@@ -3,15 +3,15 @@ project:
   output-dir: docs
   resources:
     - .nojekyll
-    - images/author/Bakti.png
+    - images/author/team.jpeg
 
 book:
   title: "Quarto Template"
-  author: "Bakti Siregar, M.Sc."
+  author: "Abyan Fathin Pradafi"
   date: today
   description: "Deskripsi singkat tentang buku"
   cover-image: images/Cover.png
-  repo-url: https://github.com/pakardata1/ebook-template-quarto.git
+  repo-url: https://github.com/Fathinda/Template_Quarto.git
   repo-actions: [edit, issue]
   downloads: [pdf]
   chapters:
@@ -40,7 +40,7 @@ format:
     link-external-newwindow: true
     include-in-header:
       text: |
-        <meta name="author" content="Bakti Siregar, M.Sc.">
+        <meta name="author" content="Abyan Fathin Pradafi">
   pdf:
     documentclass: book
     pdf-engine: xelatex
