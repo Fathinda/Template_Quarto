@@ -30,7 +30,9 @@ Penulis
 
 ![Foto](images/author/basket.jpeg){.author-portrait width=1.5in fig-align="right" fig-pos="H"}
 
-**[Abyan Fathin Pradafi](www.linkedin.com/in/abyan-fathin-pradafi-890645328)** bekerja sebagai Dosen di Prodi Sains Data Institut Teknologi Sains Bandung. Beliau adalah meraih gelar Magister-nya dari Departemen Matematika Terapan (Applied Mathematics) National Sun Yat Sen University, Taiwan. Selain mengajar beliau juga pernah bekerja sebagai **Data Scientist Freelance** di perusahaan-perusahaan ternama seperti [JNE](https://www.jne.co.id/id/beranda), [Samora Group](https://www.samoragroup.co.id/home/en), [Pertamina](https://www.pertamina.com/), dan saat ini masih aktif sebagai **Data Scientist Freelance** di [PT. Green City Traffic](PT. Green City Traffic). Beliau memiliki antusiasme khusus dalam mengerjakan proyek (mengajar) Big Data Analytics, Machine Learning, Optimisasi, dan Analisis Time Series di bidang keuangan dan investasi. Keahlian utama yang dimilikinya adalah bahasa pemrograman Statistik seperti R Studio dan Python. Beliau juga sudah terbiasa dalam mengaplikasikan sistem basis data MySQL/NoSQL untuk manajemen data, serta mahir dalam menggunakan tools Big Data seperti Spark dan Hadoop. Beberapa project beliau dapat dilihat di link berikut: [Rpubs](https://rpubs.com/dsciencelabs), [Github](https://github.com/dsciencelabs), [Website](https://dsciencelabs.github.io/web/index.html), dan [Kaggle](https://www.kaggle.com/baktisiregar/code). 
+**[Abyan Fathin Pradafi](www.linkedin.com/in/abyan-fathin-pradafi-890645328)** merupakan mahasiswa Program Studi S1 Sains Data di Institut Teknologi Sains Bandung (ITSB). Ia menempuh pendidikan menengah kejuruan di SMK Yuppentek 2 dengan jurusan Rekayasa Perangkat Lunak (RPL) sebelum melanjutkan studi di bidang sains data. Sebelum perkuliahan, ia juga sempat bekerja sebagai IT Intern (IT Support & Infrastructure) di MAXX Coffee serta memiliki pengalaman sebagai Software Engineer Intern saat menjalani Praktik Kerja Lapangan (PKL) di CNPLUS Computer Center.
+
+Saat ini, ia memiliki minat yang besar dan sedang mendalami bidang Data Science, analisis data, pengembangan aplikasi web dan mobile, serta integrasi Internet of Things (IoT). Dalam proses belajarnya, ia mulai mengeksplorasi bahasa pemrograman dan analisis statistik seperti Python, R (RStudio), dan SQL, serta mempelajari tools visualisasi data seperti Tableau dan Power BI. Ia juga terbiasa berlatih mengembangkan aplikasi menggunakan Laravel, Flutter, JavaScript, dan mengelola basis data MySQL maupun PostgreSQL. Beberapa proyek latihan dan dokumentasi perkuliahannya dapat dilihat melalui akun.
 
 
 ## Ucapan Terima Kasih 
@@ -46,6 +48,10 @@ Saya berharap Template eBook ini dapat menjadi referensi yang bermanfaat dan mem
 
 ## Masukan & Saran 
 
-Semua masukan dan tanggapan Anda sangat berarti bagi kami untuk memperbaiki Ebook Quarto Template ini kedepannya. Bagi para pembaca/pengguna yang ingin menyampaikan masukan dan tanggapan, dipersilahkan melalui kontak dibawah ini!
+Semua masukan dan tanggapan Anda sangat berarti bagi saya untuk memperbaiki proyek dan catatan pembelajaran ini ke depannya. Bagi para pembaca atau pengguna yang ingin menyampaikan masukan, saran, maupun berdiskusi lebih lanjut, dipersilakan untuk menghubungi melalui kontak di bawah ini:
 
-**Email:** dsciencelabs@outlook.com
+Email: abyanfathin67@gmail.com
+
+GitHub: github.com/Fathinda
+
+LinkedIn: Abyan Fathin Pradafi
