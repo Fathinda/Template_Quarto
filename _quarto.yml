@@ -3,14 +3,14 @@ project:
   output-dir: docs
   resources:
     - .nojekyll
-    - images/author/team.jpeg
+    - images/author/basket.jpeg
 
 book:
   title: "Quarto Template"
   author: "Abyan Fathin Pradafi"
   date: today
   description: "Deskripsi singkat tentang buku"
-  cover-image: images/Cover.png
+  cover-image: images/cover-e.jpg
   repo-url: https://github.com/Fathinda/Template_Quarto.git
   repo-actions: [edit, issue]
   downloads: [pdf]
@@ -49,7 +49,7 @@ format:
     number-sections: true
     toc: true
   epub:
-    cover-image: images/Cover.png
+    cover-image: images/cover-e.jpg
 
 execute:
   freeze: auto
