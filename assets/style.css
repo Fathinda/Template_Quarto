@@ -252,26 +252,67 @@ pre.sourceCode {
 }
 
 #quarto-sidebar .sidebar-tools-main {
+  display: flex;
   justify-content: center;
-  gap: 0.35rem;
-  margin-top: 0.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 #quarto-sidebar .quarto-navigation-tool {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 38px;
-  min-height: 38px;
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+  font-size: 1.15rem;
+  line-height: 1;
+  border: 1px solid var(--garis);
   border-radius: var(--radius-sm);
+  background-color: #ffffff;
   color: var(--teks-sekunder);
   cursor: pointer;
-  transition: background-color var(--transisi), color var(--transisi);
+  transition: background-color var(--transisi), border-color var(--transisi), color var(--transisi), box-shadow var(--transisi);
 }
 
-#quarto-sidebar .quarto-navigation-tool:hover {
+#quarto-sidebar .quarto-navigation-tool:hover,
+#quarto-sidebar .quarto-navigation-tool:focus-visible {
   background-color: var(--biru-tint);
+  border-color: var(--biru);
   color: var(--biru-tua);
+  box-shadow: 0 2px 6px rgba(26, 54, 93, 0.12);
+}
+
+#quarto-sidebar .quarto-navigation-tool[aria-label]::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  padding: 0.35rem 0.6rem;
+  border-radius: 5px;
+  background-color: var(--biru-tua);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 30;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+  transition: opacity var(--transisi), transform var(--transisi), visibility var(--transisi);
+}
+
+#quarto-sidebar .quarto-navigation-tool[aria-label]:hover::after,
+#quarto-sidebar .quarto-navigation-tool[aria-label]:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
 }
 
 #quarto-sidebar .sidebar-search {

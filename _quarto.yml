@@ -11,10 +11,17 @@ book:
   date: today
   description: "Deskripsi singkat tentang buku"
   cover-image: images/cover-e.jpg
-  repo-url: https://github.com/Fathinda/Template_Quarto.git
-  repo-actions: [edit, issue]
-  downloads: [pdf, epub]
-  sharing: [linkedin, twitter, facebook]
+  sidebar:
+    tools:
+      - icon: github
+        href: https://github.com/Fathinda/Template_Quarto.git
+        text: "Repositori GitHub"
+      - icon: file-pdf
+        href: Quarto-Template.pdf
+        text: "Baca / Unduh PDF"
+      - icon: book
+        href: Quarto-Template.epub
+        text: "Baca / Unduh EPUB"
   chapters:
     - index.qmd
     - chapters/bab-1.qmd
