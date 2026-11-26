@@ -30,7 +30,7 @@ Penulis
 
 ![Foto](images/author/basket.jpeg){.author-portrait width=1.5in fig-align="right" fig-pos="H"}
 
-**[Abyan Fathin Pradafi](www.linkedin.com/in/abyan-fathin-pradafi-890645328)** merupakan mahasiswa Program Studi S1 Sains Data di Institut Teknologi Sains Bandung (ITSB). Ia menempuh pendidikan menengah kejuruan di SMK Yuppentek 2 dengan jurusan Rekayasa Perangkat Lunak (RPL) sebelum melanjutkan studi di bidang sains data. Sebelum perkuliahan, ia juga sempat bekerja sebagai IT Intern (IT Support & Infrastructure) di MAXX Coffee serta memiliki pengalaman sebagai Software Engineer Intern saat menjalani Praktik Kerja Lapangan (PKL) di CNPLUS Computer Center.
+**[Abyan Fathin Pradafi](https://www.linkedin.com/in/abyan-fathin-pradafi-890645328)** merupakan mahasiswa Program Studi S1 Sains Data di Institut Teknologi Sains Bandung (ITSB). Ia menempuh pendidikan menengah kejuruan di SMK Yuppentek 2 dengan jurusan Rekayasa Perangkat Lunak (RPL) sebelum melanjutkan studi di bidang sains data. Sebelum perkuliahan, ia juga sempat bekerja sebagai IT Intern (IT Support & Infrastructure) di MAXX Coffee serta memiliki pengalaman sebagai Software Engineer Intern saat menjalani Praktik Kerja Lapangan (PKL) di CNPLUS Computer Center.
 
 Saat ini, ia memiliki minat yang besar dan sedang mendalami bidang Data Science, analisis data, pengembangan aplikasi web dan mobile, serta integrasi Internet of Things (IoT). Dalam proses belajarnya, ia mulai mengeksplorasi bahasa pemrograman dan analisis statistik seperti Python, R (RStudio), dan SQL, serta mempelajari tools visualisasi data seperti Tableau dan Power BI. Ia juga terbiasa berlatih mengembangkan aplikasi menggunakan Laravel, Flutter, JavaScript, dan mengelola basis data MySQL maupun PostgreSQL. Beberapa proyek latihan dan dokumentasi perkuliahannya dapat dilihat melalui akun.
 
@@ -50,8 +50,8 @@ Saya berharap Template eBook ini dapat menjadi referensi yang bermanfaat dan mem
 
 Semua masukan dan tanggapan Anda sangat berarti bagi saya untuk memperbaiki proyek dan catatan pembelajaran ini ke depannya. Bagi para pembaca atau pengguna yang ingin menyampaikan masukan, saran, maupun berdiskusi lebih lanjut, dipersilakan untuk menghubungi melalui kontak di bawah ini:
 
-Email: abyanfathin67@gmail.com
+Email: [abyanfathin67@gmail.com](mailto:abyanfathin67@gmail.com)
 
-GitHub: github.com/Fathinda
+GitHub: [github.com/Fathinda](https://github.com/Fathinda)
 
-LinkedIn: Abyan Fathin Pradafi
+LinkedIn: [Abyan Fathin Pradafi](https://www.linkedin.com/in/abyan-fathin-pradafi-890645328)
