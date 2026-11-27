@@ -8,7 +8,7 @@
 
 <meta name="description" content="Deskripsi singkat tentang buku">
 
-<title>5&nbsp; Prasyarat dan Notasi – Quarto Template</title>
+<title>5&nbsp; Ukuran Pemusatan dan Penyebaran Data – Quarto Template</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -161,7 +161,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P05.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P05.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -200,31 +200,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P05.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,94 +255,70 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#skala-pengukuran-menentukan-ukuran-yang-valid" id="toc-skala-pengukuran-menentukan-ukuran-yang-valid" class="nav-link active" data-scroll-target="#skala-pengukuran-menentukan-ukuran-yang-valid"><span class="header-section-number">5.1</span> Skala Pengukuran Menentukan Ukuran yang Valid</a></li>
-  <li><a href="#populasi-vs-sampel-notasi" id="toc-populasi-vs-sampel-notasi" class="nav-link" data-scroll-target="#populasi-vs-sampel-notasi"><span class="header-section-number">5.2</span> Populasi vs Sampel: Notasi</a></li>
-  <li><a href="#data-utama-yang-dipakai" id="toc-data-utama-yang-dipakai" class="nav-link" data-scroll-target="#data-utama-yang-dipakai"><span class="header-section-number">5.3</span> Data Utama yang Dipakai</a></li>
-  <li><a href="#ukuran-pemusatan-data" id="toc-ukuran-pemusatan-data" class="nav-link" data-scroll-target="#ukuran-pemusatan-data"><span class="header-section-number">6</span> Ukuran Pemusatan Data</a>
+  <li><a href="#prasyarat-dan-notasi" id="toc-prasyarat-dan-notasi" class="nav-link active" data-scroll-target="#prasyarat-dan-notasi"><span class="header-section-number">5.1</span> Prasyarat dan Notasi</a>
   <ul class="collapse">
-  <li><a href="#rata-rata-hitung-mean" id="toc-rata-rata-hitung-mean" class="nav-link" data-scroll-target="#rata-rata-hitung-mean"><span class="header-section-number">6.1</span> Rata-rata Hitung (Mean)</a>
+  <li><a href="#skala-pengukuran-menentukan-ukuran-yang-valid" id="toc-skala-pengukuran-menentukan-ukuran-yang-valid" class="nav-link" data-scroll-target="#skala-pengukuran-menentukan-ukuran-yang-valid"><span class="header-section-number">5.1.1</span> Skala Pengukuran Menentukan Ukuran yang Valid</a></li>
+  <li><a href="#populasi-vs-sampel-notasi" id="toc-populasi-vs-sampel-notasi" class="nav-link" data-scroll-target="#populasi-vs-sampel-notasi"><span class="header-section-number">5.1.2</span> Populasi vs Sampel: Notasi</a></li>
+  <li><a href="#data-utama-yang-dipakai" id="toc-data-utama-yang-dipakai" class="nav-link" data-scroll-target="#data-utama-yang-dipakai"><span class="header-section-number">5.1.3</span> Data Utama yang Dipakai</a></li>
+  </ul></li>
+  <li><a href="#ukuran-pemusatan-data" id="toc-ukuran-pemusatan-data" class="nav-link" data-scroll-target="#ukuran-pemusatan-data"><span class="header-section-number">5.2</span> Ukuran Pemusatan Data</a>
   <ul class="collapse">
-  <li><a href="#rata-rata-tertimbang-weighted-mean" id="toc-rata-rata-tertimbang-weighted-mean" class="nav-link" data-scroll-target="#rata-rata-tertimbang-weighted-mean"><span class="header-section-number">6.1.1</span> Rata-rata Tertimbang (Weighted Mean)</a></li>
+  <li><a href="#rata-rata-hitung-mean" id="toc-rata-rata-hitung-mean" class="nav-link" data-scroll-target="#rata-rata-hitung-mean"><span class="header-section-number">5.2.1</span> Rata-rata Hitung (Mean)</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">5.2.2</span> Median</a></li>
+  <li><a href="#modus" id="toc-modus" class="nav-link" data-scroll-target="#modus"><span class="header-section-number">5.2.3</span> Modus</a></li>
+  <li><a href="#membandingkan-dan-memilih-ukuran-pemusatan" id="toc-membandingkan-dan-memilih-ukuran-pemusatan" class="nav-link" data-scroll-target="#membandingkan-dan-memilih-ukuran-pemusatan"><span class="header-section-number">5.2.4</span> Membandingkan dan Memilih Ukuran Pemusatan</a></li>
   </ul></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">6.2</span> Median</a>
+  <li><a href="#catatan-median-sebagai-ukuran-letak" id="toc-catatan-median-sebagai-ukuran-letak" class="nav-link" data-scroll-target="#catatan-median-sebagai-ukuran-letak"><span class="header-section-number">5.3</span> Catatan: Median sebagai Ukuran Letak</a></li>
+  <li><a href="#ukuran-penyebaran-data" id="toc-ukuran-penyebaran-data" class="nav-link" data-scroll-target="#ukuran-penyebaran-data"><span class="header-section-number">5.4</span> Ukuran Penyebaran Data</a>
   <ul class="collapse">
-  <li><a href="#trimmed-mean-jalan-tengah" id="toc-trimmed-mean-jalan-tengah" class="nav-link" data-scroll-target="#trimmed-mean-jalan-tengah"><span class="header-section-number">6.2.1</span> Trimmed Mean: Jalan Tengah</a></li>
+  <li><a href="#mengapa-ukuran-pusat-saja-tidak-cukup" id="toc-mengapa-ukuran-pusat-saja-tidak-cukup" class="nav-link" data-scroll-target="#mengapa-ukuran-pusat-saja-tidak-cukup"><span class="header-section-number">5.4.1</span> Mengapa Ukuran Pusat Saja Tidak Cukup?</a></li>
+  <li><a href="#rentang-range" id="toc-rentang-range" class="nav-link" data-scroll-target="#rentang-range"><span class="header-section-number">5.4.2</span> Rentang (Range)</a></li>
+  <li><a href="#deviasi-varians-dan-simpangan-baku" id="toc-deviasi-varians-dan-simpangan-baku" class="nav-link" data-scroll-target="#deviasi-varians-dan-simpangan-baku"><span class="header-section-number">5.4.3</span> Deviasi, Varians, dan Simpangan Baku</a></li>
+  <li><a href="#koefisien-variasi-cv" id="toc-koefisien-variasi-cv" class="nav-link" data-scroll-target="#koefisien-variasi-cv"><span class="header-section-number">5.4.4</span> Koefisien Variasi (CV)</a></li>
+  <li><a href="#ringkasan-ukuran-penyebaran" id="toc-ringkasan-ukuran-penyebaran" class="nav-link" data-scroll-target="#ringkasan-ukuran-penyebaran"><span class="header-section-number">5.4.5</span> Ringkasan Ukuran Penyebaran</a></li>
   </ul></li>
-  <li><a href="#modus" id="toc-modus" class="nav-link" data-scroll-target="#modus"><span class="header-section-number">6.3</span> Modus</a></li>
-  <li><a href="#membandingkan-dan-memilih-ukuran-pemusatan" id="toc-membandingkan-dan-memilih-ukuran-pemusatan" class="nav-link" data-scroll-target="#membandingkan-dan-memilih-ukuran-pemusatan"><span class="header-section-number">6.4</span> Membandingkan dan Memilih Ukuran Pemusatan</a></li>
-  </ul></li>
-  <li><a href="#catatan-median-sebagai-ukuran-letak" id="toc-catatan-median-sebagai-ukuran-letak" class="nav-link" data-scroll-target="#catatan-median-sebagai-ukuran-letak"><span class="header-section-number">7</span> Catatan: Median sebagai Ukuran Letak</a></li>
-  <li><a href="#ukuran-penyebaran-data" id="toc-ukuran-penyebaran-data" class="nav-link" data-scroll-target="#ukuran-penyebaran-data"><span class="header-section-number">8</span> Ukuran Penyebaran Data</a>
+  <li><a href="#interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" id="toc-interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" class="nav-link" data-scroll-target="#interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran"><span class="header-section-number">5.5</span> Interpretasi: Bentuk Distribusi dari Pusat dan Sebaran</a></li>
+  <li><a href="#interpretasi-pengaruh-nilai-ekstrem" id="toc-interpretasi-pengaruh-nilai-ekstrem" class="nav-link" data-scroll-target="#interpretasi-pengaruh-nilai-ekstrem"><span class="header-section-number">5.6</span> Interpretasi: Pengaruh Nilai Ekstrem</a>
   <ul class="collapse">
-  <li><a href="#mengapa-ukuran-pusat-saja-tidak-cukup" id="toc-mengapa-ukuran-pusat-saja-tidak-cukup" class="nav-link" data-scroll-target="#mengapa-ukuran-pusat-saja-tidak-cukup"><span class="header-section-number">8.1</span> Mengapa Ukuran Pusat Saja Tidak Cukup?</a></li>
-  <li><a href="#rentang-range" id="toc-rentang-range" class="nav-link" data-scroll-target="#rentang-range"><span class="header-section-number">8.2</span> Rentang (Range)</a></li>
-  <li><a href="#deviasi-varians-dan-simpangan-baku" id="toc-deviasi-varians-dan-simpangan-baku" class="nav-link" data-scroll-target="#deviasi-varians-dan-simpangan-baku"><span class="header-section-number">8.3</span> Deviasi, Varians, dan Simpangan Baku</a>
+  <li><a href="#ukuran-mana-yang-tahan-nilai-ekstrem" id="toc-ukuran-mana-yang-tahan-nilai-ekstrem" class="nav-link" data-scroll-target="#ukuran-mana-yang-tahan-nilai-ekstrem"><span class="header-section-number">5.6.1</span> Ukuran Mana yang Tahan Nilai Ekstrem?</a></li>
+  </ul></li>
+  <li><a href="#interpretasi-menafsirkan-simpangan-baku" id="toc-interpretasi-menafsirkan-simpangan-baku" class="nav-link" data-scroll-target="#interpretasi-menafsirkan-simpangan-baku"><span class="header-section-number">5.7</span> Interpretasi: Menafsirkan Simpangan Baku</a>
   <ul class="collapse">
-  <li><a href="#langkah-perhitungan-manual" id="toc-langkah-perhitungan-manual" class="nav-link" data-scroll-target="#langkah-perhitungan-manual"><span class="header-section-number">8.3.1</span> Langkah Perhitungan Manual</a></li>
-  <li><a href="#mengapa-dibagi-n-1" id="toc-mengapa-dibagi-n-1" class="nav-link" data-scroll-target="#mengapa-dibagi-n-1"><span class="header-section-number">8.3.2</span> Mengapa Dibagi <span class="math inline">\(n-1\)</span>?</a></li>
-  <li><a href="#menerapkan-pada-data-nilai-ujian" id="toc-menerapkan-pada-data-nilai-ujian" class="nav-link" data-scroll-target="#menerapkan-pada-data-nilai-ujian"><span class="header-section-number">8.3.3</span> Menerapkan pada Data Nilai Ujian</a></li>
+  <li><a href="#z-score" id="toc-z-score" class="nav-link" data-scroll-target="#z-score"><span class="header-section-number">5.7.1</span> Z-Score</a></li>
+  <li><a href="#aturan-empiris-68-95-997" id="toc-aturan-empiris-68-95-997" class="nav-link" data-scroll-target="#aturan-empiris-68-95-997"><span class="header-section-number">5.7.2</span> Aturan Empiris (68-95-99,7)</a></li>
+  <li><a href="#teorema-chebyshev" id="toc-teorema-chebyshev" class="nav-link" data-scroll-target="#teorema-chebyshev"><span class="header-section-number">5.7.3</span> Teorema Chebyshev</a></li>
   </ul></li>
-  <li><a href="#koefisien-variasi-cv" id="toc-koefisien-variasi-cv" class="nav-link" data-scroll-target="#koefisien-variasi-cv"><span class="header-section-number">8.4</span> Koefisien Variasi (CV)</a></li>
-  <li><a href="#ringkasan-ukuran-penyebaran" id="toc-ringkasan-ukuran-penyebaran" class="nav-link" data-scroll-target="#ringkasan-ukuran-penyebaran"><span class="header-section-number">8.5</span> Ringkasan Ukuran Penyebaran</a></li>
-  </ul></li>
-  <li><a href="#interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" id="toc-interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" class="nav-link" data-scroll-target="#interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran"><span class="header-section-number">9</span> Interpretasi: Bentuk Distribusi dari Pusat dan Sebaran</a></li>
-  <li><a href="#interpretasi-pengaruh-nilai-ekstrem" id="toc-interpretasi-pengaruh-nilai-ekstrem" class="nav-link" data-scroll-target="#interpretasi-pengaruh-nilai-ekstrem"><span class="header-section-number">10</span> Interpretasi: Pengaruh Nilai Ekstrem</a>
+  <li><a href="#statistik-dari-data-terkelompok" id="toc-statistik-dari-data-terkelompok" class="nav-link" data-scroll-target="#statistik-dari-data-terkelompok"><span class="header-section-number">5.8</span> Statistik dari Data Terkelompok</a>
   <ul class="collapse">
-  <li><a href="#ukuran-mana-yang-tahan-nilai-ekstrem" id="toc-ukuran-mana-yang-tahan-nilai-ekstrem" class="nav-link" data-scroll-target="#ukuran-mana-yang-tahan-nilai-ekstrem"><span class="header-section-number">10.1</span> Ukuran Mana yang Tahan Nilai Ekstrem?</a></li>
+  <li><a href="#rumus-data-terkelompok" id="toc-rumus-data-terkelompok" class="nav-link" data-scroll-target="#rumus-data-terkelompok"><span class="header-section-number">5.8.1</span> Rumus Data Terkelompok</a></li>
+  <li><a href="#studi-kasus-pendapatan-mingguan-100-karyawan" id="toc-studi-kasus-pendapatan-mingguan-100-karyawan" class="nav-link" data-scroll-target="#studi-kasus-pendapatan-mingguan-100-karyawan"><span class="header-section-number">5.8.2</span> Studi Kasus: Pendapatan Mingguan 100 Karyawan</a></li>
+  <li><a href="#seberapa-akurat-aproksimasi-data-terkelompok" id="toc-seberapa-akurat-aproksimasi-data-terkelompok" class="nav-link" data-scroll-target="#seberapa-akurat-aproksimasi-data-terkelompok"><span class="header-section-number">5.8.3</span> Seberapa Akurat Aproksimasi Data Terkelompok?</a></li>
   </ul></li>
-  <li><a href="#interpretasi-menafsirkan-simpangan-baku" id="toc-interpretasi-menafsirkan-simpangan-baku" class="nav-link" data-scroll-target="#interpretasi-menafsirkan-simpangan-baku"><span class="header-section-number">11</span> Interpretasi: Menafsirkan Simpangan Baku</a>
+  <li><a href="#etika-pelaporan-ketika-rata-rata-menyesatkan" id="toc-etika-pelaporan-ketika-rata-rata-menyesatkan" class="nav-link" data-scroll-target="#etika-pelaporan-ketika-rata-rata-menyesatkan"><span class="header-section-number">5.9</span> Etika Pelaporan: Ketika Rata-rata Menyesatkan</a>
   <ul class="collapse">
-  <li><a href="#z-score" id="toc-z-score" class="nav-link" data-scroll-target="#z-score"><span class="header-section-number">11.1</span> Z-Score</a></li>
-  <li><a href="#aturan-empiris-68-95-997" id="toc-aturan-empiris-68-95-997" class="nav-link" data-scroll-target="#aturan-empiris-68-95-997"><span class="header-section-number">11.2</span> Aturan Empiris (68-95-99,7)</a></li>
-  <li><a href="#teorema-chebyshev" id="toc-teorema-chebyshev" class="nav-link" data-scroll-target="#teorema-chebyshev"><span class="header-section-number">11.3</span> Teorema Chebyshev</a></li>
+  <li><a href="#contoh-1-rata-rata-pada-data-menceng" id="toc-contoh-1-rata-rata-pada-data-menceng" class="nav-link" data-scroll-target="#contoh-1-rata-rata-pada-data-menceng"><span class="header-section-number">5.9.1</span> Contoh 1: Rata-rata pada Data Menceng</a></li>
+  <li><a href="#contoh-2-rata-rata-dari-rata-rata" id="toc-contoh-2-rata-rata-dari-rata-rata" class="nav-link" data-scroll-target="#contoh-2-rata-rata-dari-rata-rata"><span class="header-section-number">5.9.2</span> Contoh 2: Rata-rata dari Rata-rata</a></li>
+  <li><a href="#contoh-3-rata-rata-pada-data-bimodal" id="toc-contoh-3-rata-rata-pada-data-bimodal" class="nav-link" data-scroll-target="#contoh-3-rata-rata-pada-data-bimodal"><span class="header-section-number">5.9.3</span> Contoh 3: Rata-rata pada Data Bimodal</a></li>
+  <li><a href="#contoh-4-pusat-tanpa-sebaran" id="toc-contoh-4-pusat-tanpa-sebaran" class="nav-link" data-scroll-target="#contoh-4-pusat-tanpa-sebaran"><span class="header-section-number">5.9.4</span> Contoh 4: Pusat Tanpa Sebaran</a></li>
+  <li><a href="#daftar-periksa-checklist-pelaporan-statistik-yang-jujur" id="toc-daftar-periksa-checklist-pelaporan-statistik-yang-jujur" class="nav-link" data-scroll-target="#daftar-periksa-checklist-pelaporan-statistik-yang-jujur"><span class="header-section-number">5.9.5</span> Daftar Periksa (Checklist) Pelaporan Statistik yang Jujur</a></li>
   </ul></li>
-  <li><a href="#statistik-dari-data-terkelompok" id="toc-statistik-dari-data-terkelompok" class="nav-link" data-scroll-target="#statistik-dari-data-terkelompok"><span class="header-section-number">12</span> Statistik dari Data Terkelompok</a>
+  <li><a href="#studi-kasus-komprehensif-membandingkan-dua-kelas" id="toc-studi-kasus-komprehensif-membandingkan-dua-kelas" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-membandingkan-dua-kelas"><span class="header-section-number">5.10</span> Studi Kasus Komprehensif: Membandingkan Dua Kelas</a>
   <ul class="collapse">
-  <li><a href="#rumus-data-terkelompok" id="toc-rumus-data-terkelompok" class="nav-link" data-scroll-target="#rumus-data-terkelompok"><span class="header-section-number">12.1</span> Rumus Data Terkelompok</a></li>
-  <li><a href="#studi-kasus-pendapatan-mingguan-100-karyawan" id="toc-studi-kasus-pendapatan-mingguan-100-karyawan" class="nav-link" data-scroll-target="#studi-kasus-pendapatan-mingguan-100-karyawan"><span class="header-section-number">12.2</span> Studi Kasus: Pendapatan Mingguan 100 Karyawan</a>
+  <li><a href="#langkah-1-ringkasan-statistik-lengkap" id="toc-langkah-1-ringkasan-statistik-lengkap" class="nav-link" data-scroll-target="#langkah-1-ringkasan-statistik-lengkap"><span class="header-section-number">5.10.1</span> Langkah 1: Ringkasan Statistik Lengkap</a></li>
+  <li><a href="#langkah-2-visualisasi-berdampingan" id="toc-langkah-2-visualisasi-berdampingan" class="nav-link" data-scroll-target="#langkah-2-visualisasi-berdampingan"><span class="header-section-number">5.10.2</span> Langkah 2: Visualisasi Berdampingan</a></li>
+  <li><a href="#langkah-3-posisi-relatif-seorang-mahasiswa" id="toc-langkah-3-posisi-relatif-seorang-mahasiswa" class="nav-link" data-scroll-target="#langkah-3-posisi-relatif-seorang-mahasiswa"><span class="header-section-number">5.10.3</span> Langkah 3: Posisi Relatif Seorang Mahasiswa</a></li>
+  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">5.10.4</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  </ul></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">5.11</span> Latihan Mandiri</a>
   <ul class="collapse">
-  <li><a href="#langkah-1-mean" id="toc-langkah-1-mean" class="nav-link" data-scroll-target="#langkah-1-mean"><span class="header-section-number">12.2.1</span> Langkah 1: Mean</a></li>
-  <li><a href="#langkah-2-median" id="toc-langkah-2-median" class="nav-link" data-scroll-target="#langkah-2-median"><span class="header-section-number">12.2.2</span> Langkah 2: Median</a></li>
-  <li><a href="#langkah-3-modus" id="toc-langkah-3-modus" class="nav-link" data-scroll-target="#langkah-3-modus"><span class="header-section-number">12.2.3</span> Langkah 3: Modus</a></li>
-  <li><a href="#langkah-4-varians-dan-simpangan-baku" id="toc-langkah-4-varians-dan-simpangan-baku" class="nav-link" data-scroll-target="#langkah-4-varians-dan-simpangan-baku"><span class="header-section-number">12.2.4</span> Langkah 4: Varians dan Simpangan Baku</a></li>
-  <li><a href="#fungsi-bantu-gabungan" id="toc-fungsi-bantu-gabungan" class="nav-link" data-scroll-target="#fungsi-bantu-gabungan"><span class="header-section-number">12.2.5</span> Fungsi Bantu Gabungan</a></li>
-  <li><a href="#visualisasi-dan-interpretasi" id="toc-visualisasi-dan-interpretasi" class="nav-link" data-scroll-target="#visualisasi-dan-interpretasi"><span class="header-section-number">12.2.6</span> Visualisasi dan Interpretasi</a></li>
+  <li><a href="#latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" id="toc-latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" class="nav-link" data-scroll-target="#latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit"><span class="header-section-number">5.11.1</span> Latihan Utama (Exercise 2.14 Lanjutan): Kepemilikan Kartu Kredit</a></li>
+  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">5.11.2</span> Latihan Tambahan (Self-Check)</a></li>
   </ul></li>
-  <li><a href="#seberapa-akurat-aproksimasi-data-terkelompok" id="toc-seberapa-akurat-aproksimasi-data-terkelompok" class="nav-link" data-scroll-target="#seberapa-akurat-aproksimasi-data-terkelompok"><span class="header-section-number">12.3</span> Seberapa Akurat Aproksimasi Data Terkelompok?</a></li>
-  </ul></li>
-  <li><a href="#etika-pelaporan-ketika-rata-rata-menyesatkan" id="toc-etika-pelaporan-ketika-rata-rata-menyesatkan" class="nav-link" data-scroll-target="#etika-pelaporan-ketika-rata-rata-menyesatkan"><span class="header-section-number">13</span> Etika Pelaporan: Ketika Rata-rata Menyesatkan</a>
-  <ul class="collapse">
-  <li><a href="#contoh-1-rata-rata-pada-data-menceng" id="toc-contoh-1-rata-rata-pada-data-menceng" class="nav-link" data-scroll-target="#contoh-1-rata-rata-pada-data-menceng"><span class="header-section-number">13.1</span> Contoh 1: Rata-rata pada Data Menceng</a></li>
-  <li><a href="#contoh-2-rata-rata-dari-rata-rata" id="toc-contoh-2-rata-rata-dari-rata-rata" class="nav-link" data-scroll-target="#contoh-2-rata-rata-dari-rata-rata"><span class="header-section-number">13.2</span> Contoh 2: Rata-rata dari Rata-rata</a></li>
-  <li><a href="#contoh-3-rata-rata-pada-data-bimodal" id="toc-contoh-3-rata-rata-pada-data-bimodal" class="nav-link" data-scroll-target="#contoh-3-rata-rata-pada-data-bimodal"><span class="header-section-number">13.3</span> Contoh 3: Rata-rata pada Data Bimodal</a></li>
-  <li><a href="#contoh-4-pusat-tanpa-sebaran" id="toc-contoh-4-pusat-tanpa-sebaran" class="nav-link" data-scroll-target="#contoh-4-pusat-tanpa-sebaran"><span class="header-section-number">13.4</span> Contoh 4: Pusat Tanpa Sebaran</a></li>
-  <li><a href="#daftar-periksa-checklist-pelaporan-statistik-yang-jujur" id="toc-daftar-periksa-checklist-pelaporan-statistik-yang-jujur" class="nav-link" data-scroll-target="#daftar-periksa-checklist-pelaporan-statistik-yang-jujur"><span class="header-section-number">13.5</span> Daftar Periksa (Checklist) Pelaporan Statistik yang Jujur</a></li>
-  </ul></li>
-  <li><a href="#studi-kasus-komprehensif-membandingkan-dua-kelas" id="toc-studi-kasus-komprehensif-membandingkan-dua-kelas" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-membandingkan-dua-kelas"><span class="header-section-number">14</span> Studi Kasus Komprehensif: Membandingkan Dua Kelas</a>
-  <ul class="collapse">
-  <li><a href="#langkah-1-ringkasan-statistik-lengkap" id="toc-langkah-1-ringkasan-statistik-lengkap" class="nav-link" data-scroll-target="#langkah-1-ringkasan-statistik-lengkap"><span class="header-section-number">14.1</span> Langkah 1: Ringkasan Statistik Lengkap</a></li>
-  <li><a href="#langkah-2-visualisasi-berdampingan" id="toc-langkah-2-visualisasi-berdampingan" class="nav-link" data-scroll-target="#langkah-2-visualisasi-berdampingan"><span class="header-section-number">14.2</span> Langkah 2: Visualisasi Berdampingan</a></li>
-  <li><a href="#langkah-3-posisi-relatif-seorang-mahasiswa" id="toc-langkah-3-posisi-relatif-seorang-mahasiswa" class="nav-link" data-scroll-target="#langkah-3-posisi-relatif-seorang-mahasiswa"><span class="header-section-number">14.3</span> Langkah 3: Posisi Relatif Seorang Mahasiswa</a></li>
-  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">14.4</span> Pertanyaan Diskusi dan Jawaban</a></li>
-  </ul></li>
-  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">15</span> Latihan Mandiri</a>
-  <ul class="collapse">
-  <li><a href="#latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" id="toc-latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" class="nav-link" data-scroll-target="#latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit"><span class="header-section-number">15.1</span> Latihan Utama (Exercise 2.14 Lanjutan): Kepemilikan Kartu Kredit</a>
-  <ul class="collapse">
-  <li><a href="#tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran" id="toc-tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran" class="nav-link" data-scroll-target="#tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran"><span class="header-section-number">15.1.1</span> Tugas 1: Klasifikasi variabel dan pemilihan ukuran</a></li>
-  <li><a href="#tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7" id="toc-tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7" class="nav-link" data-scroll-target="#tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7"><span class="header-section-number">15.1.2</span> Tugas 2: Hitung titik tengah kelas (<span class="math inline">\(m\)</span>) untuk interval “4 to 7”</a></li>
-  <li><a href="#tugas-3-hitung-mean-median-dan-modus" id="toc-tugas-3-hitung-mean-median-dan-modus" class="nav-link" data-scroll-target="#tugas-3-hitung-mean-median-dan-modus"><span class="header-section-number">15.1.3</span> Tugas 3: Hitung mean, median, dan modus</a></li>
-  <li><a href="#tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi" id="toc-tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi" class="nav-link" data-scroll-target="#tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi"><span class="header-section-number">15.1.4</span> Tugas 4: Hitung varians, simpangan baku, dan koefisien variasi</a></li>
-  <li><a href="#tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya" id="toc-tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya" class="nav-link" data-scroll-target="#tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya"><span class="header-section-number">15.1.5</span> Tugas 5: Interpretasikan bentuk distribusi dan variabilitasnya</a></li>
-  <li><a href="#tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka" id="toc-tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka" class="nav-link" data-scroll-target="#tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka"><span class="header-section-number">15.1.6</span> Tugas 6 (Tantangan): Sensitivitas terhadap Kelas Terbuka</a></li>
-  </ul></li>
-  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">15.2</span> Latihan Tambahan (Self-Check)</a></li>
-  </ul></li>
-  <li><a href="#kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" id="toc-kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran"><span class="header-section-number">16</span> Kesalahan Umum dalam Ukuran Pemusatan dan Penyebaran</a></li>
-  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">17</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
-  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">18</span> Glosarium Istilah</a></li>
-  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">19</span> Rangkuman dan Kesimpulan</a></li>
-  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">20</span> Referensi Pendukung</a></li>
+  <li><a href="#kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" id="toc-kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran"><span class="header-section-number">5.12</span> Kesalahan Umum dalam Ukuran Pemusatan dan Penyebaran</a></li>
+  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">5.13</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
+  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">5.14</span> Glosarium Istilah</a></li>
+  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">5.15</span> Rangkuman dan Kesimpulan</a></li>
+  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">5.16</span> Referensi Pendukung</a></li>
   </ul>
 </nav>
     </div>
@@ -351,7 +327,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></h1>
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></h1>
 </div>
 
 
@@ -368,8 +344,10 @@ window.Quarto = {
 </header>
 
 
-<section id="skala-pengukuran-menentukan-ukuran-yang-valid" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="skala-pengukuran-menentukan-ukuran-yang-valid"><span class="header-section-number">5.1</span> Skala Pengukuran Menentukan Ukuran yang Valid</h2>
+<section id="prasyarat-dan-notasi" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="prasyarat-dan-notasi"><span class="header-section-number">5.1</span> Prasyarat dan Notasi</h2>
+<section id="skala-pengukuran-menentukan-ukuran-yang-valid" class="level3" data-number="5.1.1">
+<h3 data-number="5.1.1" class="anchored" data-anchor-id="skala-pengukuran-menentukan-ukuran-yang-valid"><span class="header-section-number">5.1.1</span> Skala Pengukuran Menentukan Ukuran yang Valid</h3>
 <p>Ingat kembali skala pengukuran dari Pertemuan 2. Skala data menentukan ukuran mana yang bermakna untuk dihitung:</p>
 <table class="caption-top table">
 <thead>
@@ -414,8 +392,8 @@ window.Quarto = {
 </table>
 <p>Contoh: “rata-rata golongan darah” tidak bermakna (nominal), sedangkan “rata-rata tinggi badan” bermakna (rasio).</p>
 </section>
-<section id="populasi-vs-sampel-notasi" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="populasi-vs-sampel-notasi"><span class="header-section-number">5.2</span> Populasi vs Sampel: Notasi</h2>
+<section id="populasi-vs-sampel-notasi" class="level3" data-number="5.1.2">
+<h3 data-number="5.1.2" class="anchored" data-anchor-id="populasi-vs-sampel-notasi"><span class="header-section-number">5.1.2</span> Populasi vs Sampel: Notasi</h3>
 <p>Karena statistik dari <strong>sampel</strong> dipakai untuk menduga parameter <strong>populasi</strong>, notasinya dibedakan:</p>
 <table class="caption-top table">
 <thead>
@@ -450,8 +428,8 @@ window.Quarto = {
 </table>
 <p>Simbol <span class="math inline">\(\sum\)</span> (sigma besar) berarti “jumlahkan”: <span class="math inline">\(\sum_{i=1}^{n} x_i = x_1 + x_2 + \cdots + x_n\)</span>.</p>
 </section>
-<section id="data-utama-yang-dipakai" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="data-utama-yang-dipakai"><span class="header-section-number">5.3</span> Data Utama yang Dipakai</h2>
+<section id="data-utama-yang-dipakai" class="level3" data-number="5.1.3">
+<h3 data-number="5.1.3" class="anchored" data-anchor-id="data-utama-yang-dipakai"><span class="header-section-number">5.1.3</span> Data Utama yang Dipakai</h3>
 <p>Sepanjang praktikum, kita memakai nilai ujian Statistika 30 mahasiswa dari Pertemuan 4. Pengelompokan kelasnya (Aturan Sturges: 6 kelas, lebar 6, batas nyata dimulai dari 62,5) sudah kita peroleh dan dipakai ulang pada bagian data terkelompok.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>nilai_ujian <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">78</span>, <span class="dv">65</span>, <span class="dv">82</span>, <span class="dv">90</span>, <span class="dv">74</span>, <span class="dv">68</span>, <span class="dv">95</span>, <span class="dv">88</span>, <span class="dv">72</span>, <span class="dv">80</span>,</span>
@@ -487,10 +465,11 @@ window.Quarto = {
 <p>Dari histogram, kita bisa memperkirakan “pusat” data ada di sekitar 80 dan sebarannya kira-kira dari 63 sampai 95. Praktikum ini mengubah <strong>perkiraan visual</strong> tersebut menjadi <strong>angka yang tepat</strong>.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="ukuran-pemusatan-data" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Ukuran Pemusatan Data</h1>
-<section id="rata-rata-hitung-mean" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="rata-rata-hitung-mean"><span class="header-section-number">6.1</span> Rata-rata Hitung (Mean)</h2>
+</section>
+<section id="ukuran-pemusatan-data" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="ukuran-pemusatan-data"><span class="header-section-number">5.2</span> Ukuran Pemusatan Data</h2>
+<section id="rata-rata-hitung-mean" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="rata-rata-hitung-mean"><span class="header-section-number">5.2.1</span> Rata-rata Hitung (Mean)</h3>
 <p>Mean adalah jumlah seluruh nilai dibagi banyaknya data:</p>
 <p><span class="math display">\[\mu = \frac{\sum_{i=1}^{N} x_i}{N} \qquad\qquad \bar{x} = \frac{\sum_{i=1}^{n} x_i}{n}\]</span></p>
 <div class="cell">
@@ -530,8 +509,8 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<section id="rata-rata-tertimbang-weighted-mean" class="level3" data-number="6.1.1">
-<h3 data-number="6.1.1" class="anchored" data-anchor-id="rata-rata-tertimbang-weighted-mean"><span class="header-section-number">6.1.1</span> Rata-rata Tertimbang (Weighted Mean)</h3>
+<section id="rata-rata-tertimbang-weighted-mean" class="level4">
+<h4 class="anchored" data-anchor-id="rata-rata-tertimbang-weighted-mean">Rata-rata Tertimbang (Weighted Mean)</h4>
 <p>Jika setiap nilai memiliki bobot yang berbeda, gunakan rata-rata tertimbang:</p>
 <p><span class="math display">\[\bar{x}_w = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}\]</span></p>
 <p>Contoh: IPK semester dihitung dari nilai mutu yang dibobot dengan jumlah SKS.</p>
@@ -589,8 +568,8 @@ window.Quarto = {
 <p>Rata-rata biasa (3,125) mengabaikan fakta bahwa Kalkulus (4 SKS) lebih “berat” daripada Algoritma (2 SKS). IPK yang benar adalah rata-rata tertimbang, yaitu <strong>3.208</strong>.</p>
 </section>
 </section>
-<section id="median" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="median"><span class="header-section-number">6.2</span> Median</h2>
+<section id="median" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="median"><span class="header-section-number">5.2.2</span> Median</h3>
 <p>Median adalah nilai tengah setelah data diurutkan. Median membagi data menjadi dua bagian sama banyak: 50% data berada di bawahnya dan 50% di atasnya.</p>
 <ul>
 <li>Jika <span class="math inline">\(n\)</span> <strong>ganjil</strong>: median = data ke-<span class="math inline">\(\frac{n+1}{2}\)</span>.</li>
@@ -630,8 +609,8 @@ window.Quarto = {
 </div>
 </div>
 <p>Mean (10,83 juta) jauh lebih besar dari gaji enam dari tujuh karyawan, karena tertarik oleh satu nilai ekstrem (45 juta). Median (5,2 juta) <strong>tidak terpengaruh besarnya</strong> nilai ekstrem tersebut – median hanya peduli pada urutan, bukan besar nilainya. Inilah sebabnya median disebut ukuran yang <strong>tahan (robust)</strong> terhadap outlier.</p>
-<section id="trimmed-mean-jalan-tengah" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="trimmed-mean-jalan-tengah"><span class="header-section-number">6.2.1</span> Trimmed Mean: Jalan Tengah</h3>
+<section id="trimmed-mean-jalan-tengah" class="level4">
+<h4 class="anchored" data-anchor-id="trimmed-mean-jalan-tengah">Trimmed Mean: Jalan Tengah</h4>
 <p>Trimmed mean membuang sebagian persentase data terkecil dan terbesar sebelum menghitung rata-rata, sehingga tetap memakai banyak data tetapi lebih tahan terhadap outlier.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(gaji)                <span class="co"># mean biasa</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -649,8 +628,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="modus" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="modus"><span class="header-section-number">6.3</span> Modus</h2>
+<section id="modus" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="modus"><span class="header-section-number">5.2.3</span> Modus</h3>
 <p>Modus adalah nilai yang <strong>paling sering muncul</strong>. Berbeda dengan mean dan median, modus juga valid untuk data <strong>nominal</strong>. R tidak menyediakan fungsi bawaan untuk modus statistik (fungsi <code>mode()</code> di R menunjukkan tipe data, bukan modus), sehingga kita membuatnya sendiri:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>hitung_modus <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
@@ -684,8 +663,8 @@ window.Quarto = {
 </div>
 <p><strong>Catatan:</strong> untuk data kontinu (seperti nilai ujian di atas) yang hampir tidak pernah berulang persis, modus dari data mentah tidak informatif. Solusinya adalah mencari <strong>kelas modus</strong> dari data yang sudah dikelompokkan (dibahas pada bagian Data Terkelompok).</p>
 </section>
-<section id="membandingkan-dan-memilih-ukuran-pemusatan" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="membandingkan-dan-memilih-ukuran-pemusatan"><span class="header-section-number">6.4</span> Membandingkan dan Memilih Ukuran Pemusatan</h2>
+<section id="membandingkan-dan-memilih-ukuran-pemusatan" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="membandingkan-dan-memilih-ukuran-pemusatan"><span class="header-section-number">5.2.4</span> Membandingkan dan Memilih Ukuran Pemusatan</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -750,15 +729,15 @@ window.Quarto = {
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="catatan-median-sebagai-ukuran-letak" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Catatan: Median sebagai Ukuran Letak</h1>
+<section id="catatan-median-sebagai-ukuran-letak" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="catatan-median-sebagai-ukuran-letak"><span class="header-section-number">5.3</span> Catatan: Median sebagai Ukuran Letak</h2>
 <p>Median membagi data terurut menjadi dua bagian sama banyak. Gagasan yang sama dapat diperluas menjadi <strong>kuartil</strong> (empat bagian), <strong>desil</strong> (sepuluh bagian), dan <strong>persentil</strong> (seratus bagian), beserta <strong>rentang antarkuartil (IQR)</strong> sebagai ukuran sebaran yang tahan nilai ekstrem. Semua ukuran letak tersebut dibahas lengkap pada <strong>Pertemuan 6</strong>. Untuk saat ini, cukup diingat bahwa median adalah <strong>persentil ke-50</strong>.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="ukuran-penyebaran-data" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Ukuran Penyebaran Data</h1>
-<section id="mengapa-ukuran-pusat-saja-tidak-cukup" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="mengapa-ukuran-pusat-saja-tidak-cukup"><span class="header-section-number">8.1</span> Mengapa Ukuran Pusat Saja Tidak Cukup?</h2>
+<section id="ukuran-penyebaran-data" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="ukuran-penyebaran-data"><span class="header-section-number">5.4</span> Ukuran Penyebaran Data</h2>
+<section id="mengapa-ukuran-pusat-saja-tidak-cukup" class="level3" data-number="5.4.1">
+<h3 data-number="5.4.1" class="anchored" data-anchor-id="mengapa-ukuran-pusat-saja-tidak-cukup"><span class="header-section-number">5.4.1</span> Mengapa Ukuran Pusat Saja Tidak Cukup?</h3>
 <p>Dua loket pelayanan mencatat waktu tunggu (menit) enam pelanggan. Keduanya memiliki mean dan median yang persis sama:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>loket_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">11</span>)</span>
@@ -791,8 +770,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Kedua loket “rata-rata 10 menit”, tetapi pengalaman pelanggannya sangat berbeda: Loket 1 <strong>konsisten</strong>, Loket 2 <strong>tidak dapat diprediksi</strong> (ada yang hanya menunggu 1 menit, ada yang 19 menit). Perbedaan inilah yang ditangkap oleh ukuran penyebaran.</p>
 </section>
-<section id="rentang-range" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="rentang-range"><span class="header-section-number">8.2</span> Rentang (Range)</h2>
+<section id="rentang-range" class="level3" data-number="5.4.2">
+<h3 data-number="5.4.2" class="anchored" data-anchor-id="rentang-range"><span class="header-section-number">5.4.2</span> Rentang (Range)</h3>
 <p><span class="math display">\[\text{Rentang} = x_{\text{max}} - x_{\text{min}}\]</span></p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(nilai_ujian)              <span class="co"># R mengembalikan nilai min dan max, BUKAN selisihnya</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -814,15 +793,15 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Rentang mudah dihitung, tetapi hanya memakai <strong>dua nilai</strong> (terkecil dan terbesar) sehingga sangat dipengaruhi nilai ekstrem dan mengabaikan sebaran data di antaranya. Ukuran sebaran yang memakai <strong>seluruh</strong> data adalah varians dan simpangan baku.</p>
 </section>
-<section id="deviasi-varians-dan-simpangan-baku" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="deviasi-varians-dan-simpangan-baku"><span class="header-section-number">8.3</span> Deviasi, Varians, dan Simpangan Baku</h2>
+<section id="deviasi-varians-dan-simpangan-baku" class="level3" data-number="5.4.3">
+<h3 data-number="5.4.3" class="anchored" data-anchor-id="deviasi-varians-dan-simpangan-baku"><span class="header-section-number">5.4.3</span> Deviasi, Varians, dan Simpangan Baku</h3>
 <p>Untuk mengukur “rata-rata jarak data dari meannya”, langkah pertama yang terpikir adalah merata-ratakan deviasi <span class="math inline">\((x_i - \bar{x})\)</span>. Namun sudah kita lihat bahwa jumlah deviasi selalu nol (yang positif dan negatif saling meniadakan), sehingga tidak informatif. Ada dua jalan keluar: memakai nilai mutlak (menghasilkan <em>mean absolute deviation</em>) atau <strong>mengkuadratkan</strong> deviasi (menghasilkan <strong>varians</strong>). Cara kedua lebih umum karena sifat matematisnya yang baik.</p>
 <p><strong>Rumus varians:</strong></p>
 <p><span class="math display">\[\sigma^2 = \frac{\sum_{i=1}^{N}(x_i - \mu)^2}{N} \qquad\qquad s^2 = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n-1}\]</span></p>
 <p><strong>Simpangan baku</strong> (standar deviasi): akar dari varians, sehingga satuannya kembali sama dengan data asli.</p>
 <p><span class="math display">\[\sigma = \sqrt{\sigma^2} \qquad\qquad s = \sqrt{s^2}\]</span></p>
-<section id="langkah-perhitungan-manual" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="langkah-perhitungan-manual"><span class="header-section-number">8.3.1</span> Langkah Perhitungan Manual</h3>
+<section id="langkah-perhitungan-manual" class="level4">
+<h4 class="anchored" data-anchor-id="langkah-perhitungan-manual">Langkah Perhitungan Manual</h4>
 <p>Contoh: skor kuis 8 mahasiswa (sampel).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>kuis <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">6</span>, <span class="dv">8</span>, <span class="dv">7</span>, <span class="dv">9</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">8</span>)</span>
@@ -925,8 +904,8 @@ Loket_2   10     10</code></pre>
 <p><strong>Awas:</strong> fungsi <code>var()</code> dan <code>sd()</code> di R <strong>selalu</strong> membagi dengan <span class="math inline">\(n-1\)</span> (versi sampel). Jika data Anda adalah seluruh populasi, gunakan <code>mean((x - mean(x))^2)</code> untuk varians populasi.</p>
 </blockquote>
 </section>
-<section id="mengapa-dibagi-n-1" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="mengapa-dibagi-n-1"><span class="header-section-number">8.3.2</span> Mengapa Dibagi <span class="math inline">\(n-1\)</span>?</h3>
+<section id="mengapa-dibagi-n-1" class="level4">
+<h4 class="anchored" data-anchor-id="mengapa-dibagi-n-1">Mengapa Dibagi <span class="math inline">\(n-1\)</span>?</h4>
 <p>Deviasi dihitung terhadap <span class="math inline">\(\bar{x}\)</span> (bukan <span class="math inline">\(\mu\)</span> yang sebenarnya), dan <span class="math inline">\(\bar{x}\)</span> selalu “menyesuaikan diri” dengan sampel sehingga jumlah kuadrat deviasinya cenderung <strong>terlalu kecil</strong>. Pembagian dengan <span class="math inline">\(n-1\)</span> (disebut <strong>koreksi Bessel</strong>, terkait <em>derajat bebas</em>) mengoreksi bias tersebut. Simulasi berikut membuktikannya:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
@@ -971,8 +950,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Pembagian dengan <span class="math inline">\(n\)</span> rata-rata menduga <strong>terlalu rendah</strong> (sekitar 80% dari nilai sebenarnya untuk <span class="math inline">\(n = 5\)</span>), sedangkan pembagian dengan <span class="math inline">\(n-1\)</span> rata-rata tepat mendekati varians populasi sebenarnya. Inilah sebab <span class="math inline">\(n-1\)</span> dipakai untuk sampel.</p>
 </section>
-<section id="menerapkan-pada-data-nilai-ujian" class="level3" data-number="8.3.3">
-<h3 data-number="8.3.3" class="anchored" data-anchor-id="menerapkan-pada-data-nilai-ujian"><span class="header-section-number">8.3.3</span> Menerapkan pada Data Nilai Ujian</h3>
+<section id="menerapkan-pada-data-nilai-ujian" class="level4">
+<h4 class="anchored" data-anchor-id="menerapkan-pada-data-nilai-ujian">Menerapkan pada Data Nilai Ujian</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Varians =</span> <span class="fu">var</span>(nilai_ujian), <span class="at">SD =</span> <span class="fu">sd</span>(nilai_ujian))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -983,8 +962,8 @@ Loket_2   10     10</code></pre>
 <p>Simpangan baku nilai ujian sekitar <strong>9.33</strong> poin: secara umum, nilai seorang mahasiswa menyimpang sekitar 9.3 poin dari rata-rata kelas (80.1).</p>
 </section>
 </section>
-<section id="koefisien-variasi-cv" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="koefisien-variasi-cv"><span class="header-section-number">8.4</span> Koefisien Variasi (CV)</h2>
+<section id="koefisien-variasi-cv" class="level3" data-number="5.4.4">
+<h3 data-number="5.4.4" class="anchored" data-anchor-id="koefisien-variasi-cv"><span class="header-section-number">5.4.4</span> Koefisien Variasi (CV)</h3>
 <p>Simpangan baku bergantung pada satuan dan besar data, sehingga tidak adil untuk membandingkan variabilitas dua variabel yang skalanya berbeda. <strong>Koefisien variasi</strong> menyatakan simpangan baku <em>relatif</em> terhadap meannya:</p>
 <p><span class="math display">\[CV = \frac{s}{\bar{x}} \times 100\%\]</span></p>
 <p>Contoh: manakah yang lebih bervariasi, tinggi badan atau berat badan mahasiswa?</p>
@@ -1005,8 +984,8 @@ Loket_2   10     10</code></pre>
 <p><strong>Syarat CV:</strong> hanya valid untuk data <strong>skala rasio</strong> (nol mutlak) dengan mean positif dan tidak mendekati nol. Jangan gunakan CV untuk suhu dalam °C (skala interval).</p>
 </blockquote>
 </section>
-<section id="ringkasan-ukuran-penyebaran" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="ringkasan-ukuran-penyebaran"><span class="header-section-number">8.5</span> Ringkasan Ukuran Penyebaran</h2>
+<section id="ringkasan-ukuran-penyebaran" class="level3" data-number="5.4.5">
+<h3 data-number="5.4.5" class="anchored" data-anchor-id="ringkasan-ukuran-penyebaran"><span class="header-section-number">5.4.5</span> Ringkasan Ukuran Penyebaran</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 20%">
@@ -1059,8 +1038,8 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Interpretasi: Bentuk Distribusi dari Pusat dan Sebaran</h1>
+<section id="interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="interpretasi-bentuk-distribusi-dari-pusat-dan-sebaran"><span class="header-section-number">5.5</span> Interpretasi: Bentuk Distribusi dari Pusat dan Sebaran</h2>
 <p>Posisi relatif mean, median, dan modus mengungkap <strong>bentuk distribusi</strong>:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1207,11 +1186,11 @@ Loket_2   10     10</code></pre>
 <p><strong>Jawaban:</strong> mean (80.13) dan median (80.5) hampir sama dan <span class="math inline">\(Sk\)</span> mendekati nol, sehingga distribusinya <strong>relatif simetris</strong> – konsisten dengan bentuk histogram pada awal praktikum.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="interpretasi-pengaruh-nilai-ekstrem" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Interpretasi: Pengaruh Nilai Ekstrem</h1>
+<section id="interpretasi-pengaruh-nilai-ekstrem" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="interpretasi-pengaruh-nilai-ekstrem"><span class="header-section-number">5.6</span> Interpretasi: Pengaruh Nilai Ekstrem</h2>
 <p>Kita sudah melihat pada data gaji bahwa satu nilai ekstrem dapat menarik mean jauh dari “kebanyakan” data. Bagaimana dengan ukuran penyebaran?</p>
-<section id="ukuran-mana-yang-tahan-nilai-ekstrem" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="ukuran-mana-yang-tahan-nilai-ekstrem"><span class="header-section-number">10.1</span> Ukuran Mana yang Tahan Nilai Ekstrem?</h2>
+<section id="ukuran-mana-yang-tahan-nilai-ekstrem" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="ukuran-mana-yang-tahan-nilai-ekstrem"><span class="header-section-number">5.6.1</span> Ukuran Mana yang Tahan Nilai Ekstrem?</h3>
 <p>Bandingkan seluruh ukuran pada data gaji <strong>dengan</strong> dan <strong>tanpa</strong> outlier:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>ukuran <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
@@ -1291,10 +1270,10 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="interpretasi-menafsirkan-simpangan-baku" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Interpretasi: Menafsirkan Simpangan Baku</h1>
-<section id="z-score" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="z-score"><span class="header-section-number">11.1</span> Z-Score</h2>
+<section id="interpretasi-menafsirkan-simpangan-baku" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="interpretasi-menafsirkan-simpangan-baku"><span class="header-section-number">5.7</span> Interpretasi: Menafsirkan Simpangan Baku</h2>
+<section id="z-score" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="z-score"><span class="header-section-number">5.7.1</span> Z-Score</h3>
 <p>Z-score menyatakan berapa simpangan baku sebuah nilai berada di atas (+) atau di bawah (−) mean:</p>
 <p><span class="math display">\[z = \frac{x - \bar{x}}{s}\]</span></p>
 <p>Karena tanpa satuan, z-score memungkinkan membandingkan nilai dari skala yang berbeda.</p>
@@ -1327,8 +1306,8 @@ Loket_2   10     10</code></pre>
 <p>Meskipun nilai mentah Statistika lebih tinggi, prestasi relatif Andi <strong>lebih baik di Kalkulus</strong> (1,3 SD di atas rata-rata kelas, dibanding 1,0 SD pada Statistika).</p>
 <p>Nilai dengan <span class="math inline">\(|z|\)</span> yang sangat besar berada jauh dari pusat data. Kapan nilai seperti itu layak disebut outlier – dan mengapa aturan “<span class="math inline">\(|z| &gt; 3\)</span>” punya kelemahan – dibahas pada Pertemuan 6.</p>
 </section>
-<section id="aturan-empiris-68-95-997" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="aturan-empiris-68-95-997"><span class="header-section-number">11.2</span> Aturan Empiris (68-95-99,7)</h2>
+<section id="aturan-empiris-68-95-997" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="aturan-empiris-68-95-997"><span class="header-section-number">5.7.2</span> Aturan Empiris (68-95-99,7)</h3>
 <p>Untuk data yang berbentuk lonceng dan simetris (mendekati distribusi normal):</p>
 <table class="caption-top table">
 <thead>
@@ -1353,8 +1332,8 @@ Loket_2   10     10</code></pre>
 </tbody>
 </table>
 </section>
-<section id="teorema-chebyshev" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="teorema-chebyshev"><span class="header-section-number">11.3</span> Teorema Chebyshev</h2>
+<section id="teorema-chebyshev" class="level3" data-number="5.7.3">
+<h3 data-number="5.7.3" class="anchored" data-anchor-id="teorema-chebyshev"><span class="header-section-number">5.7.3</span> Teorema Chebyshev</h3>
 <p>Untuk <strong>sembarang</strong> bentuk distribusi (termasuk yang menceng atau bimodal), minimal proporsi data dalam <span class="math inline">\(k\)</span> simpangan baku dari mean (<span class="math inline">\(k &gt; 1\)</span>) adalah:</p>
 <p><span class="math display">\[\text{Proporsi} \geq 1 - \frac{1}{k^2}\]</span></p>
 <p>Chebyshev berlaku umum, tetapi batasnya lebih longgar dibanding aturan empiris.</p>
@@ -1406,11 +1385,11 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="statistik-dari-data-terkelompok" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Statistik dari Data Terkelompok</h1>
+<section id="statistik-dari-data-terkelompok" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="statistik-dari-data-terkelompok"><span class="header-section-number">5.8</span> Statistik dari Data Terkelompok</h2>
 <p>Pada laporan atau publikasi, data sering hanya tersedia dalam bentuk <strong>tabel distribusi frekuensi</strong>, sehingga nilai aslinya tidak diketahui. Ukuran pemusatan dan penyebaran tetap dapat <strong>diaproksimasi</strong> dengan menganggap setiap data dalam suatu kelas bernilai sama dengan <strong>titik tengah kelas</strong> (<span class="math inline">\(m\)</span>).</p>
-<section id="rumus-data-terkelompok" class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="rumus-data-terkelompok"><span class="header-section-number">12.1</span> Rumus Data Terkelompok</h2>
+<section id="rumus-data-terkelompok" class="level3" data-number="5.8.1">
+<h3 data-number="5.8.1" class="anchored" data-anchor-id="rumus-data-terkelompok"><span class="header-section-number">5.8.1</span> Rumus Data Terkelompok</h3>
 <p>Dengan <span class="math inline">\(f\)</span> = frekuensi kelas, <span class="math inline">\(m\)</span> = titik tengah, <span class="math inline">\(n = \sum f\)</span>, <span class="math inline">\(w\)</span> = lebar kelas:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1452,8 +1431,8 @@ Loket_2   10     10</code></pre>
 <li><strong>Modus:</strong> <span class="math inline">\(L\)</span> = batas nyata bawah kelas modus (kelas dengan frekuensi terbesar); <span class="math inline">\(d_1\)</span> = selisih frekuensi kelas modus dengan kelas sebelumnya; <span class="math inline">\(d_2\)</span> = selisih dengan kelas sesudahnya.</li>
 </ul>
 </section>
-<section id="studi-kasus-pendapatan-mingguan-100-karyawan" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="studi-kasus-pendapatan-mingguan-100-karyawan"><span class="header-section-number">12.2</span> Studi Kasus: Pendapatan Mingguan 100 Karyawan</h2>
+<section id="studi-kasus-pendapatan-mingguan-100-karyawan" class="level3" data-number="5.8.2">
+<h3 data-number="5.8.2" class="anchored" data-anchor-id="studi-kasus-pendapatan-mingguan-100-karyawan"><span class="header-section-number">5.8.2</span> Studi Kasus: Pendapatan Mingguan 100 Karyawan</h3>
 <p>Data: pendapatan mingguan (USD) dari 100 karyawan, dikelompokkan ke dalam 6 kelas (data yang sama dengan Pertemuan 4).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a>kelas_p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"801-1000"</span>, <span class="st">"1001-1200"</span>, <span class="st">"1201-1400"</span>, <span class="st">"1401-1600"</span>, <span class="st">"1601-1800"</span>, <span class="st">"1801-2000"</span>)</span>
@@ -1465,8 +1444,8 @@ Loket_2   10     10</code></pre>
 <span id="cb87-7"><a href="#cb87-7" aria-hidden="true" tabindex="-1"></a>m_p <span class="ot">&lt;-</span> (L_p <span class="sc">+</span> U_p) <span class="sc">/</span> <span class="dv">2</span>           <span class="co"># titik tengah</span></span>
 <span id="cb87-8"><a href="#cb87-8" aria-hidden="true" tabindex="-1"></a>n_p <span class="ot">&lt;-</span> <span class="fu">sum</span>(f_p)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="langkah-1-mean" class="level3" data-number="12.2.1">
-<h3 data-number="12.2.1" class="anchored" data-anchor-id="langkah-1-mean"><span class="header-section-number">12.2.1</span> Langkah 1: Mean</h3>
+<section id="langkah-1-mean" class="level4">
+<h4 class="anchored" data-anchor-id="langkah-1-mean">Langkah 1: Mean</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>tabel_p <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a><span class="at">Kelas =</span> kelas_p,</span>
@@ -1544,8 +1523,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Jadi <span class="math inline">\(\bar{x} = \frac{132250}{100} = 1322{,}5\)</span> USD.</p>
 </section>
-<section id="langkah-2-median" class="level3" data-number="12.2.2">
-<h3 data-number="12.2.2" class="anchored" data-anchor-id="langkah-2-median"><span class="header-section-number">12.2.2</span> Langkah 2: Median</h3>
+<section id="langkah-2-median" class="level4">
+<h4 class="anchored" data-anchor-id="langkah-2-median">Langkah 2: Median</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>n_p <span class="sc">/</span> <span class="dv">2</span>                                        <span class="co"># posisi median = 50</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1566,8 +1545,8 @@ Loket_2   10     10</code></pre>
 <p>Kelas median adalah <strong>1201–1400</strong> karena frekuensi kumulatifnya (70) pertama kali melampaui 50. Dengan <span class="math inline">\(L = 1200{,}5\)</span>, <span class="math inline">\(F = 31\)</span>, <span class="math inline">\(f_{med} = 39\)</span>, dan <span class="math inline">\(w = 200\)</span>:</p>
 <p><span class="math display">\[\text{Median} = 1200{,}5 + \left(\frac{50 - 31}{39}\right) 200 \approx 1297{,}94\]</span></p>
 </section>
-<section id="langkah-3-modus" class="level3" data-number="12.2.3">
-<h3 data-number="12.2.3" class="anchored" data-anchor-id="langkah-3-modus"><span class="header-section-number">12.2.3</span> Langkah 3: Modus</h3>
+<section id="langkah-3-modus" class="level4">
+<h4 class="anchored" data-anchor-id="langkah-3-modus">Langkah 3: Modus</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>i_mod <span class="ot">&lt;-</span> <span class="fu">which.max</span>(f_p)    <span class="co"># kelas modus</span></span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>d1 <span class="ot">&lt;-</span> f_p[i_mod] <span class="sc">-</span> (<span class="cf">if</span> (i_mod <span class="sc">==</span> <span class="dv">1</span>) <span class="dv">0</span> <span class="cf">else</span> f_p[i_mod <span class="sc">-</span> <span class="dv">1</span>])</span>
@@ -1585,8 +1564,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p><span class="math display">\[\text{Modus} = 1200{,}5 + \left(\frac{17}{17 + 24}\right) 200 \approx 1283{,}43\]</span></p>
 </section>
-<section id="langkah-4-varians-dan-simpangan-baku" class="level3" data-number="12.2.4">
-<h3 data-number="12.2.4" class="anchored" data-anchor-id="langkah-4-varians-dan-simpangan-baku"><span class="header-section-number">12.2.4</span> Langkah 4: Varians dan Simpangan Baku</h3>
+<section id="langkah-4-varians-dan-simpangan-baku" class="level4">
+<h4 class="anchored" data-anchor-id="langkah-4-varians-dan-simpangan-baku">Langkah 4: Varians dan Simpangan Baku</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>tabel_var <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="at">m =</span> m_p,</span>
@@ -1657,8 +1636,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Data ini diperlakukan sebagai sampel sehingga pembaginya <span class="math inline">\(n - 1 = 99\)</span>.</p>
 </section>
-<section id="fungsi-bantu-gabungan" class="level3" data-number="12.2.5">
-<h3 data-number="12.2.5" class="anchored" data-anchor-id="fungsi-bantu-gabungan"><span class="header-section-number">12.2.5</span> Fungsi Bantu Gabungan</h3>
+<section id="fungsi-bantu-gabungan" class="level4">
+<h4 class="anchored" data-anchor-id="fungsi-bantu-gabungan">Fungsi Bantu Gabungan</h4>
 <p>Karena langkah-langkah di atas akan dipakai berulang, kita bungkus dalam satu fungsi yang menerima batas nyata dan frekuensi:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>statistik_terkelompok <span class="ot">&lt;-</span> <span class="cf">function</span>(batas_nyata, f) {</span>
@@ -1690,8 +1669,8 @@ Loket_2   10     10</code></pre>
 </div>
 </div>
 </section>
-<section id="visualisasi-dan-interpretasi" class="level3" data-number="12.2.6">
-<h3 data-number="12.2.6" class="anchored" data-anchor-id="visualisasi-dan-interpretasi"><span class="header-section-number">12.2.6</span> Visualisasi dan Interpretasi</h3>
+<section id="visualisasi-dan-interpretasi" class="level4">
+<h4 class="anchored" data-anchor-id="visualisasi-dan-interpretasi">Visualisasi dan Interpretasi</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>hasil_p <span class="ot">&lt;-</span> <span class="fu">statistik_terkelompok</span>(batas_nyata_p, f_p)</span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1716,8 +1695,8 @@ Loket_2   10     10</code></pre>
 <p><strong>Interpretasi:</strong> Mean (1322.5) &gt; Median (1297.9) &gt; Modus (1283.4), pola khas distribusi yang <strong>menjulur ke kanan</strong> (sedikit karyawan berpendapatan tinggi menarik mean ke atas). Koefisien kemencengan Pearson-nya 0.29 (positif, agak menceng kanan). Simpangan baku sekitar 256 USD dengan CV 19.3%. Pendapatan “tipikal” sebaiknya dilaporkan dengan median (sekitar 1298 USD).</p>
 </section>
 </section>
-<section id="seberapa-akurat-aproksimasi-data-terkelompok" class="level2" data-number="12.3">
-<h2 data-number="12.3" class="anchored" data-anchor-id="seberapa-akurat-aproksimasi-data-terkelompok"><span class="header-section-number">12.3</span> Seberapa Akurat Aproksimasi Data Terkelompok?</h2>
+<section id="seberapa-akurat-aproksimasi-data-terkelompok" class="level3" data-number="5.8.3">
+<h3 data-number="5.8.3" class="anchored" data-anchor-id="seberapa-akurat-aproksimasi-data-terkelompok"><span class="header-section-number">5.8.3</span> Seberapa Akurat Aproksimasi Data Terkelompok?</h3>
 <p>Kita punya data mentah nilai ujian sekaligus tabel kelompoknya, sehingga dapat membandingkan hasil <strong>eksak</strong> dan <strong>aproksimasi</strong>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a>eksak <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">Mean =</span> <span class="fu">mean</span>(nilai_ujian), <span class="at">Median =</span> <span class="fu">median</span>(nilai_ujian), <span class="at">SD =</span> <span class="fu">sd</span>(nilai_ujian))</span>
@@ -1757,11 +1736,11 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="etika-pelaporan-ketika-rata-rata-menyesatkan" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Etika Pelaporan: Ketika Rata-rata Menyesatkan</h1>
+<section id="etika-pelaporan-ketika-rata-rata-menyesatkan" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="etika-pelaporan-ketika-rata-rata-menyesatkan"><span class="header-section-number">5.9</span> Etika Pelaporan: Ketika Rata-rata Menyesatkan</h2>
 <p>Sama seperti grafik, ukuran statistik dapat menyesatkan – disengaja atau tidak – bila dipilih atau dilaporkan secara keliru.</p>
-<section id="contoh-1-rata-rata-pada-data-menceng" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="contoh-1-rata-rata-pada-data-menceng"><span class="header-section-number">13.1</span> Contoh 1: Rata-rata pada Data Menceng</h2>
+<section id="contoh-1-rata-rata-pada-data-menceng" class="level3" data-number="5.9.1">
+<h3 data-number="5.9.1" class="anchored" data-anchor-id="contoh-1-rata-rata-pada-data-menceng"><span class="header-section-number">5.9.1</span> Contoh 1: Rata-rata pada Data Menceng</h3>
 <p><em>“Rata-rata gaji di perusahaan kami mencapai 10,8 juta rupiah per bulan!”</em> Kalimat ini benar secara perhitungan untuk data gaji, tetapi menyesatkan: enam dari tujuh karyawan bergaji di bawah 6 juta. Untuk data menceng atau beroutlier, laporkan <strong>median</strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Mean =</span> <span class="fu">mean</span>(gaji), <span class="at">Median =</span> <span class="fu">median</span>(gaji))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1775,8 +1754,8 @@ Loket_2   10     10</code></pre>
 </div>
 </div>
 </section>
-<section id="contoh-2-rata-rata-dari-rata-rata" class="level2" data-number="13.2">
-<h2 data-number="13.2" class="anchored" data-anchor-id="contoh-2-rata-rata-dari-rata-rata"><span class="header-section-number">13.2</span> Contoh 2: Rata-rata dari Rata-rata</h2>
+<section id="contoh-2-rata-rata-dari-rata-rata" class="level3" data-number="5.9.2">
+<h3 data-number="5.9.2" class="anchored" data-anchor-id="contoh-2-rata-rata-dari-rata-rata"><span class="header-section-number">5.9.2</span> Contoh 2: Rata-rata dari Rata-rata</h3>
 <p>Kelas A (30 mahasiswa) memiliki rata-rata 80, dan Kelas B (10 mahasiswa) memiliki rata-rata 70. Berapa rata-rata gabungan?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>rata <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">A =</span> <span class="dv">80</span>, <span class="at">B =</span> <span class="dv">70</span>)</span>
@@ -1793,12 +1772,12 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Rata-rata sederhana (75) salah karena memperlakukan kedua kelas sama penting; rata-rata gabungan yang benar adalah <strong>77,5</strong> karena Kelas A memiliki lebih banyak mahasiswa.</p>
 </section>
-<section id="contoh-3-rata-rata-pada-data-bimodal" class="level2" data-number="13.3">
-<h2 data-number="13.3" class="anchored" data-anchor-id="contoh-3-rata-rata-pada-data-bimodal"><span class="header-section-number">13.3</span> Contoh 3: Rata-rata pada Data Bimodal</h2>
+<section id="contoh-3-rata-rata-pada-data-bimodal" class="level3" data-number="5.9.3">
+<h3 data-number="5.9.3" class="anchored" data-anchor-id="contoh-3-rata-rata-pada-data-bimodal"><span class="header-section-number">5.9.3</span> Contoh 3: Rata-rata pada Data Bimodal</h3>
 <p>Pada data <code>data_bimodal</code> (bagian Bentuk Distribusi), mean sekitar 50, padahal hampir tidak ada data di sekitar nilai tersebut. Mean di sini “merata-ratakan” dua kelompok berbeda dan tidak mewakili siapa pun.</p>
 </section>
-<section id="contoh-4-pusat-tanpa-sebaran" class="level2" data-number="13.4">
-<h2 data-number="13.4" class="anchored" data-anchor-id="contoh-4-pusat-tanpa-sebaran"><span class="header-section-number">13.4</span> Contoh 4: Pusat Tanpa Sebaran</h2>
+<section id="contoh-4-pusat-tanpa-sebaran" class="level3" data-number="5.9.4">
+<h3 data-number="5.9.4" class="anchored" data-anchor-id="contoh-4-pusat-tanpa-sebaran"><span class="header-section-number">5.9.4</span> Contoh 4: Pusat Tanpa Sebaran</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1819,8 +1798,8 @@ Loket_2   10     10</code></pre>
 </table>
 <p>Pelaporan yang lebih baik memungkinkan pembaca menilai apakah “rata-rata 80” mewakili kelas secara wajar atau tidak.</p>
 </section>
-<section id="daftar-periksa-checklist-pelaporan-statistik-yang-jujur" class="level2" data-number="13.5">
-<h2 data-number="13.5" class="anchored" data-anchor-id="daftar-periksa-checklist-pelaporan-statistik-yang-jujur"><span class="header-section-number">13.5</span> Daftar Periksa (Checklist) Pelaporan Statistik yang Jujur</h2>
+<section id="daftar-periksa-checklist-pelaporan-statistik-yang-jujur" class="level3" data-number="5.9.5">
+<h3 data-number="5.9.5" class="anchored" data-anchor-id="daftar-periksa-checklist-pelaporan-statistik-yang-jujur"><span class="header-section-number">5.9.5</span> Daftar Periksa (Checklist) Pelaporan Statistik yang Jujur</h3>
 <ul class="task-list">
 <li><label><input type="checkbox">Ukuran pusat selalu disertai ukuran sebaran (mean dengan SD; median dengan rentang atau IQR)</label></li>
 <li><label><input type="checkbox">Ukuran sesuai dengan skala pengukuran (tidak ada “rata-rata” untuk data nominal)</label></li>
@@ -1833,8 +1812,8 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="studi-kasus-komprehensif-membandingkan-dua-kelas" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Studi Kasus Komprehensif: Membandingkan Dua Kelas</h1>
+<section id="studi-kasus-komprehensif-membandingkan-dua-kelas" class="level2" data-number="5.10">
+<h2 data-number="5.10" class="anchored" data-anchor-id="studi-kasus-komprehensif-membandingkan-dua-kelas"><span class="header-section-number">5.10</span> Studi Kasus Komprehensif: Membandingkan Dua Kelas</h2>
 <p><strong>Konteks:</strong> Dosen Statistika membandingkan nilai ujian dua kelas paralel, masing-masing 30 mahasiswa. Kelas A adalah data <code>nilai_ujian</code> yang sudah kita pakai. Kelas B dicatat berikut ini.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>kelas_A <span class="ot">&lt;-</span> nilai_ujian</span>
@@ -1842,8 +1821,8 @@ Loket_2   10     10</code></pre>
 <span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="dv">61</span>, <span class="dv">87</span>, <span class="dv">99</span>, <span class="dv">68</span>, <span class="dv">81</span>, <span class="dv">56</span>, <span class="dv">94</span>, <span class="dv">70</span>, <span class="dv">89</span>, <span class="dv">62</span>,</span>
 <span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a><span class="dv">97</span>, <span class="dv">74</span>, <span class="dv">83</span>, <span class="dv">65</span>, <span class="dv">92</span>, <span class="dv">76</span>, <span class="dv">98</span>, <span class="dv">80</span>, <span class="dv">84</span>, <span class="dv">95</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="langkah-1-ringkasan-statistik-lengkap" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="langkah-1-ringkasan-statistik-lengkap"><span class="header-section-number">14.1</span> Langkah 1: Ringkasan Statistik Lengkap</h2>
+<section id="langkah-1-ringkasan-statistik-lengkap" class="level3" data-number="5.10.1">
+<h3 data-number="5.10.1" class="anchored" data-anchor-id="langkah-1-ringkasan-statistik-lengkap"><span class="header-section-number">5.10.1</span> Langkah 1: Ringkasan Statistik Lengkap</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a>ringkasan <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
 <span id="cb117-2"><a href="#cb117-2" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">n =</span> <span class="fu">length</span>(x), <span class="at">Mean =</span> <span class="fu">mean</span>(x), <span class="at">Median =</span> <span class="fu">median</span>(x),</span>
@@ -1920,8 +1899,8 @@ Loket_2   10     10</code></pre>
 </div>
 </div>
 </section>
-<section id="langkah-2-visualisasi-berdampingan" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="langkah-2-visualisasi-berdampingan"><span class="header-section-number">14.2</span> Langkah 2: Visualisasi Berdampingan</h2>
+<section id="langkah-2-visualisasi-berdampingan" class="level3" data-number="5.10.2">
+<h3 data-number="5.10.2" class="anchored" data-anchor-id="langkah-2-visualisasi-berdampingan"><span class="header-section-number">5.10.2</span> Langkah 2: Visualisasi Berdampingan</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">3</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>), <span class="at">heights =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="fl">2.6</span>))</span>
 <span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1955,8 +1934,8 @@ Loket_2   10     10</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">layout</span>(<span class="dv">1</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="langkah-3-posisi-relatif-seorang-mahasiswa" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="langkah-3-posisi-relatif-seorang-mahasiswa"><span class="header-section-number">14.3</span> Langkah 3: Posisi Relatif Seorang Mahasiswa</h2>
+<section id="langkah-3-posisi-relatif-seorang-mahasiswa" class="level3" data-number="5.10.3">
+<h3 data-number="5.10.3" class="anchored" data-anchor-id="langkah-3-posisi-relatif-seorang-mahasiswa"><span class="header-section-number">5.10.3</span> Langkah 3: Posisi Relatif Seorang Mahasiswa</h3>
 <p>Seorang mahasiswa mendapat nilai <strong>90</strong>. Seberapa baik posisinya jika ia berada di Kelas A dibandingkan Kelas B?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>z_A <span class="ot">&lt;-</span> (<span class="dv">90</span> <span class="sc">-</span> <span class="fu">mean</span>(kelas_A)) <span class="sc">/</span> <span class="fu">sd</span>(kelas_A)</span>
@@ -1995,8 +1974,8 @@ Loket_2   10     10</code></pre>
 </div>
 </div>
 </section>
-<section id="pertanyaan-diskusi-dan-jawaban" class="level2" data-number="14.4">
-<h2 data-number="14.4" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">14.4</span> Pertanyaan Diskusi dan Jawaban</h2>
+<section id="pertanyaan-diskusi-dan-jawaban" class="level3" data-number="5.10.4">
+<h3 data-number="5.10.4" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">5.10.4</span> Pertanyaan Diskusi dan Jawaban</h3>
 <p><strong>1. Kelas mana yang berprestasi lebih baik berdasarkan ukuran pusat?</strong></p>
 <p>Mean kedua kelas hampir identik (80.1 vs 80), sehingga berdasarkan mean saja keduanya “sama”. Namun median Kelas B (82) lebih tinggi daripada mean-nya (80), yang mengindikasikan distribusi <strong>menjulur kiri</strong>: mayoritas mahasiswa Kelas B bernilai relatif tinggi, tetapi ditarik turun oleh segelintir nilai rendah (54–61). Kelas A hampir simetris (mean ≈ median).</p>
 <p><strong>2. Kelas mana yang lebih homogen?</strong></p>
@@ -2008,10 +1987,10 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="latihan-mandiri" class="level1" data-number="15">
-<h1 data-number="15"><span class="header-section-number">15</span> Latihan Mandiri</h1>
-<section id="latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" class="level2" data-number="15.1">
-<h2 data-number="15.1" class="anchored" data-anchor-id="latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit"><span class="header-section-number">15.1</span> Latihan Utama (Exercise 2.14 Lanjutan): Kepemilikan Kartu Kredit</h2>
+<section id="latihan-mandiri" class="level2" data-number="5.11">
+<h2 data-number="5.11" class="anchored" data-anchor-id="latihan-mandiri"><span class="header-section-number">5.11</span> Latihan Mandiri</h2>
+<section id="latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit" class="level3" data-number="5.11.1">
+<h3 data-number="5.11.1" class="anchored" data-anchor-id="latihan-utama-exercise-2.14-lanjutan-kepemilikan-kartu-kredit"><span class="header-section-number">5.11.1</span> Latihan Utama (Exercise 2.14 Lanjutan): Kepemilikan Kartu Kredit</h3>
 <p><strong>Konteks:</strong> Sebuah sampel acak dari 80 orang dewasa ditanya mengenai jumlah kartu kredit yang mereka miliki. Data sudah disajikan dalam kelas (data terkelompok):</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb121"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a href="#cb121-1" aria-hidden="true" tabindex="-1"></a>kelas_kk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"0 to 3"</span>, <span class="st">"4 to 7"</span>, <span class="st">"8 to 11"</span>, <span class="st">"12 or more"</span>)</span>
@@ -2023,12 +2002,12 @@ Loket_2   10     10</code></pre>
 <span id="cb121-7"><a href="#cb121-7" aria-hidden="true" tabindex="-1"></a>batas_atas_kk  <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">11</span>, <span class="dv">15</span>)</span>
 <span id="cb121-8"><a href="#cb121-8" aria-hidden="true" tabindex="-1"></a>batas_nyata_kk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">3.5</span>, <span class="fl">7.5</span>, <span class="fl">11.5</span>, <span class="fl">15.5</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran" class="level3" data-number="15.1.1">
-<h3 data-number="15.1.1" class="anchored" data-anchor-id="tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran"><span class="header-section-number">15.1.1</span> Tugas 1: Klasifikasi variabel dan pemilihan ukuran</h3>
+<section id="tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-1-klasifikasi-variabel-dan-pemilihan-ukuran">Tugas 1: Klasifikasi variabel dan pemilihan ukuran</h4>
 <p>Variabel yang diamati adalah jumlah kartu kredit yang dimiliki. Karena berupa hasil hitungan (bilangan bulat non-negatif) dengan nol mutlak, variabelnya <strong>kuantitatif diskrit berskala rasio</strong>. Dengan skala rasio, semua ukuran pemusatan dan penyebaran (termasuk koefisien variasi) valid untuk dihitung.</p>
 </section>
-<section id="tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7" class="level3" data-number="15.1.2">
-<h3 data-number="15.1.2" class="anchored" data-anchor-id="tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7"><span class="header-section-number">15.1.2</span> Tugas 2: Hitung titik tengah kelas (<span class="math inline">\(m\)</span>) untuk interval “4 to 7”</h3>
+<section id="tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-2-hitung-titik-tengah-kelas-m-untuk-interval-4-to-7">Tugas 2: Hitung titik tengah kelas (<span class="math inline">\(m\)</span>) untuk interval “4 to 7”</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>m_4_7 <span class="ot">&lt;-</span> (<span class="dv">4</span> <span class="sc">+</span> <span class="dv">7</span>) <span class="sc">/</span> <span class="dv">2</span></span>
 <span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>m_4_7</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2038,8 +2017,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Titik tengah kelas “4 to 7” adalah <strong>5.5</strong>, diperoleh dari <span class="math inline">\(\frac{4+7}{2}\)</span> (sama dengan menggunakan batas nyata: <span class="math inline">\(\frac{3{,}5 + 7{,}5}{2}\)</span>).</p>
 </section>
-<section id="tugas-3-hitung-mean-median-dan-modus" class="level3" data-number="15.1.3">
-<h3 data-number="15.1.3" class="anchored" data-anchor-id="tugas-3-hitung-mean-median-dan-modus"><span class="header-section-number">15.1.3</span> Tugas 3: Hitung mean, median, dan modus</h3>
+<section id="tugas-3-hitung-mean-median-dan-modus" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-3-hitung-mean-median-dan-modus">Tugas 3: Hitung mean, median, dan modus</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>hasil_kk <span class="ot">&lt;-</span> <span class="fu">statistik_terkelompok</span>(batas_nyata_kk, frekuensi_kk)</span>
 <span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(hasil_kk[<span class="fu">c</span>(<span class="st">"n"</span>, <span class="st">"Mean"</span>, <span class="st">"Median"</span>, <span class="st">"Modus"</span>)], <span class="dv">2</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2050,8 +2029,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p>Kelas median dan kelas modus keduanya adalah <strong>“4 to 7”</strong> (frekuensi terbesar = 26; frekuensi kumulatif melampaui 40 di kelas ini).</p>
 </section>
-<section id="tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi" class="level3" data-number="15.1.4">
-<h3 data-number="15.1.4" class="anchored" data-anchor-id="tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi"><span class="header-section-number">15.1.4</span> Tugas 4: Hitung varians, simpangan baku, dan koefisien variasi</h3>
+<section id="tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-4-hitung-varians-simpangan-baku-dan-koefisien-variasi">Tugas 4: Hitung varians, simpangan baku, dan koefisien variasi</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(hasil_kk[<span class="fu">c</span>(<span class="st">"Varians"</span>, <span class="st">"SD"</span>, <span class="st">"CV_persen"</span>)], <span class="dv">2</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2060,8 +2039,8 @@ Loket_2   10     10</code></pre>
 </div>
 </div>
 </section>
-<section id="tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya" class="level3" data-number="15.1.5">
-<h3 data-number="15.1.5" class="anchored" data-anchor-id="tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya"><span class="header-section-number">15.1.5</span> Tugas 5: Interpretasikan bentuk distribusi dan variabilitasnya</h3>
+<section id="tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-5-interpretasikan-bentuk-distribusi-dan-variabilitasnya">Tugas 5: Interpretasikan bentuk distribusi dan variabilitasnya</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>sk_kk <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">*</span> (hasil_kk[<span class="st">"Mean"</span>] <span class="sc">-</span> hasil_kk[<span class="st">"Median"</span>]) <span class="sc">/</span> hasil_kk[<span class="st">"SD"</span>]</span>
 <span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(sk_kk, <span class="dv">2</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2090,8 +2069,8 @@ Loket_2   10     10</code></pre>
 </div>
 <p><strong>Jawaban:</strong> Mean (7.1) sedikit di atas median (6.88) dan modus (6.17), dengan <span class="math inline">\(Sk = 0.16\)</span>, sehingga distribusinya <strong>hampir simetris dengan sedikit kemencengan ke kanan</strong>. Rata-rata orang dalam sampel memiliki sekitar 7 kartu kredit. CV sebesar 57.8% menunjukkan variabilitas yang <strong>tinggi</strong> (simpangan baku mencapai lebih dari separuh mean-nya) – kepemilikan kartu kredit sangat beragam antarindividu.</p>
 </section>
-<section id="tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka" class="level3" data-number="15.1.6">
-<h3 data-number="15.1.6" class="anchored" data-anchor-id="tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka"><span class="header-section-number">15.1.6</span> Tugas 6 (Tantangan): Sensitivitas terhadap Kelas Terbuka</h3>
+<section id="tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-6-tantangan-sensitivitas-terhadap-kelas-terbuka">Tugas 6 (Tantangan): Sensitivitas terhadap Kelas Terbuka</h4>
 <p>Bagaimana jika kelas “12 or more” ternyata mencakup orang dengan hingga 19 kartu (batas atas 19, bukan 15)?</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a>batas_nyata_kk_alt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">3.5</span>, <span class="fl">7.5</span>, <span class="fl">11.5</span>, <span class="fl">19.5</span>)   <span class="co"># batas atas kelas terakhir diperlebar</span></span>
@@ -2136,8 +2115,8 @@ Loket_2   10     10</code></pre>
 <p><strong>Jawaban:</strong> Median dan modus <strong>tidak berubah</strong> (keduanya berada di kelas “4 to 7”), tetapi mean dan simpangan baku <strong>meningkat</strong> karena titik tengah kelas terakhir bergeser. Ini contoh nyata bahwa median dan modus lebih tahan terhadap ketidakjelasan kelas terbuka dibanding mean. Karena itu, asumsi batas kelas terbuka harus selalu dinyatakan secara eksplisit.</p>
 </section>
 </section>
-<section id="latihan-tambahan-self-check" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">15.2</span> Latihan Tambahan (Self-Check)</h2>
+<section id="latihan-tambahan-self-check" class="level3" data-number="5.11.2">
+<h3 data-number="5.11.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">5.11.2</span> Latihan Tambahan (Self-Check)</h3>
 <p>Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode.</p>
 <p><strong>Soal A.</strong> Data waktu tempuh (menit) 12 karyawan menuju kantor: 15, 22, 18, 30, 25, 20, 35, 28, 19, 24, 27, 33. Hitung mean, median, modus, rentang, varians, simpangan baku, dan koefisien variasi. Waktu tempuh berapa yang memiliki z-score terbesar?</p>
 <div class="cell">
@@ -2191,8 +2170,8 @@ Loket_2   10     10</code></pre>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" class="level1" data-number="16">
-<h1 data-number="16"><span class="header-section-number">16</span> Kesalahan Umum dalam Ukuran Pemusatan dan Penyebaran</h1>
+<section id="kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran" class="level2" data-number="5.12">
+<h2 data-number="5.12" class="anchored" data-anchor-id="kesalahan-umum-dalam-ukuran-pemusatan-dan-penyebaran"><span class="header-section-number">5.12</span> Kesalahan Umum dalam Ukuran Pemusatan dan Penyebaran</h2>
 <p>Ringkasan kesalahan yang paling sering dijumpai, berdasarkan contoh-contoh pada praktikum ini:</p>
 <ol type="1">
 <li><strong>Memakai mean untuk data menceng atau beroutlier</strong> tanpa memeriksa median – hasilnya tidak mewakili “kebanyakan” data (contoh: gaji, harga rumah).</li>
@@ -2210,8 +2189,8 @@ Loket_2   10     10</code></pre>
 </ol>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level1" data-number="17">
-<h1 data-number="17"><span class="header-section-number">17</span> Cheat Sheet: Fungsi R yang Digunakan</h1>
+<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level2" data-number="5.13">
+<h2 data-number="5.13" class="anchored" data-anchor-id="cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">5.13</span> Cheat Sheet: Fungsi R yang Digunakan</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -2304,8 +2283,8 @@ Loket_2   10     10</code></pre>
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="glosarium-istilah" class="level1" data-number="18">
-<h1 data-number="18"><span class="header-section-number">18</span> Glosarium Istilah</h1>
+<section id="glosarium-istilah" class="level2" data-number="5.14">
+<h2 data-number="5.14" class="anchored" data-anchor-id="glosarium-istilah"><span class="header-section-number">5.14</span> Glosarium Istilah</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -2410,8 +2389,8 @@ Loket_2   10     10</code></pre>
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="rangkuman-dan-kesimpulan" class="level1" data-number="19">
-<h1 data-number="19"><span class="header-section-number">19</span> Rangkuman dan Kesimpulan</h1>
+<section id="rangkuman-dan-kesimpulan" class="level2" data-number="5.15">
+<h2 data-number="5.15" class="anchored" data-anchor-id="rangkuman-dan-kesimpulan"><span class="header-section-number">5.15</span> Rangkuman dan Kesimpulan</h2>
 <ol type="1">
 <li><strong>Pusat dan sebaran berpasangan.</strong> Ukuran pemusatan menjawab “di mana pusat data?”, ukuran penyebaran menjawab “seberapa menyebar?”. Melaporkan salah satunya saja tidak lengkap.</li>
 <li><strong>Skala data menentukan ukuran yang valid.</strong> Modus untuk nominal; median untuk ordinal; mean untuk interval/rasio; koefisien variasi khusus rasio.</li>
@@ -2425,8 +2404,8 @@ Loket_2   10     10</code></pre>
 <p><strong>Jembatan ke sesi berikutnya:</strong> ukuran pusat dan sebaran meringkas data dengan dua angka, tetapi menyembunyikan detail seperti “di mana 25% data terbawah?” atau “nilai mana yang terlalu jauh?”. Pertemuan 6 membahas ukuran posisi (kuartil, desil, persentil), IQR dan boxplot, bentuk distribusi, serta deteksi dan penanganan outlier secara formal.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="referensi-pendukung" class="level1" data-number="20">
-<h1 data-number="20"><span class="header-section-number">20</span> Referensi Pendukung</h1>
+<section id="referensi-pendukung" class="level2" data-number="5.16">
+<h2 data-number="5.16" class="anchored" data-anchor-id="referensi-pendukung"><span class="header-section-number">5.16</span> Referensi Pendukung</h2>
 <p>Materi ini merangkum topik ukuran pemusatan dan penyebaran data (<em>measures of central tendency and dispersion</em>) yang umum dibahas pada bab statistika deskriptif buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:</p>
 <ul>
 <li>Modul/slide perkuliahan “Introduction to Statistics (SDT-1102)” – Pertemuan 5: Statistika Deskriptif (<em>Measures of Central Tendency and Dispersion</em>).</li>
@@ -2940,8 +2919,8 @@ Loket_2   10     10</code></pre>
   </script>
 <nav class="page-navigation" aria-label="Halaman">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/P04.html" class="pagination-link" aria-label="Data yang Dipakai">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></span>
+      <a href="../chapters/P04.html" class="pagination-link" aria-label="Penyajian dan Visualisasi Data">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

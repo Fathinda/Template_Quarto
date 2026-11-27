@@ -26,7 +26,7 @@ Akhir kata, semoga eBook ini dapat menjadi referensi yang bermanfaat dan memberi
 Penulis
 
 
-## Penulis 
+## Penulis
 
 ![Foto](images/author/basket.jpeg){.author-portrait width=1.5in fig-align="right" fig-pos="H"}
 
@@ -35,7 +35,7 @@ Penulis
 Saat ini, ia memiliki minat yang besar dan sedang mendalami bidang Data Science, analisis data, pengembangan aplikasi web dan mobile, serta integrasi Internet of Things (IoT). Dalam proses belajarnya, ia mulai mengeksplorasi bahasa pemrograman dan analisis statistik seperti Python, R (RStudio), dan SQL, serta mempelajari tools visualisasi data seperti Tableau dan Power BI. Ia juga terbiasa berlatih mengembangkan aplikasi menggunakan Laravel, Flutter, JavaScript, dan mengelola basis data MySQL maupun PostgreSQL. Beberapa proyek latihan dan dokumentasi perkuliahannya dapat dilihat melalui akun.
 
 
-## Ucapan Terima Kasih 
+## Ucapan Terima Kasih
 
 Proses penulisan Tempate eBook ini tidak terlepas dari dukungan berbagai pihak. Saya ingin mengucapkan terima kasih kepada:
 
@@ -46,7 +46,7 @@ Proses penulisan Tempate eBook ini tidak terlepas dari dukungan berbagai pihak. 
 Saya berharap Template eBook ini dapat menjadi referensi yang bermanfaat dan memberikan inspirasi serta pengetahuan baru bagi pembaca. Semoga Ebook ini dapat memenuhi ekspektasi dan kebutuhan para pembaca dan semoga ilmu yang disampaikan dapat bermanfaat bagi semua.
 
 
-## Masukan & Saran 
+## Masukan & Saran
 
 Semua masukan dan tanggapan Anda sangat berarti bagi saya untuk memperbaiki proyek dan catatan pembelajaran ini ke depannya. Bagi para pembaca atau pengguna yang ingin menyampaikan masukan, saran, maupun berdiskusi lebih lanjut, dipersilakan untuk menghubungi melalui kontak di bawah ini:
 

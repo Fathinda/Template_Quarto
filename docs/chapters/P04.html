@@ -8,7 +8,7 @@
 
 <meta name="description" content="Deskripsi singkat tentang buku">
 
-<title>4&nbsp; Data yang Dipakai – Quarto Template</title>
+<title>4&nbsp; Penyajian dan Visualisasi Data – Quarto Template</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -161,7 +161,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P04.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P04.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -200,31 +200,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,67 +255,60 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#tabel-frekuensi-data-kategorik" id="toc-tabel-frekuensi-data-kategorik" class="nav-link active" data-scroll-target="#tabel-frekuensi-data-kategorik"><span class="header-section-number">5</span> Tabel Frekuensi Data Kategorik</a>
+  <li><a href="#data-yang-dipakai" id="toc-data-yang-dipakai" class="nav-link active" data-scroll-target="#data-yang-dipakai"><span class="header-section-number">4.1</span> Data yang Dipakai</a></li>
+  <li><a href="#tabel-frekuensi-data-kategorik" id="toc-tabel-frekuensi-data-kategorik" class="nav-link" data-scroll-target="#tabel-frekuensi-data-kategorik"><span class="header-section-number">4.2</span> Tabel Frekuensi Data Kategorik</a>
   <ul class="collapse">
-  <li><a href="#frekuensi-frekuensi-relatif-dan-persentase" id="toc-frekuensi-frekuensi-relatif-dan-persentase" class="nav-link" data-scroll-target="#frekuensi-frekuensi-relatif-dan-persentase"><span class="header-section-number">5.1</span> Frekuensi, Frekuensi Relatif, dan Persentase</a></li>
-  <li><a href="#tabel-silang-tabel-kontingensi" id="toc-tabel-silang-tabel-kontingensi" class="nav-link" data-scroll-target="#tabel-silang-tabel-kontingensi"><span class="header-section-number">5.2</span> Tabel Silang (Tabel Kontingensi)</a></li>
+  <li><a href="#frekuensi-frekuensi-relatif-dan-persentase" id="toc-frekuensi-frekuensi-relatif-dan-persentase" class="nav-link" data-scroll-target="#frekuensi-frekuensi-relatif-dan-persentase"><span class="header-section-number">4.2.1</span> Frekuensi, Frekuensi Relatif, dan Persentase</a></li>
+  <li><a href="#tabel-silang-tabel-kontingensi" id="toc-tabel-silang-tabel-kontingensi" class="nav-link" data-scroll-target="#tabel-silang-tabel-kontingensi"><span class="header-section-number">4.2.2</span> Tabel Silang (Tabel Kontingensi)</a></li>
   </ul></li>
-  <li><a href="#tabel-frekuensi-data-numerik" id="toc-tabel-frekuensi-data-numerik" class="nav-link" data-scroll-target="#tabel-frekuensi-data-numerik"><span class="header-section-number">6</span> Tabel Frekuensi Data Numerik</a>
+  <li><a href="#tabel-frekuensi-data-numerik" id="toc-tabel-frekuensi-data-numerik" class="nav-link" data-scroll-target="#tabel-frekuensi-data-numerik"><span class="header-section-number">4.3</span> Tabel Frekuensi Data Numerik</a>
   <ul class="collapse">
-  <li><a href="#langkah-demi-langkah-nilai-ujian" id="toc-langkah-demi-langkah-nilai-ujian" class="nav-link" data-scroll-target="#langkah-demi-langkah-nilai-ujian"><span class="header-section-number">6.1</span> Langkah demi Langkah: Nilai Ujian</a></li>
-  <li><a href="#kelas-lebar-sama-dengan-hist" id="toc-kelas-lebar-sama-dengan-hist" class="nav-link" data-scroll-target="#kelas-lebar-sama-dengan-hist"><span class="header-section-number">6.2</span> Kelas Lebar Sama dengan <code>hist()</code></a></li>
-  <li><a href="#data-yang-sudah-terkelompok-pendapatan-mingguan" id="toc-data-yang-sudah-terkelompok-pendapatan-mingguan" class="nav-link" data-scroll-target="#data-yang-sudah-terkelompok-pendapatan-mingguan"><span class="header-section-number">6.3</span> Data yang Sudah Terkelompok: Pendapatan Mingguan</a></li>
+  <li><a href="#langkah-demi-langkah-nilai-ujian" id="toc-langkah-demi-langkah-nilai-ujian" class="nav-link" data-scroll-target="#langkah-demi-langkah-nilai-ujian"><span class="header-section-number">4.3.1</span> Langkah demi Langkah: Nilai Ujian</a></li>
+  <li><a href="#kelas-lebar-sama-dengan-hist" id="toc-kelas-lebar-sama-dengan-hist" class="nav-link" data-scroll-target="#kelas-lebar-sama-dengan-hist"><span class="header-section-number">4.3.2</span> Kelas Lebar Sama dengan <code>hist()</code></a></li>
+  <li><a href="#data-yang-sudah-terkelompok-pendapatan-mingguan" id="toc-data-yang-sudah-terkelompok-pendapatan-mingguan" class="nav-link" data-scroll-target="#data-yang-sudah-terkelompok-pendapatan-mingguan"><span class="header-section-number">4.3.3</span> Data yang Sudah Terkelompok: Pendapatan Mingguan</a></li>
   </ul></li>
-  <li><a href="#visualisasi-data-kategorik" id="toc-visualisasi-data-kategorik" class="nav-link" data-scroll-target="#visualisasi-data-kategorik"><span class="header-section-number">7</span> Visualisasi Data Kategorik</a>
+  <li><a href="#visualisasi-data-kategorik" id="toc-visualisasi-data-kategorik" class="nav-link" data-scroll-target="#visualisasi-data-kategorik"><span class="header-section-number">4.4</span> Visualisasi Data Kategorik</a>
   <ul class="collapse">
-  <li><a href="#diagram-batang-bar-chart" id="toc-diagram-batang-bar-chart" class="nav-link" data-scroll-target="#diagram-batang-bar-chart"><span class="header-section-number">7.1</span> Diagram Batang (Bar Chart)</a></li>
-  <li><a href="#diagram-batang-berkelompok-dan-bertumpuk" id="toc-diagram-batang-berkelompok-dan-bertumpuk" class="nav-link" data-scroll-target="#diagram-batang-berkelompok-dan-bertumpuk"><span class="header-section-number">7.2</span> Diagram Batang Berkelompok dan Bertumpuk</a></li>
-  <li><a href="#diagram-pareto" id="toc-diagram-pareto" class="nav-link" data-scroll-target="#diagram-pareto"><span class="header-section-number">7.3</span> Diagram Pareto</a></li>
-  <li><a href="#diagram-lingkaran-pie-chart" id="toc-diagram-lingkaran-pie-chart" class="nav-link" data-scroll-target="#diagram-lingkaran-pie-chart"><span class="header-section-number">7.4</span> Diagram Lingkaran (Pie Chart)</a></li>
+  <li><a href="#diagram-batang-bar-chart" id="toc-diagram-batang-bar-chart" class="nav-link" data-scroll-target="#diagram-batang-bar-chart"><span class="header-section-number">4.4.1</span> Diagram Batang (Bar Chart)</a></li>
+  <li><a href="#diagram-batang-berkelompok-dan-bertumpuk" id="toc-diagram-batang-berkelompok-dan-bertumpuk" class="nav-link" data-scroll-target="#diagram-batang-berkelompok-dan-bertumpuk"><span class="header-section-number">4.4.2</span> Diagram Batang Berkelompok dan Bertumpuk</a></li>
+  <li><a href="#diagram-pareto" id="toc-diagram-pareto" class="nav-link" data-scroll-target="#diagram-pareto"><span class="header-section-number">4.4.3</span> Diagram Pareto</a></li>
+  <li><a href="#diagram-lingkaran-pie-chart" id="toc-diagram-lingkaran-pie-chart" class="nav-link" data-scroll-target="#diagram-lingkaran-pie-chart"><span class="header-section-number">4.4.4</span> Diagram Lingkaran (Pie Chart)</a></li>
   </ul></li>
-  <li><a href="#visualisasi-data-numerik" id="toc-visualisasi-data-numerik" class="nav-link" data-scroll-target="#visualisasi-data-numerik"><span class="header-section-number">8</span> Visualisasi Data Numerik</a>
+  <li><a href="#visualisasi-data-numerik" id="toc-visualisasi-data-numerik" class="nav-link" data-scroll-target="#visualisasi-data-numerik"><span class="header-section-number">4.5</span> Visualisasi Data Numerik</a>
   <ul class="collapse">
-  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">8.1</span> Histogram</a></li>
-  <li><a href="#histogram-dari-data-terkelompok" id="toc-histogram-dari-data-terkelompok" class="nav-link" data-scroll-target="#histogram-dari-data-terkelompok"><span class="header-section-number">8.2</span> Histogram dari Data Terkelompok</a></li>
-  <li><a href="#poligon-frekuensi" id="toc-poligon-frekuensi" class="nav-link" data-scroll-target="#poligon-frekuensi"><span class="header-section-number">8.3</span> Poligon Frekuensi</a></li>
-  <li><a href="#ogive-kurva-frekuensi-kumulatif" id="toc-ogive-kurva-frekuensi-kumulatif" class="nav-link" data-scroll-target="#ogive-kurva-frekuensi-kumulatif"><span class="header-section-number">8.4</span> Ogive (Kurva Frekuensi Kumulatif)</a></li>
-  <li><a href="#diagram-batang-daun-stem-and-leaf" id="toc-diagram-batang-daun-stem-and-leaf" class="nav-link" data-scroll-target="#diagram-batang-daun-stem-and-leaf"><span class="header-section-number">8.5</span> Diagram Batang-Daun (Stem-and-Leaf)</a></li>
-  <li><a href="#memilih-grafik-yang-tepat" id="toc-memilih-grafik-yang-tepat" class="nav-link" data-scroll-target="#memilih-grafik-yang-tepat"><span class="header-section-number">8.6</span> Memilih Grafik yang Tepat</a></li>
+  <li><a href="#histogram" id="toc-histogram" class="nav-link" data-scroll-target="#histogram"><span class="header-section-number">4.5.1</span> Histogram</a></li>
+  <li><a href="#histogram-dari-data-terkelompok" id="toc-histogram-dari-data-terkelompok" class="nav-link" data-scroll-target="#histogram-dari-data-terkelompok"><span class="header-section-number">4.5.2</span> Histogram dari Data Terkelompok</a></li>
+  <li><a href="#poligon-frekuensi" id="toc-poligon-frekuensi" class="nav-link" data-scroll-target="#poligon-frekuensi"><span class="header-section-number">4.5.3</span> Poligon Frekuensi</a></li>
+  <li><a href="#ogive-kurva-frekuensi-kumulatif" id="toc-ogive-kurva-frekuensi-kumulatif" class="nav-link" data-scroll-target="#ogive-kurva-frekuensi-kumulatif"><span class="header-section-number">4.5.4</span> Ogive (Kurva Frekuensi Kumulatif)</a></li>
+  <li><a href="#diagram-batang-daun-stem-and-leaf" id="toc-diagram-batang-daun-stem-and-leaf" class="nav-link" data-scroll-target="#diagram-batang-daun-stem-and-leaf"><span class="header-section-number">4.5.5</span> Diagram Batang-Daun (Stem-and-Leaf)</a></li>
+  <li><a href="#memilih-grafik-yang-tepat" id="toc-memilih-grafik-yang-tepat" class="nav-link" data-scroll-target="#memilih-grafik-yang-tepat"><span class="header-section-number">4.5.6</span> Memilih Grafik yang Tepat</a></li>
   </ul></li>
-  <li><a href="#prinsip-visualisasi-yang-jujur" id="toc-prinsip-visualisasi-yang-jujur" class="nav-link" data-scroll-target="#prinsip-visualisasi-yang-jujur"><span class="header-section-number">9</span> Prinsip Visualisasi yang Jujur</a>
+  <li><a href="#prinsip-visualisasi-yang-jujur" id="toc-prinsip-visualisasi-yang-jujur" class="nav-link" data-scroll-target="#prinsip-visualisasi-yang-jujur"><span class="header-section-number">4.6</span> Prinsip Visualisasi yang Jujur</a>
   <ul class="collapse">
-  <li><a href="#prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" id="toc-prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" class="nav-link" data-scroll-target="#prinsip-1-skala-jangan-memotong-sumbu-diagram-batang"><span class="header-section-number">9.1</span> Prinsip 1 – Skala: Jangan Memotong Sumbu Diagram Batang</a></li>
-  <li><a href="#prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" id="toc-prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" class="nav-link" data-scroll-target="#prinsip-2-label-grafik-harus-dapat-berdiri-sendiri"><span class="header-section-number">9.2</span> Prinsip 2 – Label: Grafik Harus Dapat Berdiri Sendiri</a></li>
-  <li><a href="#prinsip-3-bin-lebar-kelas-mengubah-cerita" id="toc-prinsip-3-bin-lebar-kelas-mengubah-cerita" class="nav-link" data-scroll-target="#prinsip-3-bin-lebar-kelas-mengubah-cerita"><span class="header-section-number">9.3</span> Prinsip 3 – Bin: Lebar Kelas Mengubah Cerita</a></li>
-  <li><a href="#prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" id="toc-prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" class="nav-link" data-scroll-target="#prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan"><span class="header-section-number">9.4</span> Prinsip 4 – Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan</a></li>
-  <li><a href="#grafik-menyesatkan-lainnya" id="toc-grafik-menyesatkan-lainnya" class="nav-link" data-scroll-target="#grafik-menyesatkan-lainnya"><span class="header-section-number">9.5</span> Grafik Menyesatkan Lainnya</a></li>
+  <li><a href="#prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" id="toc-prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" class="nav-link" data-scroll-target="#prinsip-1-skala-jangan-memotong-sumbu-diagram-batang"><span class="header-section-number">4.6.1</span> Prinsip 1 – Skala: Jangan Memotong Sumbu Diagram Batang</a></li>
+  <li><a href="#prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" id="toc-prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" class="nav-link" data-scroll-target="#prinsip-2-label-grafik-harus-dapat-berdiri-sendiri"><span class="header-section-number">4.6.2</span> Prinsip 2 – Label: Grafik Harus Dapat Berdiri Sendiri</a></li>
+  <li><a href="#prinsip-3-bin-lebar-kelas-mengubah-cerita" id="toc-prinsip-3-bin-lebar-kelas-mengubah-cerita" class="nav-link" data-scroll-target="#prinsip-3-bin-lebar-kelas-mengubah-cerita"><span class="header-section-number">4.6.3</span> Prinsip 3 – Bin: Lebar Kelas Mengubah Cerita</a></li>
+  <li><a href="#prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" id="toc-prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" class="nav-link" data-scroll-target="#prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan"><span class="header-section-number">4.6.4</span> Prinsip 4 – Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan</a></li>
+  <li><a href="#grafik-menyesatkan-lainnya" id="toc-grafik-menyesatkan-lainnya" class="nav-link" data-scroll-target="#grafik-menyesatkan-lainnya"><span class="header-section-number">4.6.5</span> Grafik Menyesatkan Lainnya</a></li>
   </ul></li>
-  <li><a href="#studi-kasus-komprehensif-waktu-pengiriman-paket" id="toc-studi-kasus-komprehensif-waktu-pengiriman-paket" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-waktu-pengiriman-paket"><span class="header-section-number">10</span> Studi Kasus Komprehensif: Waktu Pengiriman Paket</a>
+  <li><a href="#studi-kasus-komprehensif-waktu-pengiriman-paket" id="toc-studi-kasus-komprehensif-waktu-pengiriman-paket" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-waktu-pengiriman-paket"><span class="header-section-number">4.7</span> Studi Kasus Komprehensif: Waktu Pengiriman Paket</a>
   <ul class="collapse">
-  <li><a href="#langkah-1-komposisi-layanan" id="toc-langkah-1-komposisi-layanan" class="nav-link" data-scroll-target="#langkah-1-komposisi-layanan"><span class="header-section-number">10.1</span> Langkah 1: Komposisi Layanan</a></li>
-  <li><a href="#langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" id="toc-langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" class="nav-link" data-scroll-target="#langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman"><span class="header-section-number">10.2</span> Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman</a></li>
-  <li><a href="#langkah-3-histogram-dan-ogive" id="toc-langkah-3-histogram-dan-ogive" class="nav-link" data-scroll-target="#langkah-3-histogram-dan-ogive"><span class="header-section-number">10.3</span> Langkah 3: Histogram dan Ogive</a></li>
-  <li><a href="#langkah-4-histogram-per-layanan" id="toc-langkah-4-histogram-per-layanan" class="nav-link" data-scroll-target="#langkah-4-histogram-per-layanan"><span class="header-section-number">10.4</span> Langkah 4: Histogram per Layanan</a></li>
-  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">10.5</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  <li><a href="#langkah-1-komposisi-layanan" id="toc-langkah-1-komposisi-layanan" class="nav-link" data-scroll-target="#langkah-1-komposisi-layanan"><span class="header-section-number">4.7.1</span> Langkah 1: Komposisi Layanan</a></li>
+  <li><a href="#langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" id="toc-langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" class="nav-link" data-scroll-target="#langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman"><span class="header-section-number">4.7.2</span> Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman</a></li>
+  <li><a href="#langkah-3-histogram-dan-ogive" id="toc-langkah-3-histogram-dan-ogive" class="nav-link" data-scroll-target="#langkah-3-histogram-dan-ogive"><span class="header-section-number">4.7.3</span> Langkah 3: Histogram dan Ogive</a></li>
+  <li><a href="#langkah-4-histogram-per-layanan" id="toc-langkah-4-histogram-per-layanan" class="nav-link" data-scroll-target="#langkah-4-histogram-per-layanan"><span class="header-section-number">4.7.4</span> Langkah 4: Histogram per Layanan</a></li>
+  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">4.7.5</span> Pertanyaan Diskusi dan Jawaban</a></li>
   </ul></li>
-  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">11</span> Latihan Mandiri</a>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">4.8</span> Latihan Mandiri</a>
   <ul class="collapse">
-  <li><a href="#latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" id="toc-latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" class="nav-link" data-scroll-target="#latihan-utama-exercise-2.14-kepemilikan-kartu-kredit"><span class="header-section-number">11.1</span> Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit</a>
-  <ul class="collapse">
-  <li><a href="#tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif" id="toc-tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif" class="nav-link" data-scroll-target="#tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif"><span class="header-section-number">11.1.1</span> Tugas 1: Lengkapi tabel dengan frekuensi relatif, persentase, dan frekuensi kumulatif</a></li>
-  <li><a href="#tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih" id="toc-tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih" class="nav-link" data-scroll-target="#tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih"><span class="header-section-number">11.1.2</span> Tugas 2: Berapa persen responden yang memiliki 8 kartu atau lebih?</a></li>
-  <li><a href="#tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas" id="toc-tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas" class="nav-link" data-scroll-target="#tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas"><span class="header-section-number">11.1.3</span> Tugas 3: Tentukan batas nyata dan titik tengah kelas</a></li>
-  <li><a href="#tugas-4-gambar-histogram-dan-poligon-frekuensinya" id="toc-tugas-4-gambar-histogram-dan-poligon-frekuensinya" class="nav-link" data-scroll-target="#tugas-4-gambar-histogram-dan-poligon-frekuensinya"><span class="header-section-number">11.1.4</span> Tugas 4: Gambar histogram dan poligon frekuensinya</a></li>
-  <li><a href="#tugas-5-interpretasikan-distribusinya" id="toc-tugas-5-interpretasikan-distribusinya" class="nav-link" data-scroll-target="#tugas-5-interpretasikan-distribusinya"><span class="header-section-number">11.1.5</span> Tugas 5: Interpretasikan distribusinya</a></li>
-  <li><a href="#tugas-6-tantangan-diagram-batang-atau-histogram" id="toc-tugas-6-tantangan-diagram-batang-atau-histogram" class="nav-link" data-scroll-target="#tugas-6-tantangan-diagram-batang-atau-histogram"><span class="header-section-number">11.1.6</span> Tugas 6 (Tantangan): Diagram batang atau histogram?</a></li>
+  <li><a href="#latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" id="toc-latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" class="nav-link" data-scroll-target="#latihan-utama-exercise-2.14-kepemilikan-kartu-kredit"><span class="header-section-number">4.8.1</span> Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit</a></li>
+  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">4.8.2</span> Latihan Tambahan (Self-Check)</a></li>
   </ul></li>
-  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">11.2</span> Latihan Tambahan (Self-Check)</a></li>
-  </ul></li>
-  <li><a href="#kesalahan-umum-dalam-penyajian-dan-visualisasi-data" id="toc-kesalahan-umum-dalam-penyajian-dan-visualisasi-data" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-penyajian-dan-visualisasi-data"><span class="header-section-number">12</span> Kesalahan Umum dalam Penyajian dan Visualisasi Data</a></li>
-  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">13</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
-  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">14</span> Glosarium Istilah</a></li>
-  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">15</span> Rangkuman dan Kesimpulan</a></li>
-  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">16</span> Referensi Pendukung</a></li>
+  <li><a href="#kesalahan-umum-dalam-penyajian-dan-visualisasi-data" id="toc-kesalahan-umum-dalam-penyajian-dan-visualisasi-data" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-penyajian-dan-visualisasi-data"><span class="header-section-number">4.9</span> Kesalahan Umum dalam Penyajian dan Visualisasi Data</a></li>
+  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">4.10</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
+  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">4.11</span> Glosarium Istilah</a></li>
+  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">4.12</span> Rangkuman dan Kesimpulan</a></li>
+  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">4.13</span> Referensi Pendukung</a></li>
   </ul>
 </nav>
     </div>
@@ -324,7 +317,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></h1>
 </div>
 
 
@@ -341,6 +334,8 @@ window.Quarto = {
 </header>
 
 
+<section id="data-yang-dipakai" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="data-yang-dipakai"><span class="header-section-number">4.1</span> Data yang Dipakai</h2>
 <p>Tiga dataset dipakai sepanjang praktikum. Dataset nilai ujian dan pendapatan mingguan akan <strong>dipakai lagi</strong> pada Pertemuan 5 (ukuran pemusatan dan penyebaran), jadi pastikan Anda memahaminya.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Kategorik: metode pembayaran 60 transaksi sebuah kedai kopi</span></span>
@@ -357,10 +352,11 @@ window.Quarto = {
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>f_p <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">9</span>, <span class="dv">22</span>, <span class="dv">39</span>, <span class="dv">15</span>, <span class="dv">9</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
-<section id="tabel-frekuensi-data-kategorik" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Tabel Frekuensi Data Kategorik</h1>
-<section id="frekuensi-frekuensi-relatif-dan-persentase" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="frekuensi-frekuensi-relatif-dan-persentase"><span class="header-section-number">5.1</span> Frekuensi, Frekuensi Relatif, dan Persentase</h2>
+</section>
+<section id="tabel-frekuensi-data-kategorik" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tabel-frekuensi-data-kategorik"><span class="header-section-number">4.2</span> Tabel Frekuensi Data Kategorik</h2>
+<section id="frekuensi-frekuensi-relatif-dan-persentase" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="frekuensi-frekuensi-relatif-dan-persentase"><span class="header-section-number">4.2.1</span> Frekuensi, Frekuensi Relatif, dan Persentase</h3>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -454,8 +450,8 @@ window.Quarto = {
 </div>
 <p><strong>Frekuensi kumulatif untuk data nominal?</strong> Kumulatif hanya bermakna jika kategori memiliki <strong>urutan</strong> (ordinal atau numerik). Pada data nominal seperti metode pembayaran, kumulatif baru bermakna setelah diurutkan dari terbanyak – dan itu pun hanya untuk analisis Pareto (lihat bagian visualisasi).</p>
 </section>
-<section id="tabel-silang-tabel-kontingensi" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="tabel-silang-tabel-kontingensi"><span class="header-section-number">5.2</span> Tabel Silang (Tabel Kontingensi)</h2>
+<section id="tabel-silang-tabel-kontingensi" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="tabel-silang-tabel-kontingensi"><span class="header-section-number">4.2.2</span> Tabel Silang (Tabel Kontingensi)</h3>
 <p>Untuk melihat hubungan <strong>dua</strong> variabel kategorik, gunakan tabel silang.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>silang <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="at">Waktu =</span> <span class="fu">factor</span>(waktu, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Pagi"</span>, <span class="st">"Siang"</span>, <span class="st">"Malam"</span>)),</span>
@@ -485,8 +481,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="tabel-frekuensi-data-numerik" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Tabel Frekuensi Data Numerik</h1>
+<section id="tabel-frekuensi-data-numerik" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="tabel-frekuensi-data-numerik"><span class="header-section-number">4.3</span> Tabel Frekuensi Data Numerik</h2>
 <p>Data numerik dengan banyak nilai berbeda perlu dikelompokkan ke dalam kelas (interval). Langkah-langkahnya:</p>
 <table class="caption-top table">
 <colgroup>
@@ -539,8 +535,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </tr>
 </tbody>
 </table>
-<section id="langkah-demi-langkah-nilai-ujian" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="langkah-demi-langkah-nilai-ujian"><span class="header-section-number">6.1</span> Langkah demi Langkah: Nilai Ujian</h2>
+<section id="langkah-demi-langkah-nilai-ujian" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="langkah-demi-langkah-nilai-ujian"><span class="header-section-number">4.3.1</span> Langkah demi Langkah: Nilai Ujian</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(nilai_ujian)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>R <span class="ot">&lt;-</span> <span class="fu">max</span>(nilai_ujian) <span class="sc">-</span> <span class="fu">min</span>(nilai_ujian)</span>
@@ -670,8 +666,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </ul>
 <p><strong>Konvensi interval di R.</strong> <code>cut()</code> secara bawaan memakai interval tertutup kanan <code>(a, b]</code>. Karena batas nyata berakhir di ,5 dan data berupa bilangan bulat, tidak ada data yang jatuh tepat di batas, sehingga konvensi ini tidak menjadi masalah.</p>
 </section>
-<section id="kelas-lebar-sama-dengan-hist" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="kelas-lebar-sama-dengan-hist"><span class="header-section-number">6.2</span> Kelas Lebar Sama dengan <code>hist()</code></h2>
+<section id="kelas-lebar-sama-dengan-hist" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="kelas-lebar-sama-dengan-hist"><span class="header-section-number">4.3.2</span> Kelas Lebar Sama dengan <code>hist()</code></h3>
 <p>Fungsi <code>hist()</code> juga menghitung frekuensi kelas jika diberi argumen <code>plot = FALSE</code>:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>h <span class="ot">&lt;-</span> <span class="fu">hist</span>(nilai_ujian, <span class="at">breaks =</span> batas_nyata_u, <span class="at">plot =</span> <span class="cn">FALSE</span>)</span>
@@ -688,8 +684,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="data-yang-sudah-terkelompok-pendapatan-mingguan" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="data-yang-sudah-terkelompok-pendapatan-mingguan"><span class="header-section-number">6.3</span> Data yang Sudah Terkelompok: Pendapatan Mingguan</h2>
+<section id="data-yang-sudah-terkelompok-pendapatan-mingguan" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="data-yang-sudah-terkelompok-pendapatan-mingguan"><span class="header-section-number">4.3.3</span> Data yang Sudah Terkelompok: Pendapatan Mingguan</h3>
 <p>Sering kali kita hanya menerima tabel jadi tanpa data mentah. Kita tetap dapat melengkapinya dengan kolom relatif dan kumulatif.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>batas_nyata_p <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">800.5</span>, <span class="at">by =</span> <span class="dv">200</span>, <span class="at">length.out =</span> <span class="dv">7</span>)</span>
@@ -791,10 +787,10 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="visualisasi-data-kategorik" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Visualisasi Data Kategorik</h1>
-<section id="diagram-batang-bar-chart" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="diagram-batang-bar-chart"><span class="header-section-number">7.1</span> Diagram Batang (Bar Chart)</h2>
+<section id="visualisasi-data-kategorik" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="visualisasi-data-kategorik"><span class="header-section-number">4.4</span> Visualisasi Data Kategorik</h2>
+<section id="diagram-batang-bar-chart" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="diagram-batang-bar-chart"><span class="header-section-number">4.4.1</span> Diagram Batang (Bar Chart)</h3>
 <p>Diagram batang menampilkan frekuensi tiap kategori sebagai batang <strong>terpisah</strong> (ada celah antarbatang, karena kategori tidak bersambung).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>bp <span class="ot">&lt;-</span> <span class="fu">barplot</span>(f_metode, <span class="at">col =</span> <span class="st">"#4C72B0"</span>, <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fu">max</span>(f_metode) <span class="sc">*</span> <span class="fl">1.2</span>),</span>
@@ -824,8 +820,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>) <span class="sc">+</span> <span class="fl">0.1</span>)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="diagram-batang-berkelompok-dan-bertumpuk" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="diagram-batang-berkelompok-dan-bertumpuk"><span class="header-section-number">7.2</span> Diagram Batang Berkelompok dan Bertumpuk</h2>
+<section id="diagram-batang-berkelompok-dan-bertumpuk" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="diagram-batang-berkelompok-dan-bertumpuk"><span class="header-section-number">4.4.2</span> Diagram Batang Berkelompok dan Bertumpuk</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>warna_waktu <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#fdd49e"</span>, <span class="st">"#fc8d59"</span>, <span class="st">"#b30000"</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
@@ -845,8 +841,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Diagram <strong>berkelompok</strong> baik untuk membandingkan frekuensi absolut; diagram <strong>bertumpuk 100%</strong> baik untuk membandingkan <strong>komposisi</strong> antarkategori.</p>
 </section>
-<section id="diagram-pareto" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="diagram-pareto"><span class="header-section-number">7.3</span> Diagram Pareto</h2>
+<section id="diagram-pareto" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="diagram-pareto"><span class="header-section-number">4.4.3</span> Diagram Pareto</h3>
 <p>Diagram Pareto adalah diagram batang yang diurutkan dari frekuensi terbesar, ditambah garis <strong>persentase kumulatif</strong>. Ia dipakai untuk menemukan “sedikit penyebab yang menyumbang sebagian besar masalah” (prinsip 80/20), misalnya jenis keluhan pelanggan.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>keluhan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Pengiriman terlambat"</span> <span class="ot">=</span> <span class="dv">48</span>, <span class="st">"Barang rusak"</span> <span class="ot">=</span> <span class="dv">27</span>, <span class="st">"Salah kirim"</span> <span class="ot">=</span> <span class="dv">14</span>,</span>
@@ -877,8 +873,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Dua jenis keluhan teratas sudah menyumbang 71.4% dari seluruh keluhan – prioritas perbaikan yang jelas.</p>
 </section>
-<section id="diagram-lingkaran-pie-chart" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="diagram-lingkaran-pie-chart"><span class="header-section-number">7.4</span> Diagram Lingkaran (Pie Chart)</h2>
+<section id="diagram-lingkaran-pie-chart" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="diagram-lingkaran-pie-chart"><span class="header-section-number">4.4.4</span> Diagram Lingkaran (Pie Chart)</h3>
 <p>Diagram lingkaran menunjukkan <strong>bagian dari keseluruhan</strong> (total harus 100%).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>label_pie <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="fu">names</span>(f_metode), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>, <span class="fu">round</span>(<span class="fu">prop.table</span>(f_metode) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>), <span class="st">"%"</span>)</span>
@@ -910,10 +906,10 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="visualisasi-data-numerik" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Visualisasi Data Numerik</h1>
-<section id="histogram" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">8.1</span> Histogram</h2>
+<section id="visualisasi-data-numerik" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="visualisasi-data-numerik"><span class="header-section-number">4.5</span> Visualisasi Data Numerik</h2>
+<section id="histogram" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="histogram"><span class="header-section-number">4.5.1</span> Histogram</h3>
 <p>Histogram menampilkan distribusi data numerik yang <strong>dikelompokkan</strong>. Berbeda dengan diagram batang, batang histogram <strong>saling menempel</strong> karena kelasnya bersambung (sumbu-x adalah skala numerik).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(nilai_ujian, <span class="at">breaks =</span> batas_nyata_u, <span class="at">col =</span> <span class="st">"#4C72B0"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
@@ -965,8 +961,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </tbody>
 </table>
 </section>
-<section id="histogram-dari-data-terkelompok" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="histogram-dari-data-terkelompok"><span class="header-section-number">8.2</span> Histogram dari Data Terkelompok</h2>
+<section id="histogram-dari-data-terkelompok" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="histogram-dari-data-terkelompok"><span class="header-section-number">4.5.2</span> Histogram dari Data Terkelompok</h3>
 <p>Jika hanya tabel yang tersedia, histogram digambar dari batas nyata dan frekuensinya:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">range</span>(batas_nyata_p), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">45</span>), <span class="at">xaxt =</span> <span class="st">"n"</span>,</span>
@@ -985,8 +981,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Distribusi pendapatan <strong>menjulur ke kanan</strong>: puncak di kelas 1201–1400, dengan ekor panjang ke arah pendapatan tinggi.</p>
 </section>
-<section id="poligon-frekuensi" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="poligon-frekuensi"><span class="header-section-number">8.3</span> Poligon Frekuensi</h2>
+<section id="poligon-frekuensi" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="poligon-frekuensi"><span class="header-section-number">4.5.3</span> Poligon Frekuensi</h3>
 <p>Poligon frekuensi menghubungkan <strong>titik tengah</strong> puncak tiap kelas dengan garis. Ditambahkan satu kelas kosong di kedua ujung agar poligon “menapak” di sumbu-x. Poligon berguna untuk <strong>membandingkan</strong> beberapa distribusi dalam satu grafik.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>m_u <span class="ot">&lt;-</span> (<span class="fu">head</span>(batas_nyata_u, <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">tail</span>(batas_nyata_u, <span class="sc">-</span><span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">2</span></span>
@@ -1006,8 +1002,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="ogive-kurva-frekuensi-kumulatif" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="ogive-kurva-frekuensi-kumulatif"><span class="header-section-number">8.4</span> Ogive (Kurva Frekuensi Kumulatif)</h2>
+<section id="ogive-kurva-frekuensi-kumulatif" class="level3" data-number="4.5.4">
+<h3 data-number="4.5.4" class="anchored" data-anchor-id="ogive-kurva-frekuensi-kumulatif"><span class="header-section-number">4.5.4</span> Ogive (Kurva Frekuensi Kumulatif)</h3>
 <p>Ogive memplot <strong>frekuensi kumulatif</strong> terhadap <strong>batas nyata atas</strong> tiap kelas (dimulai dari batas nyata bawah kelas pertama dengan kumulatif 0). Ogive memudahkan menjawab “berapa persen data di bawah nilai tertentu?” dan menaksir median secara grafis.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>x_ogive <span class="ot">&lt;-</span> batas_nyata_p</span>
@@ -1031,8 +1027,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Garis 50% memotong ogive di sekitar <strong>1298 USD</strong> – inilah taksiran median secara grafis. Pada Pertemuan 5 kita akan menghitung median data terkelompok secara aljabar dan mendapatkan angka yang sama.</p>
 </section>
-<section id="diagram-batang-daun-stem-and-leaf" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="diagram-batang-daun-stem-and-leaf"><span class="header-section-number">8.5</span> Diagram Batang-Daun (Stem-and-Leaf)</h2>
+<section id="diagram-batang-daun-stem-and-leaf" class="level3" data-number="4.5.5">
+<h3 data-number="4.5.5" class="anchored" data-anchor-id="diagram-batang-daun-stem-and-leaf"><span class="header-section-number">4.5.5</span> Diagram Batang-Daun (Stem-and-Leaf)</h3>
 <p>Diagram batang-daun memecah setiap nilai menjadi <strong>batang</strong> (digit depan) dan <strong>daun</strong> (digit terakhir). Kelebihannya: bentuk distribusi terlihat seperti histogram, tetapi <strong>nilai asli tetap terbaca</strong>. Cocok untuk data berukuran kecil–sedang.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(nilai_ujian)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1065,8 +1061,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Versi satu baris per puluhan lebih ringkas, tetapi bentuk distribusinya menjadi kurang terlihat – mirip histogram dengan kelas yang terlalu lebar.</p>
 </section>
-<section id="memilih-grafik-yang-tepat" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="memilih-grafik-yang-tepat"><span class="header-section-number">8.6</span> Memilih Grafik yang Tepat</h2>
+<section id="memilih-grafik-yang-tepat" class="level3" data-number="4.5.6">
+<h3 data-number="4.5.6" class="anchored" data-anchor-id="memilih-grafik-yang-tepat"><span class="header-section-number">4.5.6</span> Memilih Grafik yang Tepat</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1116,10 +1112,10 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="prinsip-visualisasi-yang-jujur" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Prinsip Visualisasi yang Jujur</h1>
-<section id="prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="prinsip-1-skala-jangan-memotong-sumbu-diagram-batang"><span class="header-section-number">9.1</span> Prinsip 1 – Skala: Jangan Memotong Sumbu Diagram Batang</h2>
+<section id="prinsip-visualisasi-yang-jujur" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="prinsip-visualisasi-yang-jujur"><span class="header-section-number">4.6</span> Prinsip Visualisasi yang Jujur</h2>
+<section id="prinsip-1-skala-jangan-memotong-sumbu-diagram-batang" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="prinsip-1-skala-jangan-memotong-sumbu-diagram-batang"><span class="header-section-number">4.6.1</span> Prinsip 1 – Skala: Jangan Memotong Sumbu Diagram Batang</h3>
 <p>Panjang batang harus sebanding dengan nilainya. Jika sumbu-y tidak dimulai dari nol, perbedaan kecil tampak raksasa.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>pangsa <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Aplikasi A"</span> <span class="ot">=</span> <span class="dv">41</span>, <span class="st">"Aplikasi B"</span> <span class="ot">=</span> <span class="dv">43</span>)</span>
@@ -1140,8 +1136,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Grafik kiri membuat Aplikasi B tampak “tiga kali” lebih besar, padahal selisihnya hanya 2 poin persentase. <strong>Diagram garis</strong> untuk tren boleh tidak dimulai dari nol (yang dibaca adalah perubahan), tetapi <strong>diagram batang wajib dimulai dari nol</strong>.</p>
 </section>
-<section id="prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="prinsip-2-label-grafik-harus-dapat-berdiri-sendiri"><span class="header-section-number">9.2</span> Prinsip 2 – Label: Grafik Harus Dapat Berdiri Sendiri</h2>
+<section id="prinsip-2-label-grafik-harus-dapat-berdiri-sendiri" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="prinsip-2-label-grafik-harus-dapat-berdiri-sendiri"><span class="header-section-number">4.6.2</span> Prinsip 2 – Label: Grafik Harus Dapat Berdiri Sendiri</h3>
 <p>Setiap grafik minimal memuat: <strong>judul</strong> yang informatif, <strong>label sumbu beserta satuan</strong>, <strong>legenda</strong> bila ada lebih dari satu kelompok, serta <strong>sumber data dan</strong> <span class="math inline">\(n\)</span>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
@@ -1159,8 +1155,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="prinsip-3-bin-lebar-kelas-mengubah-cerita" class="level2" data-number="9.3">
-<h2 data-number="9.3" class="anchored" data-anchor-id="prinsip-3-bin-lebar-kelas-mengubah-cerita"><span class="header-section-number">9.3</span> Prinsip 3 – Bin: Lebar Kelas Mengubah Cerita</h2>
+<section id="prinsip-3-bin-lebar-kelas-mengubah-cerita" class="level3" data-number="4.6.3">
+<h3 data-number="4.6.3" class="anchored" data-anchor-id="prinsip-3-bin-lebar-kelas-mengubah-cerita"><span class="header-section-number">4.6.3</span> Prinsip 3 – Bin: Lebar Kelas Mengubah Cerita</h3>
 <p>Bentuk histogram sangat bergantung pada banyak kelas (<em>bin</em>). Terlalu sedikit kelas menyembunyikan pola; terlalu banyak kelas membuat grafik “bergerigi” oleh kebetulan.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7</span>)</span>
@@ -1192,8 +1188,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" class="level2" data-number="9.4">
-<h2 data-number="9.4" class="anchored" data-anchor-id="prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan"><span class="header-section-number">9.4</span> Prinsip 4 – Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan</h2>
+<section id="prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan" class="level3" data-number="4.6.4">
+<h3 data-number="4.6.4" class="anchored" data-anchor-id="prinsip-4-interpretasi-ceritakan-bentuk-pusat-sebaran-dan-keanehan"><span class="header-section-number">4.6.4</span> Prinsip 4 – Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan</h3>
 <p>Saat membaca histogram, biasakan menjawab empat hal:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1233,8 +1229,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </table>
 <p>Ukuran pusat dan sebaran secara numerik dibahas pada Pertemuan 5; bentuk distribusi dan outlier secara formal pada Pertemuan 6.</p>
 </section>
-<section id="grafik-menyesatkan-lainnya" class="level2" data-number="9.5">
-<h2 data-number="9.5" class="anchored" data-anchor-id="grafik-menyesatkan-lainnya"><span class="header-section-number">9.5</span> Grafik Menyesatkan Lainnya</h2>
+<section id="grafik-menyesatkan-lainnya" class="level3" data-number="4.6.5">
+<h3 data-number="4.6.5" class="anchored" data-anchor-id="grafik-menyesatkan-lainnya"><span class="header-section-number">4.6.5</span> Grafik Menyesatkan Lainnya</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1279,8 +1275,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="studi-kasus-komprehensif-waktu-pengiriman-paket" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Studi Kasus Komprehensif: Waktu Pengiriman Paket</h1>
+<section id="studi-kasus-komprehensif-waktu-pengiriman-paket" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="studi-kasus-komprehensif-waktu-pengiriman-paket"><span class="header-section-number">4.7</span> Studi Kasus Komprehensif: Waktu Pengiriman Paket</h2>
 <p><strong>Konteks:</strong> Sebuah layanan logistik mencatat waktu pengiriman (jam, dari pemesanan hingga diterima) untuk 80 paket di wilayah Bekasi. Manajer meminta laporan distribusi waktu pengiriman beserta komposisi layanan yang dipakai.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
@@ -1294,8 +1290,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
    3.10   22.38   38.90   34.92   48.62   65.50 </code></pre>
 </div>
 </div>
-<section id="langkah-1-komposisi-layanan" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="langkah-1-komposisi-layanan"><span class="header-section-number">10.1</span> Langkah 1: Komposisi Layanan</h2>
+<section id="langkah-1-komposisi-layanan" class="level3" data-number="4.7.1">
+<h3 data-number="4.7.1" class="anchored" data-anchor-id="langkah-1-komposisi-layanan"><span class="header-section-number">4.7.1</span> Langkah 1: Komposisi Layanan</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>f_layanan <span class="ot">&lt;-</span> <span class="fu">table</span>(<span class="fu">factor</span>(layanan, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Same Day"</span>, <span class="st">"Ekspres"</span>, <span class="st">"Reguler"</span>)))</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">data.frame</span>(<span class="at">Layanan =</span> <span class="fu">names</span>(f_layanan), <span class="at">f =</span> <span class="fu">as.numeric</span>(f_layanan),</span>
@@ -1343,8 +1339,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman"><span class="header-section-number">10.2</span> Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman</h2>
+<section id="langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman" class="level3" data-number="4.7.2">
+<h3 data-number="4.7.2" class="anchored" data-anchor-id="langkah-2-tabel-distribusi-frekuensi-waktu-pengiriman"><span class="header-section-number">4.7.2</span> Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>n_kirim <span class="ot">&lt;-</span> <span class="fu">length</span>(jam_kirim)</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>k_kirim <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fl">3.322</span> <span class="sc">*</span> <span class="fu">log10</span>(n_kirim))</span>
@@ -1440,8 +1436,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p>Karena data kontinu dengan satu desimal, kita memakai interval setengah terbuka <code>[a, b)</code> (<code>right = FALSE</code>), sehingga nilai yang tepat berada di batas masuk ke kelas di atasnya.</p>
 </section>
-<section id="langkah-3-histogram-dan-ogive" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="langkah-3-histogram-dan-ogive"><span class="header-section-number">10.3</span> Langkah 3: Histogram dan Ogive</h2>
+<section id="langkah-3-histogram-dan-ogive" class="level3" data-number="4.7.3">
+<h3 data-number="4.7.3" class="anchored" data-anchor-id="langkah-3-histogram-dan-ogive"><span class="header-section-number">4.7.3</span> Langkah 3: Histogram dan Ogive</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(jam_kirim, <span class="at">breaks =</span> batas_kirim, <span class="at">right =</span> <span class="cn">FALSE</span>, <span class="at">col =</span> <span class="st">"#4C72B0"</span>, <span class="at">border =</span> <span class="st">"white"</span>,</span>
@@ -1460,8 +1456,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="langkah-4-histogram-per-layanan" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="langkah-4-histogram-per-layanan"><span class="header-section-number">10.4</span> Langkah 4: Histogram per Layanan</h2>
+<section id="langkah-4-histogram-per-layanan" class="level3" data-number="4.7.4">
+<h3 data-number="4.7.4" class="anchored" data-anchor-id="langkah-4-histogram-per-layanan"><span class="header-section-number">4.7.4</span> Langkah 4: Histogram per Layanan</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (lay <span class="cf">in</span> <span class="fu">c</span>(<span class="st">"Same Day"</span>, <span class="st">"Ekspres"</span>, <span class="st">"Reguler"</span>)) {</span>
@@ -1479,8 +1475,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="pertanyaan-diskusi-dan-jawaban" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">10.5</span> Pertanyaan Diskusi dan Jawaban</h2>
+<section id="pertanyaan-diskusi-dan-jawaban" class="level3" data-number="4.7.5">
+<h3 data-number="4.7.5" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">4.7.5</span> Pertanyaan Diskusi dan Jawaban</h3>
 <p><strong>1. Bagaimana bentuk distribusi waktu pengiriman secara keseluruhan?</strong></p>
 <p>Distribusinya <strong>tidak satu puncak</strong>: ada kelompok paket yang tiba dalam hitungan jam, kelompok sekitar satu hari, dan kelompok terbesar sekitar dua hari. Histogram per layanan menjelaskan penyebabnya – data sebenarnya campuran tiga layanan dengan waktu yang sangat berbeda.</p>
 <p><strong>2. Mengapa melaporkan “rata-rata waktu pengiriman” saja tidak tepat?</strong></p>
@@ -1492,18 +1488,18 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="latihan-mandiri" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Latihan Mandiri</h1>
-<section id="latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="latihan-utama-exercise-2.14-kepemilikan-kartu-kredit"><span class="header-section-number">11.1</span> Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit</h2>
+<section id="latihan-mandiri" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="latihan-mandiri"><span class="header-section-number">4.8</span> Latihan Mandiri</h2>
+<section id="latihan-utama-exercise-2.14-kepemilikan-kartu-kredit" class="level3" data-number="4.8.1">
+<h3 data-number="4.8.1" class="anchored" data-anchor-id="latihan-utama-exercise-2.14-kepemilikan-kartu-kredit"><span class="header-section-number">4.8.1</span> Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit</h3>
 <p><strong>Konteks:</strong> Sebuah sampel acak dari 80 orang dewasa ditanya mengenai jumlah kartu kredit yang mereka miliki. Hasilnya disajikan dalam tabel berikut (data ini dilanjutkan pada Pertemuan 5).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>kelas_kk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"0 to 3"</span>, <span class="st">"4 to 7"</span>, <span class="st">"8 to 11"</span>, <span class="st">"12 or more"</span>)</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>frekuensi_kk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>, <span class="dv">26</span>, <span class="dv">22</span>, <span class="dv">14</span>)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>n_kk <span class="ot">&lt;-</span> <span class="fu">sum</span>(frekuensi_kk)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif"><span class="header-section-number">11.1.1</span> Tugas 1: Lengkapi tabel dengan frekuensi relatif, persentase, dan frekuensi kumulatif</h3>
+<section id="tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-1-lengkapi-tabel-dengan-frekuensi-relatif-persentase-dan-frekuensi-kumulatif">Tugas 1: Lengkapi tabel dengan frekuensi relatif, persentase, dan frekuensi kumulatif</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>tabel_kk <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="at">Kelas =</span> kelas_kk,</span>
@@ -1565,8 +1561,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih"><span class="header-section-number">11.1.2</span> Tugas 2: Berapa persen responden yang memiliki 8 kartu atau lebih?</h3>
+<section id="tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-2-berapa-persen-responden-yang-memiliki-8-kartu-atau-lebih">Tugas 2: Berapa persen responden yang memiliki 8 kartu atau lebih?</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(frekuensi_kk[<span class="dv">3</span><span class="sc">:</span><span class="dv">4</span>]) <span class="sc">/</span> n_kk <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1575,8 +1571,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p><strong>Jawaban:</strong> 45% responden (22 + 14 = 36 orang) memiliki 8 kartu kredit atau lebih.</p>
 </section>
-<section id="tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas" class="level3" data-number="11.1.3">
-<h3 data-number="11.1.3" class="anchored" data-anchor-id="tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas"><span class="header-section-number">11.1.3</span> Tugas 3: Tentukan batas nyata dan titik tengah kelas</h3>
+<section id="tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-3-tentukan-batas-nyata-dan-titik-tengah-kelas">Tugas 3: Tentukan batas nyata dan titik tengah kelas</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>batas_nyata_kk <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>, <span class="fl">3.5</span>, <span class="fl">7.5</span>, <span class="fl">11.5</span>, <span class="fl">15.5</span>) <span class="co"># kelas terbuka diasumsikan lebar 4</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">Kelas =</span> kelas_kk,</span>
@@ -1592,8 +1588,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 <p><strong>Catatan:</strong> kelas “12 or more” adalah <strong>kelas terbuka</strong> (tidak punya batas atas). Untuk menggambar histogram atau menghitung titik tengah, kita harus berasumsi – di sini lebarnya disamakan dengan kelas lain (12–15). Asumsi ini <strong>wajib dinyatakan</strong>.</p>
 </section>
-<section id="tugas-4-gambar-histogram-dan-poligon-frekuensinya" class="level3" data-number="11.1.4">
-<h3 data-number="11.1.4" class="anchored" data-anchor-id="tugas-4-gambar-histogram-dan-poligon-frekuensinya"><span class="header-section-number">11.1.4</span> Tugas 4: Gambar histogram dan poligon frekuensinya</h3>
+<section id="tugas-4-gambar-histogram-dan-poligon-frekuensinya" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-4-gambar-histogram-dan-poligon-frekuensinya">Tugas 4: Gambar histogram dan poligon frekuensinya</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>m_kk <span class="ot">&lt;-</span> (<span class="fu">head</span>(batas_nyata_kk, <span class="sc">-</span><span class="dv">1</span>) <span class="sc">+</span> <span class="fu">tail</span>(batas_nyata_kk, <span class="sc">-</span><span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">2</span></span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="cn">NULL</span>, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">4.5</span>, <span class="fl">19.5</span>), <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">30</span>), <span class="at">xaxt =</span> <span class="st">"n"</span>,</span>
@@ -1613,18 +1609,18 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </div>
 </div>
 </section>
-<section id="tugas-5-interpretasikan-distribusinya" class="level3" data-number="11.1.5">
-<h3 data-number="11.1.5" class="anchored" data-anchor-id="tugas-5-interpretasikan-distribusinya"><span class="header-section-number">11.1.5</span> Tugas 5: Interpretasikan distribusinya</h3>
+<section id="tugas-5-interpretasikan-distribusinya" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-5-interpretasikan-distribusinya">Tugas 5: Interpretasikan distribusinya</h4>
 <p><strong>Jawaban:</strong> Kelas dengan frekuensi terbanyak adalah <strong>4 to 7</strong> (26 orang, 32,5%). Frekuensi naik dari kelas pertama ke kelas kedua lalu turun perlahan, sehingga distribusinya <strong>sedikit menjulur ke kanan</strong>. Sebanyak 44 responden (55%, dari frekuensi kumulatif kelas kedua) memiliki 7 kartu atau kurang. Ukuran pusat dan sebarannya dihitung pada Pertemuan 5.</p>
 </section>
-<section id="tugas-6-tantangan-diagram-batang-atau-histogram" class="level3" data-number="11.1.6">
-<h3 data-number="11.1.6" class="anchored" data-anchor-id="tugas-6-tantangan-diagram-batang-atau-histogram"><span class="header-section-number">11.1.6</span> Tugas 6 (Tantangan): Diagram batang atau histogram?</h3>
+<section id="tugas-6-tantangan-diagram-batang-atau-histogram" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-6-tantangan-diagram-batang-atau-histogram">Tugas 6 (Tantangan): Diagram batang atau histogram?</h4>
 <p>Jumlah kartu kredit adalah data <strong>diskrit</strong>. Apakah lebih tepat digambarkan dengan diagram batang atau histogram? Jelaskan.</p>
 <p><strong>Jawaban:</strong> Jika data mentah tersedia dengan sedikit nilai berbeda (misalnya 0–15), diagram batang per nilai paling informatif. Namun karena data sudah dikelompokkan menjadi interval bersambung (0–3, 4–7, …), histogram dengan batas nyata tepat dipakai – batasnya menempel karena setiap bilangan bulat pasti masuk satu kelas. Yang penting: kelas terbuka “12 or more” diberi catatan asumsi.</p>
 </section>
 </section>
-<section id="latihan-tambahan-self-check" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">11.2</span> Latihan Tambahan (Self-Check)</h2>
+<section id="latihan-tambahan-self-check" class="level3" data-number="4.8.2">
+<h3 data-number="4.8.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">4.8.2</span> Latihan Tambahan (Self-Check)</h3>
 <p>Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode.</p>
 <p><strong>Soal A.</strong> Data usia (tahun) 25 peserta pelatihan: 23, 31, 27, 45, 38, 29, 34, 41, 26, 36, 52, 30, 28, 33, 47, 39, 24, 35, 43, 32, 37, 29, 48, 31, 40. Susun tabel distribusi frekuensi dengan Aturan Sturges, lengkap dengan batas nyata, titik tengah, frekuensi relatif, dan kumulatif.</p>
 <div class="cell">
@@ -1685,8 +1681,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="kesalahan-umum-dalam-penyajian-dan-visualisasi-data" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Kesalahan Umum dalam Penyajian dan Visualisasi Data</h1>
+<section id="kesalahan-umum-dalam-penyajian-dan-visualisasi-data" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="kesalahan-umum-dalam-penyajian-dan-visualisasi-data"><span class="header-section-number">4.9</span> Kesalahan Umum dalam Penyajian dan Visualisasi Data</h2>
 <ol type="1">
 <li>Memakai <strong>histogram untuk data kategorik</strong> (atau diagram batang dengan batang menempel untuk kategori) – pilih grafik sesuai jenis data.</li>
 <li><strong>Memotong sumbu-y</strong> diagram batang – perbedaan kecil tampak sangat besar.</li>
@@ -1703,8 +1699,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </ol>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Cheat Sheet: Fungsi R yang Digunakan</h1>
+<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">4.10</span> Cheat Sheet: Fungsi R yang Digunakan</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1801,8 +1797,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="glosarium-istilah" class="level1" data-number="14">
-<h1 data-number="14"><span class="header-section-number">14</span> Glosarium Istilah</h1>
+<section id="glosarium-istilah" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="glosarium-istilah"><span class="header-section-number">4.11</span> Glosarium Istilah</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1891,8 +1887,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="rangkuman-dan-kesimpulan" class="level1" data-number="15">
-<h1 data-number="15"><span class="header-section-number">15</span> Rangkuman dan Kesimpulan</h1>
+<section id="rangkuman-dan-kesimpulan" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="rangkuman-dan-kesimpulan"><span class="header-section-number">4.12</span> Rangkuman dan Kesimpulan</h2>
 <ol type="1">
 <li><strong>Tabel distribusi frekuensi</strong> meringkas data menjadi frekuensi, frekuensi relatif, dan frekuensi kumulatif. <strong>Tabel silang</strong> meringkas hubungan dua variabel kategorik.</li>
 <li>Data numerik dikelompokkan dengan <strong>Aturan Sturges</strong>, lebar kelas yang <strong>dibulatkan ke atas</strong>, <strong>batas nyata</strong> agar kelas bersambung, dan <strong>titik tengah</strong> sebagai wakil kelas.</li>
@@ -1902,8 +1898,8 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
 </ol>
 <p><strong>Jembatan ke sesi berikutnya:</strong> Pertemuan 5 mengubah kesan visual “pusat di sekitar 80” dan “sebaran dari 63 sampai 95” menjadi angka yang tepat – mean, median, modus, rentang, varians, simpangan baku, dan koefisien variasi – termasuk perhitungannya dari tabel data terkelompok yang telah kita susun hari ini.</p>
 </section>
-<section id="referensi-pendukung" class="level1" data-number="16">
-<h1 data-number="16"><span class="header-section-number">16</span> Referensi Pendukung</h1>
+<section id="referensi-pendukung" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="referensi-pendukung"><span class="header-section-number">4.13</span> Referensi Pendukung</h2>
 <p>Materi ini merangkum topik penyajian data dan visualisasi (<em>organizing and visualizing data</em>) yang umum dibahas pada bab awal buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:</p>
 <ul>
 <li>Modul/slide perkuliahan “Introduction to Statistics (SDT-1102)” – Pertemuan 4: Penyajian dan Visualisasi Data.</li>
@@ -2418,13 +2414,13 @@ Waktu   QRIS Tunai Debit E-Wallet Kartu Kredit
   </script>
 <nav class="page-navigation" aria-label="Halaman">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/P03.html" class="pagination-link" aria-label="Metode Pengumpulan Data">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span>
+      <a href="../chapters/P03.html" class="pagination-link" aria-label="Metode Pengumpulan Data, Sampling, dan Bias">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/P05.html" class="pagination-link" aria-label="Prasyarat dan Notasi">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/P05.html" class="pagination-link" aria-label="Ukuran Pemusatan dan Penyebaran Data">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

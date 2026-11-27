@@ -8,7 +8,7 @@
 
 <meta name="description" content="Deskripsi singkat tentang buku">
 
-<title>2&nbsp; Jenis Data – Quarto Template</title>
+<title>2&nbsp; Jenis Data, Skala Pengukuran, dan Struktur Dataset – Quarto Template</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -161,7 +161,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P02.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -200,31 +200,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,61 +255,57 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#kualitatif-vs-kuantitatif" id="toc-kualitatif-vs-kuantitatif" class="nav-link active" data-scroll-target="#kualitatif-vs-kuantitatif"><span class="header-section-number">2.1</span> Kualitatif vs Kuantitatif</a></li>
-  <li><a href="#pohon-klasifikasi-data" id="toc-pohon-klasifikasi-data" class="nav-link" data-scroll-target="#pohon-klasifikasi-data"><span class="header-section-number">2.2</span> Pohon Klasifikasi Data</a></li>
-  <li><a href="#sumber-data" id="toc-sumber-data" class="nav-link" data-scroll-target="#sumber-data"><span class="header-section-number">3</span> Sumber Data</a>
+  <li><a href="#jenis-data" id="toc-jenis-data" class="nav-link active" data-scroll-target="#jenis-data"><span class="header-section-number">2.1</span> Jenis Data</a>
   <ul class="collapse">
-  <li><a href="#data-primer-vs-sekunder" id="toc-data-primer-vs-sekunder" class="nav-link" data-scroll-target="#data-primer-vs-sekunder"><span class="header-section-number">3.1</span> Data Primer vs Sekunder</a></li>
-  <li><a href="#menjelajahi-data-sekunder-di-r" id="toc-menjelajahi-data-sekunder-di-r" class="nav-link" data-scroll-target="#menjelajahi-data-sekunder-di-r"><span class="header-section-number">3.2</span> Menjelajahi Data Sekunder di R</a></li>
-  <li><a href="#mensimulasikan-data-primer" id="toc-mensimulasikan-data-primer" class="nav-link" data-scroll-target="#mensimulasikan-data-primer"><span class="header-section-number">3.3</span> Mensimulasikan Data Primer</a></li>
+  <li><a href="#kualitatif-vs-kuantitatif" id="toc-kualitatif-vs-kuantitatif" class="nav-link" data-scroll-target="#kualitatif-vs-kuantitatif"><span class="header-section-number">2.1.1</span> Kualitatif vs Kuantitatif</a></li>
+  <li><a href="#pohon-klasifikasi-data" id="toc-pohon-klasifikasi-data" class="nav-link" data-scroll-target="#pohon-klasifikasi-data"><span class="header-section-number">2.1.2</span> Pohon Klasifikasi Data</a></li>
   </ul></li>
-  <li><a href="#skala-pengukuran" id="toc-skala-pengukuran" class="nav-link" data-scroll-target="#skala-pengukuran"><span class="header-section-number">4</span> Skala Pengukuran</a>
+  <li><a href="#sumber-data" id="toc-sumber-data" class="nav-link" data-scroll-target="#sumber-data"><span class="header-section-number">2.2</span> Sumber Data</a>
   <ul class="collapse">
-  <li><a href="#operasi-yang-sah-untuk-tiap-skala" id="toc-operasi-yang-sah-untuk-tiap-skala" class="nav-link" data-scroll-target="#operasi-yang-sah-untuk-tiap-skala"><span class="header-section-number">4.1</span> Operasi yang Sah untuk Tiap Skala</a></li>
-  <li><a href="#nominal-angka-hanya-sebagai-label" id="toc-nominal-angka-hanya-sebagai-label" class="nav-link" data-scroll-target="#nominal-angka-hanya-sebagai-label"><span class="header-section-number">4.2</span> Nominal: Angka Hanya Sebagai Label</a></li>
-  <li><a href="#ordinal-berurutan-jarak-tidak-pasti" id="toc-ordinal-berurutan-jarak-tidak-pasti" class="nav-link" data-scroll-target="#ordinal-berurutan-jarak-tidak-pasti"><span class="header-section-number">4.3</span> Ordinal: Berurutan, Jarak Tidak Pasti</a></li>
-  <li><a href="#interval-selisih-bermakna-rasio-tidak" id="toc-interval-selisih-bermakna-rasio-tidak" class="nav-link" data-scroll-target="#interval-selisih-bermakna-rasio-tidak"><span class="header-section-number">4.4</span> Interval: Selisih Bermakna, Rasio Tidak</a></li>
-  <li><a href="#rasio-semua-operasi-sah" id="toc-rasio-semua-operasi-sah" class="nav-link" data-scroll-target="#rasio-semua-operasi-sah"><span class="header-section-number">4.5</span> Rasio: Semua Operasi Sah</a></li>
-  <li><a href="#menentukan-skala-empat-pertanyaan-berurutan" id="toc-menentukan-skala-empat-pertanyaan-berurutan" class="nav-link" data-scroll-target="#menentukan-skala-empat-pertanyaan-berurutan"><span class="header-section-number">4.6</span> Menentukan Skala: Empat Pertanyaan Berurutan</a></li>
+  <li><a href="#data-primer-vs-sekunder" id="toc-data-primer-vs-sekunder" class="nav-link" data-scroll-target="#data-primer-vs-sekunder"><span class="header-section-number">2.2.1</span> Data Primer vs Sekunder</a></li>
+  <li><a href="#menjelajahi-data-sekunder-di-r" id="toc-menjelajahi-data-sekunder-di-r" class="nav-link" data-scroll-target="#menjelajahi-data-sekunder-di-r"><span class="header-section-number">2.2.2</span> Menjelajahi Data Sekunder di R</a></li>
+  <li><a href="#mensimulasikan-data-primer" id="toc-mensimulasikan-data-primer" class="nav-link" data-scroll-target="#mensimulasikan-data-primer"><span class="header-section-number">2.2.3</span> Mensimulasikan Data Primer</a></li>
   </ul></li>
-  <li><a href="#skala-dan-tipe-data-di-r" id="toc-skala-dan-tipe-data-di-r" class="nav-link" data-scroll-target="#skala-dan-tipe-data-di-r"><span class="header-section-number">5</span> Skala dan Tipe Data di R</a>
+  <li><a href="#skala-pengukuran" id="toc-skala-pengukuran" class="nav-link" data-scroll-target="#skala-pengukuran"><span class="header-section-number">2.3</span> Skala Pengukuran</a>
   <ul class="collapse">
-  <li><a href="#memetakan-skala-ke-tipe-data" id="toc-memetakan-skala-ke-tipe-data" class="nav-link" data-scroll-target="#memetakan-skala-ke-tipe-data"><span class="header-section-number">5.1</span> Memetakan Skala ke Tipe Data</a></li>
-  <li><a href="#urutan-level-yang-keliru" id="toc-urutan-level-yang-keliru" class="nav-link" data-scroll-target="#urutan-level-yang-keliru"><span class="header-section-number">5.2</span> Urutan Level yang Keliru</a></li>
-  <li><a href="#jebakan-mengonversi-factor-berisi-angka" id="toc-jebakan-mengonversi-factor-berisi-angka" class="nav-link" data-scroll-target="#jebakan-mengonversi-factor-berisi-angka"><span class="header-section-number">5.3</span> Jebakan: Mengonversi Factor Berisi Angka</a></li>
-  <li><a href="#jebakan-angka-tersimpan-sebagai-teks" id="toc-jebakan-angka-tersimpan-sebagai-teks" class="nav-link" data-scroll-target="#jebakan-angka-tersimpan-sebagai-teks"><span class="header-section-number">5.4</span> Jebakan: Angka Tersimpan sebagai Teks</a></li>
+  <li><a href="#operasi-yang-sah-untuk-tiap-skala" id="toc-operasi-yang-sah-untuk-tiap-skala" class="nav-link" data-scroll-target="#operasi-yang-sah-untuk-tiap-skala"><span class="header-section-number">2.3.1</span> Operasi yang Sah untuk Tiap Skala</a></li>
+  <li><a href="#nominal-angka-hanya-sebagai-label" id="toc-nominal-angka-hanya-sebagai-label" class="nav-link" data-scroll-target="#nominal-angka-hanya-sebagai-label"><span class="header-section-number">2.3.2</span> Nominal: Angka Hanya Sebagai Label</a></li>
+  <li><a href="#ordinal-berurutan-jarak-tidak-pasti" id="toc-ordinal-berurutan-jarak-tidak-pasti" class="nav-link" data-scroll-target="#ordinal-berurutan-jarak-tidak-pasti"><span class="header-section-number">2.3.3</span> Ordinal: Berurutan, Jarak Tidak Pasti</a></li>
+  <li><a href="#interval-selisih-bermakna-rasio-tidak" id="toc-interval-selisih-bermakna-rasio-tidak" class="nav-link" data-scroll-target="#interval-selisih-bermakna-rasio-tidak"><span class="header-section-number">2.3.4</span> Interval: Selisih Bermakna, Rasio Tidak</a></li>
+  <li><a href="#rasio-semua-operasi-sah" id="toc-rasio-semua-operasi-sah" class="nav-link" data-scroll-target="#rasio-semua-operasi-sah"><span class="header-section-number">2.3.5</span> Rasio: Semua Operasi Sah</a></li>
+  <li><a href="#menentukan-skala-empat-pertanyaan-berurutan" id="toc-menentukan-skala-empat-pertanyaan-berurutan" class="nav-link" data-scroll-target="#menentukan-skala-empat-pertanyaan-berurutan"><span class="header-section-number">2.3.6</span> Menentukan Skala: Empat Pertanyaan Berurutan</a></li>
   </ul></li>
-  <li><a href="#struktur-dataset" id="toc-struktur-dataset" class="nav-link" data-scroll-target="#struktur-dataset"><span class="header-section-number">6</span> Struktur Dataset</a>
+  <li><a href="#skala-dan-tipe-data-di-r" id="toc-skala-dan-tipe-data-di-r" class="nav-link" data-scroll-target="#skala-dan-tipe-data-di-r"><span class="header-section-number">2.4</span> Skala dan Tipe Data di R</a>
   <ul class="collapse">
-  <li><a href="#observasi-variabel-feature-dan-target" id="toc-observasi-variabel-feature-dan-target" class="nav-link" data-scroll-target="#observasi-variabel-feature-dan-target"><span class="header-section-number">6.1</span> Observasi, Variabel, Feature, dan Target</a></li>
-  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">6.2</span> Tidy Data</a></li>
-  <li><a href="#format-wide-vs-long" id="toc-format-wide-vs-long" class="nav-link" data-scroll-target="#format-wide-vs-long"><span class="header-section-number">6.3</span> Format Wide vs Long</a></li>
+  <li><a href="#memetakan-skala-ke-tipe-data" id="toc-memetakan-skala-ke-tipe-data" class="nav-link" data-scroll-target="#memetakan-skala-ke-tipe-data"><span class="header-section-number">2.4.1</span> Memetakan Skala ke Tipe Data</a></li>
+  <li><a href="#urutan-level-yang-keliru" id="toc-urutan-level-yang-keliru" class="nav-link" data-scroll-target="#urutan-level-yang-keliru"><span class="header-section-number">2.4.2</span> Urutan Level yang Keliru</a></li>
+  <li><a href="#jebakan-mengonversi-factor-berisi-angka" id="toc-jebakan-mengonversi-factor-berisi-angka" class="nav-link" data-scroll-target="#jebakan-mengonversi-factor-berisi-angka"><span class="header-section-number">2.4.3</span> Jebakan: Mengonversi Factor Berisi Angka</a></li>
+  <li><a href="#jebakan-angka-tersimpan-sebagai-teks" id="toc-jebakan-angka-tersimpan-sebagai-teks" class="nav-link" data-scroll-target="#jebakan-angka-tersimpan-sebagai-teks"><span class="header-section-number">2.4.4</span> Jebakan: Angka Tersimpan sebagai Teks</a></li>
   </ul></li>
-  <li><a href="#studi-kasus-komprehensif-membersihkan-data-pelanggan" id="toc-studi-kasus-komprehensif-membersihkan-data-pelanggan" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-membersihkan-data-pelanggan"><span class="header-section-number">7</span> Studi Kasus Komprehensif: Membersihkan Data Pelanggan</a>
+  <li><a href="#struktur-dataset" id="toc-struktur-dataset" class="nav-link" data-scroll-target="#struktur-dataset"><span class="header-section-number">2.5</span> Struktur Dataset</a>
   <ul class="collapse">
-  <li><a href="#langkah-1-klasifikasi-setiap-variabel" id="toc-langkah-1-klasifikasi-setiap-variabel" class="nav-link" data-scroll-target="#langkah-1-klasifikasi-setiap-variabel"><span class="header-section-number">7.1</span> Langkah 1: Klasifikasi Setiap Variabel</a></li>
-  <li><a href="#langkah-2-mengonversi-ke-tipe-yang-tepat" id="toc-langkah-2-mengonversi-ke-tipe-yang-tepat" class="nav-link" data-scroll-target="#langkah-2-mengonversi-ke-tipe-yang-tepat"><span class="header-section-number">7.2</span> Langkah 2: Mengonversi ke Tipe yang Tepat</a></li>
-  <li><a href="#langkah-3-ringkasan-yang-sesuai-skala" id="toc-langkah-3-ringkasan-yang-sesuai-skala" class="nav-link" data-scroll-target="#langkah-3-ringkasan-yang-sesuai-skala"><span class="header-section-number">7.3</span> Langkah 3: Ringkasan yang Sesuai Skala</a></li>
-  <li><a href="#langkah-4-memisahkan-feature-dan-target" id="toc-langkah-4-memisahkan-feature-dan-target" class="nav-link" data-scroll-target="#langkah-4-memisahkan-feature-dan-target"><span class="header-section-number">7.4</span> Langkah 4: Memisahkan Feature dan Target</a></li>
-  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">7.5</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  <li><a href="#observasi-variabel-feature-dan-target" id="toc-observasi-variabel-feature-dan-target" class="nav-link" data-scroll-target="#observasi-variabel-feature-dan-target"><span class="header-section-number">2.5.1</span> Observasi, Variabel, Feature, dan Target</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">2.5.2</span> Tidy Data</a></li>
+  <li><a href="#format-wide-vs-long" id="toc-format-wide-vs-long" class="nav-link" data-scroll-target="#format-wide-vs-long"><span class="header-section-number">2.5.3</span> Format Wide vs Long</a></li>
   </ul></li>
-  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">8</span> Latihan Mandiri</a>
+  <li><a href="#studi-kasus-komprehensif-membersihkan-data-pelanggan" id="toc-studi-kasus-komprehensif-membersihkan-data-pelanggan" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-membersihkan-data-pelanggan"><span class="header-section-number">2.6</span> Studi Kasus Komprehensif: Membersihkan Data Pelanggan</a>
   <ul class="collapse">
-  <li><a href="#latihan-utama-dataset-airquality" id="toc-latihan-utama-dataset-airquality" class="nav-link" data-scroll-target="#latihan-utama-dataset-airquality"><span class="header-section-number">8.1</span> Latihan Utama: Dataset airquality</a>
+  <li><a href="#langkah-1-klasifikasi-setiap-variabel" id="toc-langkah-1-klasifikasi-setiap-variabel" class="nav-link" data-scroll-target="#langkah-1-klasifikasi-setiap-variabel"><span class="header-section-number">2.6.1</span> Langkah 1: Klasifikasi Setiap Variabel</a></li>
+  <li><a href="#langkah-2-mengonversi-ke-tipe-yang-tepat" id="toc-langkah-2-mengonversi-ke-tipe-yang-tepat" class="nav-link" data-scroll-target="#langkah-2-mengonversi-ke-tipe-yang-tepat"><span class="header-section-number">2.6.2</span> Langkah 2: Mengonversi ke Tipe yang Tepat</a></li>
+  <li><a href="#langkah-3-ringkasan-yang-sesuai-skala" id="toc-langkah-3-ringkasan-yang-sesuai-skala" class="nav-link" data-scroll-target="#langkah-3-ringkasan-yang-sesuai-skala"><span class="header-section-number">2.6.3</span> Langkah 3: Ringkasan yang Sesuai Skala</a></li>
+  <li><a href="#langkah-4-memisahkan-feature-dan-target" id="toc-langkah-4-memisahkan-feature-dan-target" class="nav-link" data-scroll-target="#langkah-4-memisahkan-feature-dan-target"><span class="header-section-number">2.6.4</span> Langkah 4: Memisahkan Feature dan Target</a></li>
+  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">2.6.5</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  </ul></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">2.7</span> Latihan Mandiri</a>
   <ul class="collapse">
-  <li><a href="#tugas-1-klasifikasikan-setiap-variabel" id="toc-tugas-1-klasifikasikan-setiap-variabel" class="nav-link" data-scroll-target="#tugas-1-klasifikasikan-setiap-variabel"><span class="header-section-number">8.1.1</span> Tugas 1: Klasifikasikan setiap variabel</a></li>
-  <li><a href="#tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan" id="toc-tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan" class="nav-link" data-scroll-target="#tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan"><span class="header-section-number">8.1.2</span> Tugas 2: Ubah Month menjadi factor berurutan dengan label nama bulan</a></li>
-  <li><a href="#tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu" id="toc-tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu" class="nav-link" data-scroll-target="#tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu"><span class="header-section-number">8.1.3</span> Tugas 4: Konversi Temp ke °C dan Kelvin, lalu jelaskan mengapa rasio suhu</a></li>
-  <li><a href="#tugas-5-tentukan-feature-dan-target" id="toc-tugas-5-tentukan-feature-dan-target" class="nav-link" data-scroll-target="#tugas-5-tentukan-feature-dan-target"><span class="header-section-number">8.1.4</span> Tugas 5: Tentukan <em>feature</em> dan <em>target</em></a></li>
-  <li><a href="#tugas-6-tantangan-ubah-ke-format-long" id="toc-tugas-6-tantangan-ubah-ke-format-long" class="nav-link" data-scroll-target="#tugas-6-tantangan-ubah-ke-format-long"><span class="header-section-number">8.1.5</span> Tugas 6 (Tantangan): Ubah ke format <em>long</em></a></li>
+  <li><a href="#latihan-utama-dataset-airquality" id="toc-latihan-utama-dataset-airquality" class="nav-link" data-scroll-target="#latihan-utama-dataset-airquality"><span class="header-section-number">2.7.1</span> Latihan Utama: Dataset airquality</a></li>
+  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">2.7.2</span> Latihan Tambahan (Self-Check)</a></li>
   </ul></li>
-  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">8.2</span> Latihan Tambahan (Self-Check)</a></li>
-  </ul></li>
-  <li><a href="#kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" id="toc-kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"><span class="header-section-number">9</span> Kesalahan Umum dalam Jenis Data dan Skala Pengukuran</a></li>
-  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">10</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
-  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">11</span> Glosarium Istilah</a></li>
-  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">12</span> Rangkuman dan Kesimpulan</a></li>
-  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">13</span> Referensi Pendukung</a></li>
+  <li><a href="#kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" id="toc-kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" class="nav-link" data-scroll-target="#kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"><span class="header-section-number">2.8</span> Kesalahan Umum dalam Jenis Data dan Skala Pengukuran</a></li>
+  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">2.9</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
+  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">2.10</span> Glosarium Istilah</a></li>
+  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">2.11</span> Rangkuman dan Kesimpulan</a></li>
+  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">2.12</span> Referensi Pendukung</a></li>
   </ul>
 </nav>
     </div>
@@ -318,7 +314,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></h1>
 </div>
 
 
@@ -335,8 +331,10 @@ window.Quarto = {
 </header>
 
 
-<section id="kualitatif-vs-kuantitatif" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="kualitatif-vs-kuantitatif"><span class="header-section-number">2.1</span> Kualitatif vs Kuantitatif</h2>
+<section id="jenis-data" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="jenis-data"><span class="header-section-number">2.1</span> Jenis Data</h2>
+<section id="kualitatif-vs-kuantitatif" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="kualitatif-vs-kuantitatif"><span class="header-section-number">2.1.1</span> Kualitatif vs Kuantitatif</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -465,8 +463,8 @@ window.Quarto = {
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="pohon-klasifikasi-data" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="pohon-klasifikasi-data"><span class="header-section-number">2.2</span> Pohon Klasifikasi Data</h2>
+<section id="pohon-klasifikasi-data" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="pohon-klasifikasi-data"><span class="header-section-number">2.1.2</span> Pohon Klasifikasi Data</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -511,10 +509,11 @@ window.Quarto = {
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="sumber-data" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Sumber Data</h1>
-<section id="data-primer-vs-sekunder" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="data-primer-vs-sekunder"><span class="header-section-number">3.1</span> Data Primer vs Sekunder</h2>
+</section>
+<section id="sumber-data" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sumber-data"><span class="header-section-number">2.2</span> Sumber Data</h2>
+<section id="data-primer-vs-sekunder" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="data-primer-vs-sekunder"><span class="header-section-number">2.2.1</span> Data Primer vs Sekunder</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -553,8 +552,8 @@ window.Quarto = {
 </table>
 <p>Dalam data science, sebagian besar pekerjaan memakai data <strong>sekunder</strong> (misalnya data transaksi yang tercatat otomatis). Karena kita tidak mengumpulkannya sendiri, <strong>metadata</strong> – keterangan tentang arti tiap variabel, satuan, kode, periode, dan cara pengumpulan – menjadi sangat penting.</p>
 </section>
-<section id="menjelajahi-data-sekunder-di-r" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="menjelajahi-data-sekunder-di-r"><span class="header-section-number">3.2</span> Menjelajahi Data Sekunder di R</h2>
+<section id="menjelajahi-data-sekunder-di-r" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="menjelajahi-data-sekunder-di-r"><span class="header-section-number">2.2.2</span> Menjelajahi Data Sekunder di R</h3>
 <p>R menyediakan banyak dataset sekunder bawaan beserta dokumentasinya. Contohnya airquality: pengukuran kualitas udara harian di New York (Mei–September 1973).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(airquality)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
@@ -642,8 +641,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="mensimulasikan-data-primer" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="mensimulasikan-data-primer"><span class="header-section-number">3.3</span> Mensimulasikan Data Primer</h2>
+<section id="mensimulasikan-data-primer" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="mensimulasikan-data-primer"><span class="header-section-number">2.2.3</span> Mensimulasikan Data Primer</h3>
 <p>Data primer biasanya berasal dari formulir atau kuesioner yang Anda rancang. Contoh: hasil formulir online yang diekspor ke CSV. Di sini isi CSV kita tulis langsung sebagai teks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>csv_survei <span class="ot">&lt;-</span> <span class="st">"responden,usia,jenis_kelamin,pendidikan,kepuasan,pengeluaran_bulanan</span></span>
@@ -669,8 +668,8 @@ window.Quarto = {
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="skala-pengukuran" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Skala Pengukuran</h1>
+<section id="skala-pengukuran" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="skala-pengukuran"><span class="header-section-number">2.3</span> Skala Pengukuran</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -713,8 +712,8 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<section id="operasi-yang-sah-untuk-tiap-skala" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="operasi-yang-sah-untuk-tiap-skala"><span class="header-section-number">4.1</span> Operasi yang Sah untuk Tiap Skala</h2>
+<section id="operasi-yang-sah-untuk-tiap-skala" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="operasi-yang-sah-untuk-tiap-skala"><span class="header-section-number">2.3.1</span> Operasi yang Sah untuk Tiap Skala</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 16%">
@@ -765,8 +764,8 @@ window.Quarto = {
 </table>
 <p>Tabel ini akan terus kita pakai: pada Pertemuan 5 untuk memilih ukuran pemusatan, dan pada paruh kedua semester untuk memilih uji statistik.</p>
 </section>
-<section id="nominal-angka-hanya-sebagai-label" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="nominal-angka-hanya-sebagai-label"><span class="header-section-number">4.2</span> Nominal: Angka Hanya Sebagai Label</h2>
+<section id="nominal-angka-hanya-sebagai-label" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="nominal-angka-hanya-sebagai-label"><span class="header-section-number">2.3.2</span> Nominal: Angka Hanya Sebagai Label</h3>
 <p>Jika kategori nominal dikodekan dengan angka, R akan dengan senang hati menghitung rata- ratanya – dan hasilnya tidak bermakna.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kode provinsi: 31 = DKI Jakarta, 32 = Jawa Barat, 33 = Jawa Tengah, 73 = Sulawesi Selatan</span></span>
@@ -796,8 +795,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="ordinal-berurutan-jarak-tidak-pasti" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="ordinal-berurutan-jarak-tidak-pasti"><span class="header-section-number">4.3</span> Ordinal: Berurutan, Jarak Tidak Pasti</h2>
+<section id="ordinal-berurutan-jarak-tidak-pasti" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="ordinal-berurutan-jarak-tidak-pasti"><span class="header-section-number">2.3.3</span> Ordinal: Berurutan, Jarak Tidak Pasti</h3>
 <p>Pada skala kepuasan “Sangat Tidak Puas – Tidak Puas – Netral – Puas – Sangat Puas”, kita tahu urutannya, tetapi <strong>tidak</strong> tahu apakah jarak “Netral ke Puas” sama dengan jarak “Puas ke Sangat Puas”.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tingkat_puas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Sangat Tidak Puas"</span>, <span class="st">"Tidak Puas"</span>, <span class="st">"Netral"</span>, <span class="st">"Puas"</span>, <span class="st">"Sangat Puas"</span>)</span>
@@ -849,8 +848,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 <p><strong>Likert: mean atau median?</strong> Skor Likert (1–5) dari <strong>satu butir pertanyaan</strong> secara ketat bersifat ordinal, sehingga median dan modus lebih tepat. Dalam praktik, <strong>jumlah atau rata-rata dari banyak butir</strong> (misalnya indeks kepuasan dari 10 pertanyaan) sering diperlakukan sebagai data interval. Apa pun pilihannya, <strong>nyatakan asumsi Anda.</strong></p>
 </section>
-<section id="interval-selisih-bermakna-rasio-tidak" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="interval-selisih-bermakna-rasio-tidak"><span class="header-section-number">4.4</span> Interval: Selisih Bermakna, Rasio Tidak</h2>
+<section id="interval-selisih-bermakna-rasio-tidak" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="interval-selisih-bermakna-rasio-tidak"><span class="header-section-number">2.3.4</span> Interval: Selisih Bermakna, Rasio Tidak</h3>
 <p>Suhu dalam °C memiliki jarak yang setara (naik dari 10 ke 20 °C sama besarnya dengan dari 20 ke 30 °C), tetapi titik 0 °C <strong>bukan</strong> “tidak ada panas” – hanya titik beku air yang dipilih secara konvensi. Akibatnya, “20 °C dua kali lebih panas dari 10 °C” adalah pernyataan <strong>keliru</strong>.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>suhu_c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">pagi =</span> <span class="dv">10</span>, <span class="at">siang =</span> <span class="dv">20</span>)</span>
@@ -906,8 +905,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 <p>“Rasio” suhu berubah-ubah tergantung satuan (2 kali dalam °C, 1,36 kali dalam °F, 1,035 kali dalam Kelvin) – tanda bahwa rasio pada skala interval <strong>tidak bermakna</strong>. Hanya Kelvin, yang nolnya mutlak, yang merupakan skala rasio.</p>
 </section>
-<section id="rasio-semua-operasi-sah" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="rasio-semua-operasi-sah"><span class="header-section-number">4.5</span> Rasio: Semua Operasi Sah</h2>
+<section id="rasio-semua-operasi-sah" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="rasio-semua-operasi-sah"><span class="header-section-number">2.3.5</span> Rasio: Semua Operasi Sah</h3>
 <p>Pada skala rasio, perbandingan <strong>tetap sama</strong> berapa pun satuannya.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>berat_kg <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">koper_A =</span> <span class="dv">10</span>, <span class="at">koper_B =</span> <span class="dv">20</span>)</span>
@@ -921,8 +920,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 <p>Koper B <strong>benar-benar</strong> dua kali lebih berat dari koper A, dalam satuan apa pun. Karena itu koefisien variasi (Pertemuan 5) hanya sah untuk skala rasio.</p>
 </section>
-<section id="menentukan-skala-empat-pertanyaan-berurutan" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="menentukan-skala-empat-pertanyaan-berurutan"><span class="header-section-number">4.6</span> Menentukan Skala: Empat Pertanyaan Berurutan</h2>
+<section id="menentukan-skala-empat-pertanyaan-berurutan" class="level3" data-number="2.3.6">
+<h3 data-number="2.3.6" class="anchored" data-anchor-id="menentukan-skala-empat-pertanyaan-berurutan"><span class="header-section-number">2.3.6</span> Menentukan Skala: Empat Pertanyaan Berurutan</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 29%">
@@ -1036,10 +1035,10 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 </section>
 </section>
-<section id="skala-dan-tipe-data-di-r" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Skala dan Tipe Data di R</h1>
-<section id="memetakan-skala-ke-tipe-data" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="memetakan-skala-ke-tipe-data"><span class="header-section-number">5.1</span> Memetakan Skala ke Tipe Data</h2>
+<section id="skala-dan-tipe-data-di-r" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="skala-dan-tipe-data-di-r"><span class="header-section-number">2.4</span> Skala dan Tipe Data di R</h2>
+<section id="memetakan-skala-ke-tipe-data" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="memetakan-skala-ke-tipe-data"><span class="header-section-number">2.4.1</span> Memetakan Skala ke Tipe Data</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 29%">
@@ -1094,8 +1093,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 </div>
 </section>
-<section id="urutan-level-yang-keliru" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="urutan-level-yang-keliru"><span class="header-section-number">5.2</span> Urutan Level yang Keliru</h2>
+<section id="urutan-level-yang-keliru" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="urutan-level-yang-keliru"><span class="header-section-number">2.4.2</span> Urutan Level yang Keliru</h3>
 <p>Tanpa urutan yang ditentukan, R mengurutkan kategori <strong>menurut abjad</strong>, yang sering tidak logis:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>ukuran_baju <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"M"</span>, <span class="st">"L"</span>, <span class="st">"S"</span>, <span class="st">"XL"</span>, <span class="st">"M"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>, <span class="st">"S"</span>, <span class="st">"XL"</span>, <span class="st">"L"</span>, <span class="st">"M"</span>)</span>
@@ -1115,8 +1114,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="jebakan-mengonversi-factor-berisi-angka" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="jebakan-mengonversi-factor-berisi-angka"><span class="header-section-number">5.3</span> Jebakan: Mengonversi Factor Berisi Angka</h2>
+<section id="jebakan-mengonversi-factor-berisi-angka" class="level3" data-number="2.4.3">
+<h3 data-number="2.4.3" class="anchored" data-anchor-id="jebakan-mengonversi-factor-berisi-angka"><span class="header-section-number">2.4.3</span> Jebakan: Mengonversi Factor Berisi Angka</h3>
 <p>Jika sebuah factor berisi angka, as.numeric() mengembalikan <strong>nomor urut level</strong>, bukan angkanya.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>tahun <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"2021"</span>, <span class="st">"2023"</span>, <span class="st">"2021"</span>, <span class="st">"2024"</span>))</span>
@@ -1132,8 +1131,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 </div>
 </section>
-<section id="jebakan-angka-tersimpan-sebagai-teks" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="jebakan-angka-tersimpan-sebagai-teks"><span class="header-section-number">5.4</span> Jebakan: Angka Tersimpan sebagai Teks</h2>
+<section id="jebakan-angka-tersimpan-sebagai-teks" class="level3" data-number="2.4.4">
+<h3 data-number="2.4.4" class="anchored" data-anchor-id="jebakan-angka-tersimpan-sebagai-teks"><span class="header-section-number">2.4.4</span> Jebakan: Angka Tersimpan sebagai Teks</h3>
 <p>Data dari formulir atau spreadsheet sering memuat simbol (Rp, titik ribuan, koma desimal) sehingga terbaca sebagai teks.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>harga_teks <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Rp 12.500"</span>, <span class="st">"Rp 8.000"</span>, <span class="st">"Rp 150.000"</span>, <span class="st">"Rp 27.250"</span>)</span>
@@ -1153,10 +1152,10 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="struktur-dataset" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Struktur Dataset</h1>
-<section id="observasi-variabel-feature-dan-target" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="observasi-variabel-feature-dan-target"><span class="header-section-number">6.1</span> Observasi, Variabel, Feature, dan Target</h2>
+<section id="struktur-dataset" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="struktur-dataset"><span class="header-section-number">2.5</span> Struktur Dataset</h2>
+<section id="observasi-variabel-feature-dan-target" class="level3" data-number="2.5.1">
+<h3 data-number="2.5.1" class="anchored" data-anchor-id="observasi-variabel-feature-dan-target"><span class="header-section-number">2.5.1</span> Observasi, Variabel, Feature, dan Target</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -1228,8 +1227,8 @@ Sangat Tidak Puas        Tidak Puas            Netral              Puas
 </div>
 <p><strong>Jenis target menentukan jenis tugas:</strong> | Skala target | Tugas | Contoh | |:—|:—|:—| | Nominal (2 kategori) | Klasifikasi biner | Pelanggan <em>churn</em> atau tidak | | Nominal (&gt; 2 kategori) | Klasifikasi multikelas | Spesies iris | | Ordinal | Klasifikasi ordinal | Tingkat risiko kredit rendah/sedang/tinggi | | Interval/rasio | Regresi | Harga rumah, kadar TSS |</p>
 </section>
-<section id="tidy-data" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">6.2</span> Tidy Data</h2>
+<section id="tidy-data" class="level3" data-number="2.5.2">
+<h3 data-number="2.5.2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">2.5.2</span> Tidy Data</h3>
 <p>Sebuah dataset disebut tidy jika memenuhi tiga prinsip:</p>
 <ol style="margin-left:10px;">
 <li>
@@ -1244,8 +1243,8 @@ Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
 </ol>
 <p>Hampir semua fungsi statistika di R mengasumsikan data <em>tidy.</em></p>
 </section>
-<section id="format-wide-vs-long" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="format-wide-vs-long"><span class="header-section-number">6.3</span> Format Wide vs Long</h2>
+<section id="format-wide-vs-long" class="level3" data-number="2.5.3">
+<h3 data-number="2.5.3" class="anchored" data-anchor-id="format-wide-vs-long"><span class="header-section-number">2.5.3</span> Format Wide vs Long</h3>
 <p>Data yang sama dapat disusun dalam dua format. Contoh: kadar TSS (mg/L) di tiga titik peman- tauan selama tiga bulan.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a>tss_wide <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -1380,8 +1379,8 @@ Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="studi-kasus-komprehensif-membersihkan-data-pelanggan" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Studi Kasus Komprehensif: Membersihkan Data Pelanggan</h1>
+<section id="studi-kasus-komprehensif-membersihkan-data-pelanggan" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="studi-kasus-komprehensif-membersihkan-data-pelanggan"><span class="header-section-number">2.6</span> Studi Kasus Komprehensif: Membersihkan Data Pelanggan</h2>
 <p><strong>Konteks</strong>: Tim analytics sebuah e-commerce menerima ekspor data pelanggan (data <strong>sekunder</strong> dari sistem CRM) untuk membangun model prediksi churn (pelanggan berhenti berlangganan). Datanya masih “mentah”.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>csv_pelanggan <span class="ot">&lt;-</span> <span class="st">"id,gender,kota,segmen,rating_layanan,lama_langganan_bln,total_belanja,suhu_gudang_c,churn</span></span>
@@ -1409,8 +1408,8 @@ Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
 </div>
 </div>
 <p><strong>Metadata dari tim CRM</strong>: gender 1 = Laki-laki, 2 = Perempuan; segmen berurutan Bronze &lt; Silver &lt; Gold &lt; Platinum; rating_layanan skala 1–5 (1 = sangat buruk); suhu_gudang_c = suhu rata-rata gudang pengirim (°C).</p>
-<section id="langkah-1-klasifikasi-setiap-variabel" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="langkah-1-klasifikasi-setiap-variabel"><span class="header-section-number">7.1</span> Langkah 1: Klasifikasi Setiap Variabel</h2>
+<section id="langkah-1-klasifikasi-setiap-variabel" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="langkah-1-klasifikasi-setiap-variabel"><span class="header-section-number">2.6.1</span> Langkah 1: Klasifikasi Setiap Variabel</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 15%">
@@ -1506,8 +1505,8 @@ Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
 </tbody>
 </table>
 </section>
-<section id="langkah-2-mengonversi-ke-tipe-yang-tepat" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="langkah-2-mengonversi-ke-tipe-yang-tepat"><span class="header-section-number">7.2</span> Langkah 2: Mengonversi ke Tipe yang Tepat</h2>
+<section id="langkah-2-mengonversi-ke-tipe-yang-tepat" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="langkah-2-mengonversi-ke-tipe-yang-tepat"><span class="header-section-number">2.6.2</span> Langkah 2: Mengonversi ke Tipe yang Tepat</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a>bersih <span class="ot">&lt;-</span> <span class="fu">within</span>(pelanggan, {</span>
 <span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>gender <span class="ot">&lt;-</span> <span class="fu">factor</span>(gender, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Laki-laki"</span>, <span class="st">"Perempuan"</span>))</span>
@@ -1535,8 +1534,8 @@ Setiap <strong>nilai</strong> menempati satu <strong>sel</strong>.
 </div>
 </div>
 </section>
-<section id="langkah-3-ringkasan-yang-sesuai-skala" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="langkah-3-ringkasan-yang-sesuai-skala"><span class="header-section-number">7.3</span> Langkah 3: Ringkasan yang Sesuai Skala</h2>
+<section id="langkah-3-ringkasan-yang-sesuai-skala" class="level3" data-number="2.6.3">
+<h3 data-number="2.6.3" class="anchored" data-anchor-id="langkah-3-ringkasan-yang-sesuai-skala"><span class="header-section-number">2.6.3</span> Langkah 3: Ringkasan yang Sesuai Skala</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(bersih<span class="sc">$</span>gender) <span class="co"># nominal -&gt; frekuensi</span></span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1583,8 +1582,8 @@ Laki-laki Perempuan
 </div>
 </div>
 </section>
-<section id="langkah-4-memisahkan-feature-dan-target" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="langkah-4-memisahkan-feature-dan-target"><span class="header-section-number">7.4</span> Langkah 4: Memisahkan Feature dan Target</h2>
+<section id="langkah-4-memisahkan-feature-dan-target" class="level3" data-number="2.6.4">
+<h3 data-number="2.6.4" class="anchored" data-anchor-id="langkah-4-memisahkan-feature-dan-target"><span class="header-section-number">2.6.4</span> Langkah 4: Memisahkan Feature dan Target</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>X_pel <span class="ot">&lt;-</span> bersih[, <span class="fu">setdiff</span>(<span class="fu">names</span>(bersih), <span class="fu">c</span>(<span class="st">"id"</span>, <span class="st">"churn"</span>))]</span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>y_pel <span class="ot">&lt;-</span> bersih<span class="sc">$</span>churn</span>
@@ -1604,19 +1603,19 @@ Tidak    Ya
 </div>
 </div>
 </section>
-<section id="pertanyaan-diskusi-dan-jawaban" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">7.5</span> Pertanyaan Diskusi dan Jawaban</h2>
+<section id="pertanyaan-diskusi-dan-jawaban" class="level3" data-number="2.6.5">
+<h3 data-number="2.6.5" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">2.6.5</span> Pertanyaan Diskusi dan Jawaban</h3>
 <p><strong>1. Mengapa gender tidak boleh dibiarkan sebagai int?</strong> <br> Karena angka 1 dan 2 hanya kode. Jika dibiarkan numerik, model akan menganggap “Perempuan = 2 kali Laki-laki” atau menghitung rata-rata gender (misalnya 1,5) yang tidak bermakna. <br> <br> <strong>2. Bolehkah kita menyatakan “rata-rata rating layanan = 3,25”?</strong> <br> Secara ketat tidak, karena rating_layanan adalah satu butir skala ordinal – jarak antara rating 1 ke 2 belum tentu sama dengan 4 ke 5. Laporan yang aman: median (antara 3 dan 4) dan distribusi frekuensinya. Jika mean tetap dilaporkan, nyatakan bahwa rating diasumsikan berskala interval. <br> <br> <strong>3. Mengapa rasio “suhu gudang C003 dibanding C001” tidak bermakna, sementara rasio total belanja bermakna?</strong> <br> Suhu °C berskala interval (nol tidak mutlak), sedangkan total belanja berskala rasio (Rp 0 be- rarti tidak berbelanja sama sekali). Pelanggan C008 benar-benar berbelanja sekitar 75 kali lipat pelanggan C005. <br> <br> <strong>4. Mengapa id dikeluarkan dari feature?</strong> id unik untuk setiap pelanggan dan tidak memuat informasi perilaku. Memasukkannya dapat membuat model “menghafal” pelanggan, bukan mempelajari pola.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="latihan-mandiri" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Latihan Mandiri</h1>
-<section id="latihan-utama-dataset-airquality" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="latihan-utama-dataset-airquality"><span class="header-section-number">8.1</span> Latihan Utama: Dataset airquality</h2>
+<section id="latihan-mandiri" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="latihan-mandiri"><span class="header-section-number">2.7</span> Latihan Mandiri</h2>
+<section id="latihan-utama-dataset-airquality" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="latihan-utama-dataset-airquality"><span class="header-section-number">2.7.1</span> Latihan Utama: Dataset airquality</h3>
 <p>Gunakan dataset bawaan airquality (data sekunder).</p>
-<section id="tugas-1-klasifikasikan-setiap-variabel" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="tugas-1-klasifikasikan-setiap-variabel"><span class="header-section-number">8.1.1</span> Tugas 1: Klasifikasikan setiap variabel</h3>
+<section id="tugas-1-klasifikasikan-setiap-variabel" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-1-klasifikasikan-setiap-variabel">Tugas 1: Klasifikasikan setiap variabel</h4>
 <p><strong>Jawaban:</strong></p>
 <table class="caption-top table">
 <colgroup>
@@ -1673,8 +1672,8 @@ Tidak    Ya
 </tbody>
 </table>
 </section>
-<section id="tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan"><span class="header-section-number">8.1.2</span> Tugas 2: Ubah Month menjadi factor berurutan dengan label nama bulan</h3>
+<section id="tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-2-ubah-month-menjadi-factor-berurutan-dengan-label-nama-bulan">Tugas 2: Ubah Month menjadi factor berurutan dengan label nama bulan</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a>aq <span class="ot">&lt;-</span> airquality</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>aq<span class="sc">$</span>Month <span class="ot">&lt;-</span> <span class="fu">factor</span>(aq<span class="sc">$</span>Month, <span class="at">levels =</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,</span>
@@ -1700,8 +1699,8 @@ Mei Jun Jul Agu Sep
 </div>
 </div>
 </section>
-<section id="tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu" class="level3" data-number="8.1.3">
-<h3 data-number="8.1.3" class="anchored" data-anchor-id="tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu"><span class="header-section-number">8.1.3</span> Tugas 4: Konversi Temp ke °C dan Kelvin, lalu jelaskan mengapa rasio suhu</h3>
+<section id="tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-4-konversi-temp-ke-c-dan-kelvin-lalu-jelaskan-mengapa-rasio-suhu">Tugas 4: Konversi Temp ke °C dan Kelvin, lalu jelaskan mengapa rasio suhu</h4>
 <p>hanya sah pada Kelvin</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>aq<span class="sc">$</span>Temp_C <span class="ot">&lt;-</span> (aq<span class="sc">$</span>Temp <span class="sc">-</span> <span class="dv">32</span>) <span class="sc">*</span> <span class="dv">5</span> <span class="sc">/</span> <span class="dv">9</span></span>
@@ -1723,14 +1722,14 @@ Mei Jun Jul Agu Sep
 </div>
 <p><strong>Jawaban</strong>: Hari terpanas “tampak” 1.73 kali lebih panas dalam °F dan 2.71 kali dalam °C, tetapi hanya 1.08 kali dalam Kelvin. Hanya Kelvin yang nolnya mutlak, sehingga hanya rasio Kelvin yang</p>
 </section>
-<section id="tugas-5-tentukan-feature-dan-target" class="level3" data-number="8.1.4">
-<h3 data-number="8.1.4" class="anchored" data-anchor-id="tugas-5-tentukan-feature-dan-target"><span class="header-section-number">8.1.4</span> Tugas 5: Tentukan <em>feature</em> dan <em>target</em></h3>
+<section id="tugas-5-tentukan-feature-dan-target" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-5-tentukan-feature-dan-target">Tugas 5: Tentukan <em>feature</em> dan <em>target</em></h4>
 <p>bermakna secara fisik.</p>
 <p>Jika tujuannya memprediksi kadar ozon dari kondisi cuaca, tentukan feature, target, dan jenis tugasnya.</p>
 <p>Jawaban: Target = Ozone (rasio) sehingga tugasnya regresi; feature = Solar.R, Wind, Temp, dan Month. Day sebaiknya tidak dipakai langsung karena hanya urutan tanggal.</p>
 </section>
-<section id="tugas-6-tantangan-ubah-ke-format-long" class="level3" data-number="8.1.5">
-<h3 data-number="8.1.5" class="anchored" data-anchor-id="tugas-6-tantangan-ubah-ke-format-long"><span class="header-section-number">8.1.5</span> Tugas 6 (Tantangan): Ubah ke format <em>long</em></h3>
+<section id="tugas-6-tantangan-ubah-ke-format-long" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-6-tantangan-ubah-ke-format-long">Tugas 6 (Tantangan): Ubah ke format <em>long</em></h4>
 <p>Ubah kolom Ozone, Wind, dan Temp untuk 3 hari pertama menjadi format long dengan kolom variabel dan nilai.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>aq3 <span class="ot">&lt;-</span> airquality[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="fu">c</span>(<span class="st">"Month"</span>, <span class="st">"Day"</span>, <span class="st">"Ozone"</span>, <span class="st">"Wind"</span>, <span class="st">"Temp"</span>)]</span>
@@ -1757,8 +1756,8 @@ Mei Jun Jul Agu Sep
 <p><strong>Catatan</strong>: format long seperti ini praktis untuk visualisasi banyak variabel sekaligus, tetapi perhatikan bahwa kolom nilai kini mencampur satuan berbeda (ppb, mil/jam, °F) – jangan meringkasnya bersama-sama.</p>
 </section>
 </section>
-<section id="latihan-tambahan-self-check" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">8.2</span> Latihan Tambahan (Self-Check)</h2>
+<section id="latihan-tambahan-self-check" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">2.7.2</span> Latihan Tambahan (Self-Check)</h3>
 <p>Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode. <br><br> <strong>Soal A</strong>. Tentukan skala pengukuran: (1) nomor punggung pemain, (2) peringkat klasemen liga, (3) skor TOEFL, (4) waktu lari 100 m, (5) tahun berdirinya perusahaan, (6) jumlah karyawan, (7) tingkat keparahan gempa pada skala MMI (I–XII).</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
@@ -1811,8 +1810,8 @@ Bintang 3 Bintang 4 Bintang 5
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
 </section>
-<section id="kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Kesalahan Umum dalam Jenis Data dan Skala Pengukuran</h1>
+<section id="kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="kesalahan-umum-dalam-jenis-data-dan-skala-pengukuran"><span class="header-section-number">2.8</span> Kesalahan Umum dalam Jenis Data dan Skala Pengukuran</h2>
 <ol style="margin-left:10px;">
 <li>
 <strong>Menghitung mean dari kode kategori</strong> – misalnya “rata-rata gender = 1,46” atau “ratarata kode provinsi”
@@ -1850,8 +1849,8 @@ Bintang 3 Bintang 4 Bintang 5
 </ol>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Cheat Sheet: Fungsi R yang Digunakan</h1>
+<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">2.9</span> Cheat Sheet: Fungsi R yang Digunakan</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1940,8 +1939,8 @@ Bintang 3 Bintang 4 Bintang 5
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="glosarium-istilah" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Glosarium Istilah</h1>
+<section id="glosarium-istilah" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="glosarium-istilah"><span class="header-section-number">2.10</span> Glosarium Istilah</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -2033,8 +2032,8 @@ Bintang 3 Bintang 4 Bintang 5
 </tbody>
 </table>
 </section>
-<section id="rangkuman-dan-kesimpulan" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Rangkuman dan Kesimpulan</h1>
+<section id="rangkuman-dan-kesimpulan" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="rangkuman-dan-kesimpulan"><span class="header-section-number">2.11</span> Rangkuman dan Kesimpulan</h2>
 <ol>
 <li>
 <strong>Data kualitatif</strong> berupa kategori; <strong>data kuantitatif</strong> berupa angka yang bermakna secara aritmetika. Data kuantitatif dibagi menjadi <strong>diskrit</strong> (menghitung) dan <strong>kontinu</strong> (mengukur).
@@ -2055,8 +2054,8 @@ Bintang 3 Bintang 4 Bintang 5
 <p><strong>Jembatan ke sesi berikutnya:</strong> setelah memahami jenis data, Pertemuan 3 membahas <strong>bagaimana data diperoleh</strong> – metode pengumpulan data, teknik sampling probabilitas dan non-probabilitas, serta berbagai bentuk <strong>bias</strong> yang dapat merusak kesimpulan.</p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="referensi-pendukung" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Referensi Pendukung</h1>
+<section id="referensi-pendukung" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="referensi-pendukung"><span class="header-section-number">2.12</span> Referensi Pendukung</h2>
 <p>Materi ini merangkum topik jenis data dan skala pengukuran (<em>types of data and levels of measurement</em>) yang umum dibahas pada bab awal buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:</p>
 <ul>
 <li>
@@ -2579,13 +2578,13 @@ Dokumentasi resmi R: <code>?factor</code>, <code>?read.csv</code>, <code>?reshap
   </script>
 <nav class="page-navigation" aria-label="Halaman">
   <div class="nav-page nav-page-previous">
-      <a href="../chapters/P01.html" class="pagination-link" aria-label="Mengenal R Secara Singkat">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></span>
+      <a href="../chapters/P01.html" class="pagination-link" aria-label="Konsep Dasar Statistika dan Pengenalan R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/P03.html" class="pagination-link" aria-label="Metode Pengumpulan Data">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/P03.html" class="pagination-link" aria-label="Metode Pengumpulan Data, Sampling, dan Bias">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

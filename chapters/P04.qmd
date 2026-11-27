@@ -1,4 +1,6 @@
-# Data yang Dipakai
+# Penyajian dan Visualisasi Data
+
+## Data yang Dipakai
 Tiga dataset dipakai sepanjang praktikum. Dataset nilai ujian dan pendapatan mingguan akan
 **dipakai lagi** pada Pertemuan 5 (ukuran pemusatan dan penyebaran), jadi pastikan Anda memahaminya.
 
@@ -21,8 +23,8 @@ f_p <- c(9, 22, 39, 15, 9, 6)
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
 
-# Tabel Frekuensi Data Kategorik
-## Frekuensi, Frekuensi Relatif, dan Persentase
+## Tabel Frekuensi Data Kategorik
+### Frekuensi, Frekuensi Relatif, dan Persentase
 | Kolom | Rumus | Arti |
 |---|---|---|
 | Frekuensi ($f$) | hitung | Banyaknya data pada kategori |
@@ -47,7 +49,7 @@ knitr::kable(tabel_metode, caption = "Distribusi Frekuensi Metode Pembayaran (n 
 **Frekuensi kumulatif untuk data nominal?** Kumulatif hanya bermakna jika kategori memiliki **urutan** (ordinal atau numerik). Pada data nominal seperti metode pembayaran, kumulatif baru bermakna setelah diurutkan dari terbanyak – dan itu pun hanya
 untuk analisis Pareto (lihat bagian visualisasi).
 
-## Tabel Silang (Tabel Kontingensi)
+### Tabel Silang (Tabel Kontingensi)
 Untuk melihat hubungan **dua** variabel kategorik, gunakan tabel silang.
 
 ```{r}
@@ -67,7 +69,7 @@ Persentase **per baris** menjawab “di waktu tertentu, metode apa yang dominan?
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Tabel Frekuensi Data Numerik
+## Tabel Frekuensi Data Numerik
 Data numerik dengan banyak nilai berbeda perlu dikelompokkan ke dalam kelas (interval).
 Langkah-langkahnya:
 
@@ -81,7 +83,7 @@ Langkah-langkahnya:
 | 6 | Hitung titik tengah | $m = \frac{\text{batas bawah} + \text{batas atas}}{2}$ |
 | 7 | Hitung frekuensi tiap kelas | Turus / `cut()` + `table()` |
 
-## Langkah demi Langkah: Nilai Ujian
+### Langkah demi Langkah: Nilai Ujian
 ```{r}
 n <- length(nilai_ujian)
 R <- max(nilai_ujian) - min(nilai_ujian)
@@ -124,7 +126,7 @@ knitr::kable(tabel_ujian, caption = "Distribusi Frekuensi Nilai Ujian Statistika
 
 **Konvensi interval di R.** `cut()` secara bawaan memakai interval tertutup kanan `(a, b]`. Karena batas nyata berakhir di ,5 dan data berupa bilangan bulat, tidak ada data yang jatuh tepat di batas, sehingga konvensi ini tidak menjadi masalah.
 
-## Kelas Lebar Sama dengan `hist()`
+### Kelas Lebar Sama dengan `hist()`
 Fungsi `hist()` juga menghitung frekuensi kelas jika diberi argumen `plot = FALSE`:
 
 ```{r}
@@ -133,7 +135,7 @@ data.frame(dari = head(h$breaks, -1), sampai = tail(h$breaks, -1),
 titik_tengah = h$mids, f = h$counts)
 ```
 
-## Data yang Sudah Terkelompok: Pendapatan Mingguan
+### Data yang Sudah Terkelompok: Pendapatan Mingguan
 Sering kali kita hanya menerima tabel jadi tanpa data mentah. Kita tetap dapat melengkapinya dengan kolom relatif dan kumulatif.
 
 ```{r}
@@ -156,8 +158,8 @@ Kumulatif "kurang dari" menjawab: "berapa karyawan berpendapatan di bawah 1.400,
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Visualisasi Data Kategorik
-## Diagram Batang (Bar Chart)
+## Visualisasi Data Kategorik
+### Diagram Batang (Bar Chart)
 Diagram batang menampilkan frekuensi tiap kategori sebagai batang **terpisah** (ada celah antarbatang, karena kategori tidak bersambung).
 
 ```{r}
@@ -176,7 +178,7 @@ xlab = "Persentase Transaksi (%)", main = "Komposisi Metode Pembayaran")
 par(mar = c(5, 4, 4, 2) + 0.1)
 ```
 
-## Diagram Batang Berkelompok dan Bertumpuk
+### Diagram Batang Berkelompok dan Bertumpuk
 
 ```{r, fig.width=10, fig.height=4.5}
 warna_waktu <- c("#fdd49e", "#fc8d59", "#b30000")
@@ -191,7 +193,7 @@ par(mfrow = c(1, 1))
 
 Diagram **berkelompok** baik untuk membandingkan frekuensi absolut; diagram **bertumpuk 100%** baik untuk membandingkan **komposisi** antarkategori.
 
-## Diagram Pareto
+### Diagram Pareto
 Diagram Pareto adalah diagram batang yang diurutkan dari frekuensi terbesar, ditambah garis **persentase kumulatif**. Ia dipakai untuk menemukan "sedikit penyebab yang menyumbang sebagian besar masalah" (prinsip 80/20), misalnya jenis keluhan pelanggan.
 
 ```{r}
@@ -211,7 +213,7 @@ round(kum_persen, 1)
 
 Dua jenis keluhan teratas sudah menyumbang `r round(kum_persen[2], 1)`% dari seluruh keluhan -- prioritas perbaikan yang jelas.
 
-## Diagram Lingkaran (Pie Chart)
+### Diagram Lingkaran (Pie Chart)
 Diagram lingkaran menunjukkan **bagian dari keseluruhan** (total harus 100%).
 
 ```{r}
@@ -232,8 +234,8 @@ par(mfrow = c(1, 1))
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Visualisasi Data Numerik
-## Histogram
+## Visualisasi Data Numerik
+### Histogram
 Histogram menampilkan distribusi data numerik yang **dikelompokkan**. Berbeda dengan diagram batang, batang histogram **saling menempel** karena kelasnya bersambung (sumbu-x adalah skala numerik).
 
 ```{r}
@@ -250,7 +252,7 @@ axis(1, at = batas_nyata_u)
 | Celah antarbatang | Ada | Tidak ada |
 | Lebar batang | Tidak bermakna | Mewakili lebar kelas |
 
-## Histogram dari Data Terkelompok
+### Histogram dari Data Terkelompok
 Jika hanya tabel yang tersedia, histogram digambar dari batas nyata dan frekuensinya:
 
 ```{r}
@@ -264,7 +266,7 @@ text((L_p + U_p) / 2, f_p, labels = f_p, pos = 3)
 
 Distribusi pendapatan **menjulur ke kanan**: puncak di kelas 1201–1400, dengan ekor panjang ke arah pendapatan tinggi.
 
-## Poligon Frekuensi
+### Poligon Frekuensi
 Poligon frekuensi menghubungkan **titik tengah** puncak tiap kelas dengan garis. Ditambahkan satu kelas kosong di kedua ujung agar poligon "menapak" di sumbu-x. Poligon berguna untuk **membandingkan** beberapa distribusi dalam satu grafik.
 
 ```{r}
@@ -278,7 +280,7 @@ ylab = "Frekuensi")
 lines(x_pol, y_pol, type = "b", pch = 16, col = "firebrick", lwd = 2)
 ```
 
-## Ogive (Kurva Frekuensi Kumulatif)
+### Ogive (Kurva Frekuensi Kumulatif)
 Ogive memplot **frekuensi kumulatif** terhadap **batas nyata atas** tiap kelas (dimulai dari batas nyata bawah kelas pertama dengan kumulatif 0). Ogive memudahkan menjawab "berapa persen data di bawah nilai tertentu?" dan menaksir median secara grafis.
 
 ```{r}
@@ -297,7 +299,7 @@ text(median_grafis, 8, labels = paste0("~", round(median_grafis)), pos = 4, col 
 
 Garis 50% memotong ogive di sekitar **`r round(median_grafis)` USD** -- inilah taksiran median secara grafis. Pada Pertemuan 5 kita akan menghitung median data terkelompok secara aljabar dan mendapatkan angka yang sama.
 
-## Diagram Batang-Daun (Stem-and-Leaf)
+### Diagram Batang-Daun (Stem-and-Leaf)
 Diagram batang-daun memecah setiap nilai menjadi **batang** (digit depan) dan **daun** (digit terakhir). Kelebihannya: bentuk distribusi terlihat seperti histogram, tetapi **nilai asli tetap terbaca**. Cocok untuk data berukuran kecil–sedang.
 
 ```{r}
@@ -312,7 +314,7 @@ stem(nilai_ujian, scale = 0.5)
 
 Versi satu baris per puluhan lebih ringkas, tetapi bentuk distribusinya menjadi kurang terlihat -- mirip histogram dengan kelas yang terlalu lebar.
 
-## Memilih Grafik yang Tepat
+### Memilih Grafik yang Tepat
 
 | Tujuan / Jenis Data | Grafik yang disarankan |
 |---|---|
@@ -327,8 +329,8 @@ Versi satu baris per puluhan lebih ringkas, tetapi bentuk distribusinya menjadi 
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Prinsip Visualisasi yang Jujur
-## Prinsip 1 -- Skala: Jangan Memotong Sumbu Diagram Batang
+## Prinsip Visualisasi yang Jujur
+### Prinsip 1 -- Skala: Jangan Memotong Sumbu Diagram Batang
 Panjang batang harus sebanding dengan nilainya. Jika sumbu-y tidak dimulai dari nol, perbedaan kecil tampak raksasa.
 
 ```{r, fig.width=9, fig.height=4.5}
@@ -344,7 +346,7 @@ par(mfrow = c(1, 1))
 
 Grafik kiri membuat Aplikasi B tampak "tiga kali" lebih besar, padahal selisihnya hanya 2 poin persentase. **Diagram garis** untuk tren boleh tidak dimulai dari nol (yang dibaca adalah perubahan), tetapi **diagram batang wajib dimulai dari nol**.
 
-## Prinsip 2 -- Label: Grafik Harus Dapat Berdiri Sendiri
+### Prinsip 2 -- Label: Grafik Harus Dapat Berdiri Sendiri
 Setiap grafik minimal memuat: **judul** yang informatif, **label sumbu beserta satuan**, **legenda** bila ada lebih dari satu kelompok, serta **sumber data dan** $n$.
 
 ```{r, fig.width=9, fig.height=4.5}
@@ -356,7 +358,7 @@ xlab = "Nilai Ujian (skala 0-100)", ylab = "Jumlah Mahasiswa")
 par(mfrow = c(1, 1))
 ```
 
-## Prinsip 3 -- Bin: Lebar Kelas Mengubah Cerita
+### Prinsip 3 -- Bin: Lebar Kelas Mengubah Cerita
 Bentuk histogram sangat bergantung pada banyak kelas (*bin*). Terlalu sedikit kelas menyembunyikan pola; terlalu banyak kelas membuat grafik "bergerigi" oleh kebetulan.
 
 ```{r, fig.width=11, fig.height=4}
@@ -380,7 +382,7 @@ c(Sturges = nclass.Sturges(waktu_layanan), Scott = nclass.scott(waktu_layanan),
 Freedman_Diaconis = nclass.FD(waktu_layanan))
 ```
 
-## Prinsip 4 -- Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan
+### Prinsip 4 -- Interpretasi: Ceritakan Bentuk, Pusat, Sebaran, dan Keanehan
 Saat membaca histogram, biasakan menjawab empat hal:
 
 | Aspek | Pertanyaan | Contoh untuk nilai ujian |
@@ -392,7 +394,7 @@ Saat membaca histogram, biasakan menjawab empat hal:
 
 Ukuran pusat dan sebaran secara numerik dibahas pada Pertemuan 5; bentuk distribusi dan outlier secara formal pada Pertemuan 6.
 
-## Grafik Menyesatkan Lainnya
+### Grafik Menyesatkan Lainnya
 
 | Praktik menyesatkan | Mengapa menyesatkan | Perbaikan |
 |---|---|---|
@@ -404,7 +406,7 @@ Ukuran pusat dan sebaran secara numerik dibahas pada Pertemuan 5; bentuk distrib
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Studi Kasus Komprehensif: Waktu Pengiriman Paket
+## Studi Kasus Komprehensif: Waktu Pengiriman Paket
 **Konteks:** Sebuah layanan logistik mencatat waktu pengiriman (jam, dari pemesanan hingga diterima) untuk 80 paket di wilayah Bekasi. Manajer meminta laporan distribusi waktu pengiriman beserta komposisi layanan yang dipakai.
 
 ```{r}
@@ -416,7 +418,7 @@ jam_kirim <- pmax(jam_kirim, 2)
 summary(jam_kirim)
 ```
 
-## Langkah 1: Komposisi Layanan
+### Langkah 1: Komposisi Layanan
 
 ```{r}
 f_layanan <- table(factor(layanan, levels = c("Same Day", "Ekspres", "Reguler")))
@@ -430,7 +432,7 @@ barplot(f_layanan, col = c("#55A868", "#DD8452", "#4C72B0"), border = NA,
 ylab = "Jumlah Paket", main = "Jumlah Paket per Jenis Layanan")
 ```
 
-## Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman
+### Langkah 2: Tabel Distribusi Frekuensi Waktu Pengiriman
 
 ```{r}
 n_kirim <- length(jam_kirim)
@@ -458,7 +460,7 @@ sum(f_kirim) == n_kirim # pastikan semua data tertampung
 
 Karena data kontinu dengan satu desimal, kita memakai interval setengah terbuka `[a, b)` (`right = FALSE`), sehingga nilai yang tepat berada di batas masuk ke kelas di atasnya.
 
-## Langkah 3: Histogram dan Ogive
+### Langkah 3: Histogram dan Ogive
 
 ```{r, fig.width=10, fig.height=4.5}
 par(mfrow = c(1, 2))
@@ -471,7 +473,7 @@ abline(h = c(50, 90), lty = 2, col = "grey50")
 par(mfrow = c(1, 1))
 ```
 
-## Langkah 4: Histogram per Layanan
+### Langkah 4: Histogram per Layanan
 
 ```{r, fig.width=11, fig.height=4}
 par(mfrow = c(1, 3))
@@ -483,7 +485,7 @@ main = lay, xlab = "Waktu pengiriman (jam)", ylab = "Jumlah Paket")
 par(mfrow = c(1, 1))
 ```
 
-## Pertanyaan Diskusi dan Jawaban
+### Pertanyaan Diskusi dan Jawaban
 **1. Bagaimana bentuk distribusi waktu pengiriman secara keseluruhan?**
 
 Distribusinya **tidak satu puncak**: ada kelompok paket yang tiba dalam hitungan jam, kelompok sekitar satu hari, dan kelompok terbesar sekitar dua hari. Histogram per layanan menjelaskan penyebabnya -- data sebenarnya campuran tiga layanan dengan waktu yang sangat berbeda.
@@ -502,8 +504,8 @@ Diagram batang komposisi layanan (kategorik) dan histogram per layanan (numerik)
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Latihan Mandiri
-## Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit
+## Latihan Mandiri
+### Latihan Utama (Exercise 2.14): Kepemilikan Kartu Kredit
 **Konteks:** Sebuah sampel acak dari 80 orang dewasa ditanya mengenai jumlah kartu kredit yang mereka miliki. Hasilnya disajikan dalam tabel berikut (data ini dilanjutkan pada Pertemuan 5).
 
 ```{r}
@@ -512,7 +514,7 @@ frekuensi_kk <- c(18, 26, 22, 14)
 n_kk <- sum(frekuensi_kk)
 ```
 
-### Tugas 1: Lengkapi tabel dengan frekuensi relatif, persentase, dan frekuensi kumulatif
+#### Tugas 1: Lengkapi tabel dengan frekuensi relatif, persentase, dan frekuensi kumulatif
 
 ```{r}
 tabel_kk <- data.frame(
@@ -526,7 +528,7 @@ Persen_Kum = cumsum(frekuensi_kk) / n_kk * 100
 knitr::kable(tabel_kk, digits = 3, caption = "Distribusi Kepemilikan Kartu Kredit (n = 80)")
 ```
 
-### Tugas 2: Berapa persen responden yang memiliki 8 kartu atau lebih?
+#### Tugas 2: Berapa persen responden yang memiliki 8 kartu atau lebih?
 
 ```{r}
 sum(frekuensi_kk[3:4]) / n_kk * 100
@@ -534,7 +536,7 @@ sum(frekuensi_kk[3:4]) / n_kk * 100
 
 **Jawaban:** 45% responden (22 + 14 = 36 orang) memiliki 8 kartu kredit atau lebih.
 
-### Tugas 3: Tentukan batas nyata dan titik tengah kelas
+#### Tugas 3: Tentukan batas nyata dan titik tengah kelas
 
 ```{r}
 batas_nyata_kk <- c(-0.5, 3.5, 7.5, 11.5, 15.5) # kelas terbuka diasumsikan lebar 4
@@ -545,7 +547,7 @@ Titik_Tengah = (head(batas_nyata_kk, -1) + tail(batas_nyata_kk, -1)) / 2)
 
 **Catatan:** kelas "12 or more" adalah **kelas terbuka** (tidak punya batas atas). Untuk menggambar histogram atau menghitung titik tengah, kita harus berasumsi -- di sini lebarnya disamakan dengan kelas lain (12–15). Asumsi ini **wajib dinyatakan**.
 
-### Tugas 4: Gambar histogram dan poligon frekuensinya
+#### Tugas 4: Gambar histogram dan poligon frekuensinya
 
 ```{r}
 m_kk <- (head(batas_nyata_kk, -1) + tail(batas_nyata_kk, -1)) / 2
@@ -559,15 +561,15 @@ axis(1, at = batas_nyata_kk)
 text(m_kk, frekuensi_kk, frekuensi_kk, pos = 3)
 ```
 
-### Tugas 5: Interpretasikan distribusinya
+#### Tugas 5: Interpretasikan distribusinya
 **Jawaban:** Kelas dengan frekuensi terbanyak adalah **4 to 7** (26 orang, 32,5%). Frekuensi naik dari kelas pertama ke kelas kedua lalu turun perlahan, sehingga distribusinya **sedikit menjulur ke kanan**. Sebanyak 44 responden (55%, dari frekuensi kumulatif kelas kedua) memiliki 7 kartu atau kurang. Ukuran pusat dan sebarannya dihitung pada Pertemuan 5.
 
-### Tugas 6 (Tantangan): Diagram batang atau histogram?
+#### Tugas 6 (Tantangan): Diagram batang atau histogram?
 Jumlah kartu kredit adalah data **diskrit**. Apakah lebih tepat digambarkan dengan diagram batang atau histogram? Jelaskan.
 
 **Jawaban:** Jika data mentah tersedia dengan sedikit nilai berbeda (misalnya 0–15), diagram batang per nilai paling informatif. Namun karena data sudah dikelompokkan menjadi interval bersambung (0–3, 4–7, ...), histogram dengan batas nyata tepat dipakai -- batasnya menempel karena setiap bilangan bulat pasti masuk satu kelas. Yang penting: kelas terbuka "12 or more" diberi catatan asumsi.
 
-## Latihan Tambahan (Self-Check)
+### Latihan Tambahan (Self-Check)
 Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode.
 
 **Soal A.** Data usia (tahun) 25 peserta pelatihan: 23, 31, 27, 45, 38, 29, 34, 41, 26, 36, 52, 30, 28, 33, 47, 39, 24, 35, 43, 32, 37, 29, 48, 31, 40. Susun tabel distribusi frekuensi dengan Aturan Sturges, lengkap dengan batas nyata, titik tengah, frekuensi relatif, dan kumulatif.
@@ -610,7 +612,7 @@ cumsum(f_p) # 9, 31, 70, ... -> posisi median ke-50 berada di kelas 1201-1400
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Kesalahan Umum dalam Penyajian dan Visualisasi Data
+## Kesalahan Umum dalam Penyajian dan Visualisasi Data
 1. Memakai **histogram untuk data kategorik** (atau diagram batang dengan batang menempel untuk kategori) -- pilih grafik sesuai jenis data.
 2. **Memotong sumbu-y** diagram batang -- perbedaan kecil tampak sangat besar.
 3. Diagram lingkaran dengan **terlalu banyak irisan** atau total yang bukan 100%.
@@ -626,7 +628,7 @@ cumsum(f_p) # 9, 31, 70, ... -> posisi median ke-50 berada di kelas 1201-1400
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Cheat Sheet: Fungsi R yang Digunakan
+## Cheat Sheet: Fungsi R yang Digunakan
 
 | Fungsi | Kegunaan |
 |---|---|
@@ -653,7 +655,7 @@ cumsum(f_p) # 9, 31, 70, ... -> posisi median ke-50 berada di kelas 1201-1400
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Glosarium Istilah
+## Glosarium Istilah
 
 | Istilah | Definisi Singkat |
 |---|---|
@@ -678,7 +680,7 @@ cumsum(f_p) # 9, 31, 70, ... -> posisi median ke-50 berada di kelas 1201-1400
 
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 
-# Rangkuman dan Kesimpulan
+## Rangkuman dan Kesimpulan
 1. **Tabel distribusi frekuensi** meringkas data menjadi frekuensi, frekuensi relatif, dan frekuensi kumulatif. **Tabel silang** meringkas hubungan dua variabel kategorik.
 2. Data numerik dikelompokkan dengan **Aturan Sturges**, lebar kelas yang **dibulatkan ke atas**, **batas nyata** agar kelas bersambung, dan **titik tengah** sebagai wakil kelas.
 3. **Jenis data menentukan grafik**: diagram batang/lingkaran/Pareto untuk kategorik; histogram, poligon, ogive, dan stem-and-leaf untuk numerik.
@@ -687,7 +689,7 @@ cumsum(f_p) # 9, 31, 70, ... -> posisi median ke-50 berada di kelas 1201-1400
 
 **Jembatan ke sesi berikutnya:** Pertemuan 5 mengubah kesan visual "pusat di sekitar 80" dan "sebaran dari 63 sampai 95" menjadi angka yang tepat -- mean, median, modus, rentang, varians, simpangan baku, dan koefisien variasi -- termasuk perhitungannya dari tabel data terkelompok yang telah kita susun hari ini.
 
-# Referensi Pendukung
+## Referensi Pendukung
 Materi ini merangkum topik penyajian data dan visualisasi (*organizing and visualizing data*) yang umum dibahas pada bab awal buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:
 
 - Modul/slide perkuliahan "Introduction to Statistics (SDT-1102)" -- Pertemuan 4: Penyajian dan Visualisasi Data.

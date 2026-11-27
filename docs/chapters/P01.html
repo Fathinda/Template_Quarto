@@ -8,7 +8,7 @@
 
 <meta name="description" content="Deskripsi singkat tentang buku">
 
-<title>1&nbsp; Mengenal R Secara Singkat – Quarto Template</title>
+<title>1&nbsp; Konsep Dasar Statistika dan Pengenalan R – Quarto Template</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -161,7 +161,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alihkan bilah sisi" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="Jalur"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/P01.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></a></li></ol></nav>
         <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Mencari" onclick="window.quartoOpenSearch();">
@@ -200,31 +200,31 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Metode Pengumpulan Data, Sampling, dan Bias</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data yang Dipakai</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Penyajian dan Visualisasi Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../chapters/P05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Prasyarat dan Notasi</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Ukuran Pemusatan dan Penyebaran Data</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -255,57 +255,52 @@ window.Quarto = {
     <h2 id="toc-title">Daftar Isi</h2>
    
   <ul>
-  <li><a href="#vektor-kumpulan-nilai-sejenis" id="toc-vektor-kumpulan-nilai-sejenis" class="nav-link active" data-scroll-target="#vektor-kumpulan-nilai-sejenis"><span class="header-section-number">1.1</span> Vektor: Kumpulan Nilai Sejenis</a></li>
-  <li><a href="#data-frame-tabel-data" id="toc-data-frame-tabel-data" class="nav-link" data-scroll-target="#data-frame-tabel-data"><span class="header-section-number">1.2</span> Data Frame: Tabel Data</a></li>
-  <li><a href="#fundamental-statistika" id="toc-fundamental-statistika" class="nav-link" data-scroll-target="#fundamental-statistika"><span class="header-section-number">2</span> Fundamental Statistika</a>
+  <li><a href="#mengenal-r-secara-singkat" id="toc-mengenal-r-secara-singkat" class="nav-link active" data-scroll-target="#mengenal-r-secara-singkat"><span class="header-section-number">1.1</span> Mengenal R Secara Singkat</a>
   <ul class="collapse">
-  <li><a href="#statistika-vs-statistik" id="toc-statistika-vs-statistik" class="nav-link" data-scroll-target="#statistika-vs-statistik"><span class="header-section-number">2.1</span> Statistika vs Statistik</a></li>
-  <li><a href="#siklus-kerja-statistika" id="toc-siklus-kerja-statistika" class="nav-link" data-scroll-target="#siklus-kerja-statistika"><span class="header-section-number">2.2</span> Siklus Kerja Statistika</a></li>
-  <li><a href="#statistika-deskriptif-vs-inferensial" id="toc-statistika-deskriptif-vs-inferensial" class="nav-link" data-scroll-target="#statistika-deskriptif-vs-inferensial"><span class="header-section-number">2.3</span> Statistika Deskriptif vs Inferensial</a></li>
+  <li><a href="#vektor-kumpulan-nilai-sejenis" id="toc-vektor-kumpulan-nilai-sejenis" class="nav-link" data-scroll-target="#vektor-kumpulan-nilai-sejenis"><span class="header-section-number">1.1.1</span> Vektor: Kumpulan Nilai Sejenis</a></li>
+  <li><a href="#data-frame-tabel-data" id="toc-data-frame-tabel-data" class="nav-link" data-scroll-target="#data-frame-tabel-data"><span class="header-section-number">1.1.2</span> Data Frame: Tabel Data</a></li>
   </ul></li>
-  <li><a href="#populasi-dan-sampel" id="toc-populasi-dan-sampel" class="nav-link" data-scroll-target="#populasi-dan-sampel"><span class="header-section-number">3</span> Populasi dan Sampel</a>
+  <li><a href="#fundamental-statistika" id="toc-fundamental-statistika" class="nav-link" data-scroll-target="#fundamental-statistika"><span class="header-section-number">1.2</span> Fundamental Statistika</a>
   <ul class="collapse">
-  <li><a href="#definisi-kunci" id="toc-definisi-kunci" class="nav-link" data-scroll-target="#definisi-kunci"><span class="header-section-number">3.1</span> Definisi Kunci</a></li>
-  <li><a href="#mengapa-tidak-mengamati-seluruh-populasi" id="toc-mengapa-tidak-mengamati-seluruh-populasi" class="nav-link" data-scroll-target="#mengapa-tidak-mengamati-seluruh-populasi"><span class="header-section-number">3.2</span> Mengapa Tidak Mengamati Seluruh Populasi?</a></li>
-  <li><a href="#simulasi-populasi-yang-pura-pura-kita-ketahui" id="toc-simulasi-populasi-yang-pura-pura-kita-ketahui" class="nav-link" data-scroll-target="#simulasi-populasi-yang-pura-pura-kita-ketahui"><span class="header-section-number">3.3</span> Simulasi: Populasi yang (Pura-pura) Kita Ketahui</a></li>
-  <li><a href="#mengambil-sampel-dan-menghitung-statistik" id="toc-mengambil-sampel-dan-menghitung-statistik" class="nav-link" data-scroll-target="#mengambil-sampel-dan-menghitung-statistik"><span class="header-section-number">3.4</span> Mengambil Sampel dan Menghitung Statistik</a></li>
-  <li><a href="#unit-observasi-bisa-berubah" id="toc-unit-observasi-bisa-berubah" class="nav-link" data-scroll-target="#unit-observasi-bisa-berubah"><span class="header-section-number">3.5</span> Unit Observasi Bisa Berubah</a></li>
+  <li><a href="#statistika-vs-statistik" id="toc-statistika-vs-statistik" class="nav-link" data-scroll-target="#statistika-vs-statistik"><span class="header-section-number">1.2.1</span> Statistika vs Statistik</a></li>
+  <li><a href="#siklus-kerja-statistika" id="toc-siklus-kerja-statistika" class="nav-link" data-scroll-target="#siklus-kerja-statistika"><span class="header-section-number">1.2.2</span> Siklus Kerja Statistika</a></li>
+  <li><a href="#statistika-deskriptif-vs-inferensial" id="toc-statistika-deskriptif-vs-inferensial" class="nav-link" data-scroll-target="#statistika-deskriptif-vs-inferensial"><span class="header-section-number">1.2.3</span> Statistika Deskriptif vs Inferensial</a></li>
   </ul></li>
-  <li><a href="#variabilitas-sampling-statistik-itu-berubah-ubah" id="toc-variabilitas-sampling-statistik-itu-berubah-ubah" class="nav-link" data-scroll-target="#variabilitas-sampling-statistik-itu-berubah-ubah"><span class="header-section-number">4</span> Variabilitas Sampling: Statistik Itu Berubah-ubah</a>
+  <li><a href="#populasi-dan-sampel" id="toc-populasi-dan-sampel" class="nav-link" data-scroll-target="#populasi-dan-sampel"><span class="header-section-number">1.3</span> Populasi dan Sampel</a>
   <ul class="collapse">
-  <li><a href="#sekilas-inferensi" id="toc-sekilas-inferensi" class="nav-link" data-scroll-target="#sekilas-inferensi"><span class="header-section-number">4.1</span> Sekilas Inferensi</a></li>
+  <li><a href="#definisi-kunci" id="toc-definisi-kunci" class="nav-link" data-scroll-target="#definisi-kunci"><span class="header-section-number">1.3.1</span> Definisi Kunci</a></li>
+  <li><a href="#mengapa-tidak-mengamati-seluruh-populasi" id="toc-mengapa-tidak-mengamati-seluruh-populasi" class="nav-link" data-scroll-target="#mengapa-tidak-mengamati-seluruh-populasi"><span class="header-section-number">1.3.2</span> Mengapa Tidak Mengamati Seluruh Populasi?</a></li>
+  <li><a href="#simulasi-populasi-yang-pura-pura-kita-ketahui" id="toc-simulasi-populasi-yang-pura-pura-kita-ketahui" class="nav-link" data-scroll-target="#simulasi-populasi-yang-pura-pura-kita-ketahui"><span class="header-section-number">1.3.3</span> Simulasi: Populasi yang (Pura-pura) Kita Ketahui</a></li>
+  <li><a href="#mengambil-sampel-dan-menghitung-statistik" id="toc-mengambil-sampel-dan-menghitung-statistik" class="nav-link" data-scroll-target="#mengambil-sampel-dan-menghitung-statistik"><span class="header-section-number">1.3.4</span> Mengambil Sampel dan Menghitung Statistik</a></li>
+  <li><a href="#unit-observasi-bisa-berubah" id="toc-unit-observasi-bisa-berubah" class="nav-link" data-scroll-target="#unit-observasi-bisa-berubah"><span class="header-section-number">1.3.5</span> Unit Observasi Bisa Berubah</a></li>
   </ul></li>
-  <li><a href="#variabel" id="toc-variabel" class="nav-link" data-scroll-target="#variabel"><span class="header-section-number">5</span> Variabel</a>
+  <li><a href="#variabilitas-sampling-statistik-itu-berubah-ubah" id="toc-variabilitas-sampling-statistik-itu-berubah-ubah" class="nav-link" data-scroll-target="#variabilitas-sampling-statistik-itu-berubah-ubah"><span class="header-section-number">1.4</span> Variabilitas Sampling: Statistik Itu Berubah-ubah</a>
   <ul class="collapse">
-  <li><a href="#variabel-numerik-vs-kategorik" id="toc-variabel-numerik-vs-kategorik" class="nav-link" data-scroll-target="#variabel-numerik-vs-kategorik"><span class="header-section-number">5.1</span> Variabel Numerik vs Kategorik</a></li>
-  <li><a href="#variabel-independen-vs-dependen" id="toc-variabel-independen-vs-dependen" class="nav-link" data-scroll-target="#variabel-independen-vs-dependen"><span class="header-section-number">5.2</span> Variabel Independen vs Dependen</a></li>
+  <li><a href="#sekilas-inferensi" id="toc-sekilas-inferensi" class="nav-link" data-scroll-target="#sekilas-inferensi"><span class="header-section-number">1.4.1</span> Sekilas Inferensi</a></li>
   </ul></li>
-  <li><a href="#kerangka-membaca-sebuah-studi" id="toc-kerangka-membaca-sebuah-studi" class="nav-link" data-scroll-target="#kerangka-membaca-sebuah-studi"><span class="header-section-number">6</span> Kerangka Membaca Sebuah Studi</a></li>
-  <li><a href="#studi-kasus-komprehensif-survei-pemakaian-qris" id="toc-studi-kasus-komprehensif-survei-pemakaian-qris" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-survei-pemakaian-qris"><span class="header-section-number">7</span> Studi Kasus Komprehensif: Survei Pemakaian QRIS</a>
+  <li><a href="#variabel" id="toc-variabel" class="nav-link" data-scroll-target="#variabel"><span class="header-section-number">1.5</span> Variabel</a>
   <ul class="collapse">
-  <li><a href="#langkah-1-identifikasi-komponen-studi" id="toc-langkah-1-identifikasi-komponen-studi" class="nav-link" data-scroll-target="#langkah-1-identifikasi-komponen-studi"><span class="header-section-number">7.1</span> Langkah 1: Identifikasi Komponen Studi</a></li>
-  <li><a href="#langkah-2-menghitung-statistik-dari-sampel" id="toc-langkah-2-menghitung-statistik-dari-sampel" class="nav-link" data-scroll-target="#langkah-2-menghitung-statistik-dari-sampel"><span class="header-section-number">7.2</span> Langkah 2: Menghitung Statistik dari Sampel</a></li>
-  <li><a href="#langkah-3-variabel-independen-dan-dependen" id="toc-langkah-3-variabel-independen-dan-dependen" class="nav-link" data-scroll-target="#langkah-3-variabel-independen-dan-dependen"><span class="header-section-number">7.3</span> Langkah 3: Variabel Independen dan Dependen</a></li>
-  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">7.4</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  <li><a href="#variabel-numerik-vs-kategorik" id="toc-variabel-numerik-vs-kategorik" class="nav-link" data-scroll-target="#variabel-numerik-vs-kategorik"><span class="header-section-number">1.5.1</span> Variabel Numerik vs Kategorik</a></li>
+  <li><a href="#variabel-independen-vs-dependen" id="toc-variabel-independen-vs-dependen" class="nav-link" data-scroll-target="#variabel-independen-vs-dependen"><span class="header-section-number">1.5.2</span> Variabel Independen vs Dependen</a></li>
   </ul></li>
-  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">8</span> Latihan Mandiri</a>
+  <li><a href="#kerangka-membaca-sebuah-studi" id="toc-kerangka-membaca-sebuah-studi" class="nav-link" data-scroll-target="#kerangka-membaca-sebuah-studi"><span class="header-section-number">1.6</span> Kerangka Membaca Sebuah Studi</a></li>
+  <li><a href="#studi-kasus-komprehensif-survei-pemakaian-qris" id="toc-studi-kasus-komprehensif-survei-pemakaian-qris" class="nav-link" data-scroll-target="#studi-kasus-komprehensif-survei-pemakaian-qris"><span class="header-section-number">1.7</span> Studi Kasus Komprehensif: Survei Pemakaian QRIS</a>
   <ul class="collapse">
-  <li><a href="#latihan-utama-survei-kepuasan-aplikasi-kampus" id="toc-latihan-utama-survei-kepuasan-aplikasi-kampus" class="nav-link" data-scroll-target="#latihan-utama-survei-kepuasan-aplikasi-kampus"><span class="header-section-number">8.1</span> Latihan Utama: Survei Kepuasan Aplikasi Kampus</a>
+  <li><a href="#langkah-1-identifikasi-komponen-studi" id="toc-langkah-1-identifikasi-komponen-studi" class="nav-link" data-scroll-target="#langkah-1-identifikasi-komponen-studi"><span class="header-section-number">1.7.1</span> Langkah 1: Identifikasi Komponen Studi</a></li>
+  <li><a href="#langkah-2-menghitung-statistik-dari-sampel" id="toc-langkah-2-menghitung-statistik-dari-sampel" class="nav-link" data-scroll-target="#langkah-2-menghitung-statistik-dari-sampel"><span class="header-section-number">1.7.2</span> Langkah 2: Menghitung Statistik dari Sampel</a></li>
+  <li><a href="#langkah-3-variabel-independen-dan-dependen" id="toc-langkah-3-variabel-independen-dan-dependen" class="nav-link" data-scroll-target="#langkah-3-variabel-independen-dan-dependen"><span class="header-section-number">1.7.3</span> Langkah 3: Variabel Independen dan Dependen</a></li>
+  <li><a href="#pertanyaan-diskusi-dan-jawaban" id="toc-pertanyaan-diskusi-dan-jawaban" class="nav-link" data-scroll-target="#pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">1.7.4</span> Pertanyaan Diskusi dan Jawaban</a></li>
+  </ul></li>
+  <li><a href="#latihan-mandiri" id="toc-latihan-mandiri" class="nav-link" data-scroll-target="#latihan-mandiri"><span class="header-section-number">1.8</span> Latihan Mandiri</a>
   <ul class="collapse">
-  <li><a href="#tugas-1-identifikasi-komponen-studi" id="toc-tugas-1-identifikasi-komponen-studi" class="nav-link" data-scroll-target="#tugas-1-identifikasi-komponen-studi"><span class="header-section-number">8.1.1</span> Tugas 1: Identifikasi komponen studi</a></li>
-  <li><a href="#tugas-2-klasifikasikan-setiap-variabel" id="toc-tugas-2-klasifikasikan-setiap-variabel" class="nav-link" data-scroll-target="#tugas-2-klasifikasikan-setiap-variabel"><span class="header-section-number">8.1.2</span> Tugas 2: Klasifikasikan setiap variabel</a></li>
-  <li><a href="#tugas-3-hitung-statistik-sampel" id="toc-tugas-3-hitung-statistik-sampel" class="nav-link" data-scroll-target="#tugas-3-hitung-statistik-sampel"><span class="header-section-number">8.1.3</span> Tugas 3: Hitung statistik sampel</a></li>
-  <li><a href="#tugas-4-tentukan-variabel-independen-dan-dependen" id="toc-tugas-4-tentukan-variabel-independen-dan-dependen" class="nav-link" data-scroll-target="#tugas-4-tentukan-variabel-independen-dan-dependen"><span class="header-section-number">8.1.4</span> Tugas 4: Tentukan variabel independen dan dependen</a></li>
-  <li><a href="#tugas-5-deskriptif-atau-inferensial" id="toc-tugas-5-deskriptif-atau-inferensial" class="nav-link" data-scroll-target="#tugas-5-deskriptif-atau-inferensial"><span class="header-section-number">8.1.5</span> Tugas 5: Deskriptif atau inferensial?</a></li>
-  <li><a href="#tugas-6-tantangan-variabilitas-sampling" id="toc-tugas-6-tantangan-variabilitas-sampling" class="nav-link" data-scroll-target="#tugas-6-tantangan-variabilitas-sampling"><span class="header-section-number">8.1.6</span> Tugas 6 (Tantangan): Variabilitas Sampling</a></li>
+  <li><a href="#latihan-utama-survei-kepuasan-aplikasi-kampus" id="toc-latihan-utama-survei-kepuasan-aplikasi-kampus" class="nav-link" data-scroll-target="#latihan-utama-survei-kepuasan-aplikasi-kampus"><span class="header-section-number">1.8.1</span> Latihan Utama: Survei Kepuasan Aplikasi Kampus</a></li>
+  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">1.8.2</span> Latihan Tambahan (Self-Check)</a></li>
   </ul></li>
-  <li><a href="#latihan-tambahan-self-check" id="toc-latihan-tambahan-self-check" class="nav-link" data-scroll-target="#latihan-tambahan-self-check"><span class="header-section-number">8.2</span> Latihan Tambahan (Self-Check)</a></li>
-  </ul></li>
-  <li><a href="#kesalahan-umum-pada-konsep-dasar" id="toc-kesalahan-umum-pada-konsep-dasar" class="nav-link" data-scroll-target="#kesalahan-umum-pada-konsep-dasar"><span class="header-section-number">9</span> Kesalahan Umum pada Konsep Dasar</a></li>
-  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">10</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
-  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">11</span> Glosarium Istilah</a></li>
-  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">12</span> Rangkuman dan Kesimpulan</a></li>
-  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">13</span> Referensi Pendukung</a></li>
+  <li><a href="#kesalahan-umum-pada-konsep-dasar" id="toc-kesalahan-umum-pada-konsep-dasar" class="nav-link" data-scroll-target="#kesalahan-umum-pada-konsep-dasar"><span class="header-section-number">1.9</span> Kesalahan Umum pada Konsep Dasar</a></li>
+  <li><a href="#cheat-sheet-fungsi-r-yang-digunakan" id="toc-cheat-sheet-fungsi-r-yang-digunakan" class="nav-link" data-scroll-target="#cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">1.10</span> Cheat Sheet: Fungsi R yang Digunakan</a></li>
+  <li><a href="#glosarium-istilah" id="toc-glosarium-istilah" class="nav-link" data-scroll-target="#glosarium-istilah"><span class="header-section-number">1.11</span> Glosarium Istilah</a></li>
+  <li><a href="#rangkuman-dan-kesimpulan" id="toc-rangkuman-dan-kesimpulan" class="nav-link" data-scroll-target="#rangkuman-dan-kesimpulan"><span class="header-section-number">1.12</span> Rangkuman dan Kesimpulan</a></li>
+  <li><a href="#referensi-pendukung" id="toc-referensi-pendukung" class="nav-link" data-scroll-target="#referensi-pendukung"><span class="header-section-number">1.13</span> Referensi Pendukung</a></li>
   </ul>
 </nav>
     </div>
@@ -314,7 +309,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Mengenal R Secara Singkat</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Konsep Dasar Statistika dan Pengenalan R</span></h1>
 </div>
 
 
@@ -331,9 +326,11 @@ window.Quarto = {
 </header>
 
 
+<section id="mengenal-r-secara-singkat" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="mengenal-r-secara-singkat"><span class="header-section-number">1.1</span> Mengenal R Secara Singkat</h2>
 <p>Sepanjang semester kita memakai R sebagai “kalkulator statistika”. Bagian ini hanya membekali perintah minimal yang dibutuhkan pada pertemuan ini.</p>
-<section id="vektor-kumpulan-nilai-sejenis" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="vektor-kumpulan-nilai-sejenis"><span class="header-section-number">1.1</span> Vektor: Kumpulan Nilai Sejenis</h2>
+<section id="vektor-kumpulan-nilai-sejenis" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="vektor-kumpulan-nilai-sejenis"><span class="header-section-number">1.1.1</span> Vektor: Kumpulan Nilai Sejenis</h3>
 <p>Vektor dibuat dengan fungsi c() (combine). Satu vektor biasanya mewakili satu variabel.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tinggi <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">172</span>, <span class="dv">168</span>, <span class="dv">155</span>, <span class="dv">181</span>)</span>
@@ -370,8 +367,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="data-frame-tabel-data" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="data-frame-tabel-data"><span class="header-section-number">1.2</span> Data Frame: Tabel Data</h2>
+<section id="data-frame-tabel-data" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="data-frame-tabel-data"><span class="header-section-number">1.1.2</span> Data Frame: Tabel Data</h3>
 <p>Data frame adalah tabel: baris = observasi, kolom = variabel. Inilah bentuk data yang paling sering kita jumpai.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mhs_kecil <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
@@ -417,10 +414,11 @@ window.Quarto = {
 </div>
 <p>Fungsi str() akan sering kita pakai untuk “berkenalan” dengan dataset baru: berapa observasinya, apa saja variabelnya, dan apa tipenya.</p>
 </section>
-<section id="fundamental-statistika" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Fundamental Statistika</h1>
-<section id="statistika-vs-statistik" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="statistika-vs-statistik"><span class="header-section-number">2.1</span> Statistika vs Statistik</h2>
+</section>
+<section id="fundamental-statistika" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="fundamental-statistika"><span class="header-section-number">1.2</span> Fundamental Statistika</h2>
+<section id="statistika-vs-statistik" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="statistika-vs-statistik"><span class="header-section-number">1.2.1</span> Statistika vs Statistik</h3>
 Dua kata ini mirip tetapi maknanya berbeda:
 <table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
 <thead>
@@ -475,8 +473,8 @@ Ilmu tentang cara <strong>mengumpulkan, mengolah, menyajikan, menganalisis, dan 
 </div>
 </div>
 </section>
-<section id="siklus-kerja-statistika" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="siklus-kerja-statistika"><span class="header-section-number">2.2</span> Siklus Kerja Statistika</h2>
+<section id="siklus-kerja-statistika" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="siklus-kerja-statistika"><span class="header-section-number">1.2.2</span> Siklus Kerja Statistika</h3>
 Statistika bukan sekadar menghitung rumus. Ia adalah sebuah siklus:
 <table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
 <thead>
@@ -561,8 +559,8 @@ Sepanjang semester
 
 
 </section>
-<section id="statistika-deskriptif-vs-inferensial" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="statistika-deskriptif-vs-inferensial"><span class="header-section-number">2.3</span> Statistika Deskriptif vs Inferensial</h2>
+<section id="statistika-deskriptif-vs-inferensial" class="level3" data-number="1.2.3">
+<h3 data-number="1.2.3" class="anchored" data-anchor-id="statistika-deskriptif-vs-inferensial"><span class="header-section-number">1.2.3</span> Statistika Deskriptif vs Inferensial</h3>
 <table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
 <thead>
 <tr style="border-bottom: 1px solid black; text-align: left;">
@@ -639,10 +637,10 @@ Tidak dinyatakan
 <hr>
 </section>
 </section>
-<section id="populasi-dan-sampel" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Populasi dan Sampel</h1>
-<section id="definisi-kunci" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="definisi-kunci"><span class="header-section-number">3.1</span> Definisi Kunci</h2>
+<section id="populasi-dan-sampel" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="populasi-dan-sampel"><span class="header-section-number">1.3</span> Populasi dan Sampel</h2>
+<section id="definisi-kunci" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="definisi-kunci"><span class="header-section-number">1.3.1</span> Definisi Kunci</h3>
 <table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid #000; border-bottom: 1.5px solid #000; font-family: 'Times New Roman', Times, serif, sans-serif; font-size: 15px; line-height: 1.4;">
 <thead>
 <tr style="border-bottom: 1px solid #000; text-align: left;">
@@ -717,8 +715,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </table>
 <p>Cara mudah mengingat: <strong>P</strong>arameter - <strong>P</strong>opulasi; <strong>S</strong>tatistik - <strong>S</strong>ampel.</p>
 </section>
-<section id="mengapa-tidak-mengamati-seluruh-populasi" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="mengapa-tidak-mengamati-seluruh-populasi"><span class="header-section-number">3.2</span> Mengapa Tidak Mengamati Seluruh Populasi?</h2>
+<section id="mengapa-tidak-mengamati-seluruh-populasi" class="level3" data-number="1.3.2">
+<h3 data-number="1.3.2" class="anchored" data-anchor-id="mengapa-tidak-mengamati-seluruh-populasi"><span class="header-section-number">1.3.2</span> Mengapa Tidak Mengamati Seluruh Populasi?</h3>
 <p>Mengamati seluruh populasi disebut <strong>sensus</strong>. Sensus ideal, tetapi sering tidak mungkin atau tidak efisien karena:</p>
 <ol type="1">
 <li><strong>Biaya dan waktu</strong> – mensurvei 270 juta penduduk Indonesia hanya dilakukan BPS setiap 10 tahun.</li>
@@ -727,8 +725,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <li><strong>Sampel yang dirancang baik sudah cukup akurat</strong> – dan sering lebih teliti karena petugasnya lebih sedikit dan terlatih.</li>
 </ol>
 </section>
-<section id="simulasi-populasi-yang-pura-pura-kita-ketahui" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="simulasi-populasi-yang-pura-pura-kita-ketahui"><span class="header-section-number">3.3</span> Simulasi: Populasi yang (Pura-pura) Kita Ketahui</h2>
+<section id="simulasi-populasi-yang-pura-pura-kita-ketahui" class="level3" data-number="1.3.3">
+<h3 data-number="1.3.3" class="anchored" data-anchor-id="simulasi-populasi-yang-pura-pura-kita-ketahui"><span class="header-section-number">1.3.3</span> Simulasi: Populasi yang (Pura-pura) Kita Ketahui</h3>
 <p>Di dunia nyata parameter populasi <strong>tidak diketahui</strong>. Agar dapat melihat hubungan parameter dan statistik, kita <strong>menyimulasikan</strong> sebuah populasi 5.000 mahasiswa, sehingga – khusus di praktikum ini – kita tahu “kebenarannya”.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
@@ -772,8 +770,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 </div>
 </section>
-<section id="mengambil-sampel-dan-menghitung-statistik" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="mengambil-sampel-dan-menghitung-statistik"><span class="header-section-number">3.4</span> Mengambil Sampel dan Menghitung Statistik</h2>
+<section id="mengambil-sampel-dan-menghitung-statistik" class="level3" data-number="1.3.4">
+<h3 data-number="1.3.4" class="anchored" data-anchor-id="mengambil-sampel-dan-menghitung-statistik"><span class="header-section-number">1.3.4</span> Mengambil Sampel dan Menghitung Statistik</h3>
 <p>Sekarang kita berperan sebagai peneliti yang hanya mampu mensurvei <strong>50 mahasiswa</strong> yang dipilih secara acak.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
@@ -819,8 +817,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 <p>Statistik sampel <strong>dekat</strong> dengan parameter, tetapi <strong>tidak sama persis</strong>. Selisih ini disebut <strong>kesalahan sampling</strong> (<em>sampling error</em>) – bukan karena peneliti ceroboh, melainkan karena kita hanya melihat sebagian populasi.</p>
 </section>
-<section id="unit-observasi-bisa-berubah" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="unit-observasi-bisa-berubah"><span class="header-section-number">3.5</span> Unit Observasi Bisa Berubah</h2>
+<section id="unit-observasi-bisa-berubah" class="level3" data-number="1.3.5">
+<h3 data-number="1.3.5" class="anchored" data-anchor-id="unit-observasi-bisa-berubah"><span class="header-section-number">1.3.5</span> Unit Observasi Bisa Berubah</h3>
 <p>Unit observasi ditentukan oleh <strong>tingkat</strong> di mana data dicatat. Data mahasiswa di atas memiliki unit observasi “satu mahasiswa”. Jika data tersebut diringkas per fakultas, unit observasinya berubah menjadi “satu fakultas”:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>per_fakultas <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(<span class="fu">cbind</span>(ipk, jam_belajar) <span class="sc">~</span> fakultas, <span class="at">data =</span> populasi, <span class="at">FUN =</span> mean)</span>
@@ -876,8 +874,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <hr>
 </section>
 </section>
-<section id="variabilitas-sampling-statistik-itu-berubah-ubah" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Variabilitas Sampling: Statistik Itu Berubah-ubah</h1>
+<section id="variabilitas-sampling-statistik-itu-berubah-ubah" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="variabilitas-sampling-statistik-itu-berubah-ubah"><span class="header-section-number">1.4</span> Variabilitas Sampling: Statistik Itu Berubah-ubah</h2>
 <p>Jika peneliti lain mengambil sampel 50 mahasiswa yang berbeda, apakah ia memperoleh ̄𝑥 yang sama? Mari kita ulangi pengambilan sampel sebanyak 1.000 kali.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
@@ -931,8 +929,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 </div>
 <p>Semakin besar sampel, semakin <strong>sempit</strong> sebaran ̄𝑥 di sekitar 𝜇 – statistik semakin dapat dipercaya. Ide ini akan dibahas secara formal pada Pertemuan 9 (<em>sampling distribution</em> dan <em>Central Limit Theorem</em>).</p>
-<section id="sekilas-inferensi" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="sekilas-inferensi"><span class="header-section-number">4.1</span> Sekilas Inferensi</h2>
+<section id="sekilas-inferensi" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="sekilas-inferensi"><span class="header-section-number">1.4.1</span> Sekilas Inferensi</h3>
 <p>Sebagai pratinjau, statistika inferensial memungkinkan kita menyatakan: “berdasarkan satu sampel ini, <strong>𝜇 kemungkinan besar</strong> berada di antara … dan …”.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sd</span>(sampel<span class="sc">$</span>ipk) <span class="sc">/</span> <span class="fu">sqrt</span>(n)</span>
@@ -955,11 +953,11 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <hr>
 </section>
 </section>
-<section id="variabel" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Variabel</h1>
+<section id="variabel" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="variabel"><span class="header-section-number">1.5</span> Variabel</h2>
 <p><strong>Variabel</strong> adalah karakteristik yang <strong>nilainya bervariasi</strong> antarunit observasi. Dalam data frame, setiap kolom adalah satu variabel.</p>
-<section id="variabel-numerik-vs-kategorik" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="variabel-numerik-vs-kategorik"><span class="header-section-number">5.1</span> Variabel Numerik vs Kategorik</h2>
+<section id="variabel-numerik-vs-kategorik" class="level3" data-number="1.5.1">
+<h3 data-number="1.5.1" class="anchored" data-anchor-id="variabel-numerik-vs-kategorik"><span class="header-section-number">1.5.1</span> Variabel Numerik vs Kategorik</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -1038,8 +1036,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 <p>Pembagian numerik menjadi <strong>diskrit/kontinu</strong> dan kategorik menjadi <strong>nominal/ordinal</strong> akan dibahas lebih rinci pada Pertemuan 2.</p>
 </section>
-<section id="variabel-independen-vs-dependen" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="variabel-independen-vs-dependen"><span class="header-section-number">5.2</span> Variabel Independen vs Dependen</h2>
+<section id="variabel-independen-vs-dependen" class="level3" data-number="1.5.2">
+<h3 data-number="1.5.2" class="anchored" data-anchor-id="variabel-independen-vs-dependen"><span class="header-section-number">1.5.2</span> Variabel Independen vs Dependen</h3>
 <p>Ketika sebuah studi menyelidiki <strong>hubungan</strong> antarvariabel, peran variabel dibedakan:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1090,8 +1088,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <hr>
 </section>
 </section>
-<section id="kerangka-membaca-sebuah-studi" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Kerangka Membaca Sebuah Studi</h1>
+<section id="kerangka-membaca-sebuah-studi" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="kerangka-membaca-sebuah-studi"><span class="header-section-number">1.6</span> Kerangka Membaca Sebuah Studi</h2>
 <p>Setiap kali menjumpai klaim berbasis data, biasakan menjawab enam pertanyaan berikut:</p>
 <table class="caption-top table">
 <colgroup>
@@ -1141,8 +1139,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </table>
 <hr>
 </section>
-<section id="studi-kasus-komprehensif-survei-pemakaian-qris" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Studi Kasus Komprehensif: Survei Pemakaian QRIS</h1>
+<section id="studi-kasus-komprehensif-survei-pemakaian-qris" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="studi-kasus-komprehensif-survei-pemakaian-qris"><span class="header-section-number">1.7</span> Studi Kasus Komprehensif: Survei Pemakaian QRIS</h2>
 <p><strong>Konteks</strong>: Sebuah lembaga riset melaporkan: <em>“Survei terhadap 400 pelaku UMKM kuliner di Kota Bandung menunjukkan 72% sudah menerima pembayaran QRIS, dengan rata-rata 38 transaksi QRIS per minggu. Pelaku usaha yang lebih lama memakai QRIS cenderung memiliki omzet lebih tinggi.Dengan demikian, sekitar tujuh dari sepuluh UMKM kuliner di Bandung telah mengadopsi QRIS.”</em> Kita simulasikan data survei tersebut agar dapat dianalisis.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2024</span>)</span>
@@ -1168,8 +1166,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
  $ omzet_juta : num  22.1 15.8 25.6 13.8 14.3 23.9 25.5 24.4 15.5 9.7 ...</code></pre>
 </div>
 </div>
-<section id="langkah-1-identifikasi-komponen-studi" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="langkah-1-identifikasi-komponen-studi"><span class="header-section-number">7.1</span> Langkah 1: Identifikasi Komponen Studi</h2>
+<section id="langkah-1-identifikasi-komponen-studi" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="langkah-1-identifikasi-komponen-studi"><span class="header-section-number">1.7.1</span> Langkah 1: Identifikasi Komponen Studi</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1213,8 +1211,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </tbody>
 </table>
 </section>
-<section id="langkah-2-menghitung-statistik-dari-sampel" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="langkah-2-menghitung-statistik-dari-sampel"><span class="header-section-number">7.2</span> Langkah 2: Menghitung Statistik dari Sampel</h2>
+<section id="langkah-2-menghitung-statistik-dari-sampel" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="langkah-2-menghitung-statistik-dari-sampel"><span class="header-section-number">1.7.2</span> Langkah 2: Menghitung Statistik dari Sampel</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>p_hat_qris <span class="ot">&lt;-</span> <span class="fu">mean</span>(umkm<span class="sc">$</span>terima_qris <span class="sc">==</span> <span class="st">"Ya"</span>)</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>rata_trx <span class="ot">&lt;-</span> <span class="fu">mean</span>(umkm<span class="sc">$</span>trx_qris[umkm<span class="sc">$</span>terima_qris <span class="sc">==</span> <span class="st">"Ya"</span>])</span>
@@ -1237,8 +1235,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 <p>Karena datanya hasil simulasi, angkanya (71.5% dan 36.1 transaksi) sedikit berbeda dari laporan (72% dan 38 transaksi) – persis seperti dua sampel berbeda yang menghasilkan statistik berbeda.</p>
 </section>
-<section id="langkah-3-variabel-independen-dan-dependen" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="langkah-3-variabel-independen-dan-dependen"><span class="header-section-number">7.3</span> Langkah 3: Variabel Independen dan Dependen</h2>
+<section id="langkah-3-variabel-independen-dan-dependen" class="level3" data-number="1.7.3">
+<h3 data-number="1.7.3" class="anchored" data-anchor-id="langkah-3-variabel-independen-dan-dependen"><span class="header-section-number">1.7.3</span> Langkah 3: Variabel Independen dan Dependen</h3>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>pengguna <span class="ot">&lt;-</span> <span class="fu">subset</span>(umkm, terima_qris <span class="sc">==</span> <span class="st">"Ya"</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pengguna<span class="sc">$</span>bulan_qris, pengguna<span class="sc">$</span>omzet_juta, <span class="at">pch =</span> <span class="dv">16</span>, <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.3</span>, <span class="fl">0.45</span>, <span class="fl">0.7</span>, <span class="fl">0.6</span>),</span>
@@ -1255,16 +1253,16 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 </div>
 </section>
-<section id="pertanyaan-diskusi-dan-jawaban" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">7.4</span> Pertanyaan Diskusi dan Jawaban</h2>
+<section id="pertanyaan-diskusi-dan-jawaban" class="level3" data-number="1.7.4">
+<h3 data-number="1.7.4" class="anchored" data-anchor-id="pertanyaan-diskusi-dan-jawaban"><span class="header-section-number">1.7.4</span> Pertanyaan Diskusi dan Jawaban</h3>
 <strong>1. Bagian mana dari laporan itu yang deskriptif, dan mana yang inferensial?</strong> “72% sudah menerima QRIS” dan “rata-rata 38 transaksi” adalah <strong>deskriptif</strong> (menggambarkan 400 UMKM dalam sampel). Kalimat “sekitar tujuh dari sepuluh UMKM kuliner <strong>di Bandung”</strong> adalah <strong>inferensial</strong> karena menggeneralisasi ke seluruh populasi. 2. Apakah generalisasi tersebut sah? Hanya jika sampel 400 UMKM <strong>mewakili</strong> populasi – misalnya dipilih secara acak dari daftar seluruh UMKM kuliner Bandung. Jika survei dilakukan secara online melalui media sosial, UMKM yang sudah melek digital akan lebih banyak terjaring, dan angka 72% kemungkinan <strong>terlalu tinggi</strong>. Laporan juga sebaiknya menyebut ketidakpastiannya (misalnya <em>margin of error</em>). <strong>3. Bolehkah disimpulkan bahwa “memakai QRIS menyebabkan omzet naik”?</strong> <strong>Tidak.</strong> Grafik menunjukkan <strong>kecenderungan bersama</strong>, tetapi data ini observasional. Bisa jadi UMKM yang omzetnya sudah besar lebih dahulu mengadopsi QRIS (arah sebab-akibat terbalik), atau ada faktor lain (lokasi strategis) yang memengaruhi keduanya. <strong>4. Mengapa id_umkm tidak dianalisis?</strong> id_umkm hanya <strong>pengenal</strong> unit observasi. Ia bukan karakteristik yang bervariasi secara bermakna, sehingga tidak dianalisis sebagai variabel.
 <hr>
 </section>
 </section>
-<section id="latihan-mandiri" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Latihan Mandiri</h1>
-<section id="latihan-utama-survei-kepuasan-aplikasi-kampus" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="latihan-utama-survei-kepuasan-aplikasi-kampus"><span class="header-section-number">8.1</span> Latihan Utama: Survei Kepuasan Aplikasi Kampus</h2>
+<section id="latihan-mandiri" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="latihan-mandiri"><span class="header-section-number">1.8</span> Latihan Mandiri</h2>
+<section id="latihan-utama-survei-kepuasan-aplikasi-kampus" class="level3" data-number="1.8.1">
+<h3 data-number="1.8.1" class="anchored" data-anchor-id="latihan-utama-survei-kepuasan-aplikasi-kampus"><span class="header-section-number">1.8.1</span> Latihan Utama: Survei Kepuasan Aplikasi Kampus</h3>
 <p><strong>Konteks</strong>: Bagian TI sebuah universitas dengan 12.000 mahasiswa ingin mengetahui kepuasan terhadap aplikasi akademik barunya. Mereka menyebarkan kuesioner kepada 300 mahasiswa yang dipilih acak dari daftar mahasiswa aktif. Laporan awal menyebut: skor kepuasan rata-rata sekitar 3,5 (skala 1–5), sekitar 60% mahasiswa mengakses aplikasi setiap hari, dan mahasiswa yang lebih sering mengalami error cenderung memberi skor kepuasan lebih rendah.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">77</span>)</span>
@@ -1287,12 +1285,12 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 6 20248022     2024        Tidak            1        4</code></pre>
 </div>
 </div>
-<section id="tugas-1-identifikasi-komponen-studi" class="level3" data-number="8.1.1">
-<h3 data-number="8.1.1" class="anchored" data-anchor-id="tugas-1-identifikasi-komponen-studi"><span class="header-section-number">8.1.1</span> Tugas 1: Identifikasi komponen studi</h3>
+<section id="tugas-1-identifikasi-komponen-studi" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-1-identifikasi-komponen-studi">Tugas 1: Identifikasi komponen studi</h4>
 <p>Tentukan populasi, sampel, 𝑛, unit observasi, serta satu contoh parameter dan statistik. <strong>Jawaban</strong>: Populasi = seluruh 12.000 mahasiswa aktif; sampel = 300 mahasiswa yang mengisi kuesioner (𝑛 = 300); unit observasi = satu mahasiswa. Parameter = proporsi <strong>seluruh</strong> mahasiswa yang mengakses aplikasi setiap hari (tidak diketahui); statistik = proporsi mahasiswa dalam sampel yang mengakses aplikasi setiap hari (dihitung pada Tugas 3, sekitar 62.3%).</p>
 </section>
-<section id="tugas-2-klasifikasikan-setiap-variabel" class="level3" data-number="8.1.2">
-<h3 data-number="8.1.2" class="anchored" data-anchor-id="tugas-2-klasifikasikan-setiap-variabel"><span class="header-section-number">8.1.2</span> Tugas 2: Klasifikasikan setiap variabel</h3>
+<section id="tugas-2-klasifikasikan-setiap-variabel" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-2-klasifikasikan-setiap-variabel">Tugas 2: Klasifikasikan setiap variabel</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(survei_app, class)</span></code></pre></div><button title="Salin ke Papan Klip" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1302,8 +1300,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 <p><strong>Jawaban</strong>: akses_harian kategorik; jumlah_error numerik; kepuasan pada skala 1–5 adalah <strong>kategorik berurutan</strong> (ordinal) meskipun ditulis sebagai angka – dibahas lebih lanjut di Pertemuan 2. nim adalah label (kategorik, disimpan sebagai teks). angkatan tersimpan sebagai numerik, tetapi dalam survei ini berfungsi sebagai <strong>kelompok</strong> (kategorik).</p>
 </section>
-<section id="tugas-3-hitung-statistik-sampel" class="level3" data-number="8.1.3">
-<h3 data-number="8.1.3" class="anchored" data-anchor-id="tugas-3-hitung-statistik-sampel"><span class="header-section-number">8.1.3</span> Tugas 3: Hitung statistik sampel</h3>
+<section id="tugas-3-hitung-statistik-sampel" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-3-hitung-statistik-sampel">Tugas 3: Hitung statistik sampel</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="at">Proporsi_akses_harian =</span> <span class="fu">mean</span>(survei_app<span class="sc">$</span>akses_harian <span class="sc">==</span> <span class="st">"Ya"</span>),</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="at">Rata_kepuasan =</span> <span class="fu">mean</span>(survei_app<span class="sc">$</span>kepuasan),</span>
@@ -1314,8 +1312,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 </div>
 </section>
-<section id="tugas-4-tentukan-variabel-independen-dan-dependen" class="level3" data-number="8.1.4">
-<h3 data-number="8.1.4" class="anchored" data-anchor-id="tugas-4-tentukan-variabel-independen-dan-dependen"><span class="header-section-number">8.1.4</span> Tugas 4: Tentukan variabel independen dan dependen</h3>
+<section id="tugas-4-tentukan-variabel-independen-dan-dependen" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-4-tentukan-variabel-independen-dan-dependen">Tugas 4: Tentukan variabel independen dan dependen</h4>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(kepuasan <span class="sc">~</span> jumlah_error, <span class="at">data =</span> survei_app, <span class="at">col =</span> <span class="st">"#c6dbef"</span>,</span>
 <span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="at">xlab =</span> <span class="st">"Jumlah error yang dialami (independen)"</span>,</span>
@@ -1330,12 +1328,12 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 <p><strong>Jawaban</strong>: Pertanyaannya adalah “apakah error memengaruhi kepuasan?”, sehingga jumlah_error = <strong>independen</strong> dan kepuasan = <strong>dependen</strong>. Grafik menunjukkan skor kepuasan cenderung turun seiring bertambahnya error.</p>
 </section>
-<section id="tugas-5-deskriptif-atau-inferensial" class="level3" data-number="8.1.5">
-<h3 data-number="8.1.5" class="anchored" data-anchor-id="tugas-5-deskriptif-atau-inferensial"><span class="header-section-number">8.1.5</span> Tugas 5: Deskriptif atau inferensial?</h3>
+<section id="tugas-5-deskriptif-atau-inferensial" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-5-deskriptif-atau-inferensial">Tugas 5: Deskriptif atau inferensial?</h4>
 <p>Klasifikasikan dua kalimat berikut: (a) “Rata-rata kepuasan 300 responden adalah 3,5.” (b) “Mayoritas mahasiswa universitas ini puas terhadap aplikasi akademik.” <strong>Jawaban</strong>: (a) <strong>deskriptif</strong> – hanya melaporkan sampel. (b) <strong>inferensial</strong> – menggeneralisasi ke seluruh mahasiswa; sah karena sampel diambil <strong>acak</strong> dari daftar mahasiswa aktif, tetapi sebaiknya disertai ukuran ketidakpastian.</p>
 </section>
-<section id="tugas-6-tantangan-variabilitas-sampling" class="level3" data-number="8.1.6">
-<h3 data-number="8.1.6" class="anchored" data-anchor-id="tugas-6-tantangan-variabilitas-sampling"><span class="header-section-number">8.1.6</span> Tugas 6 (Tantangan): Variabilitas Sampling</h3>
+<section id="tugas-6-tantangan-variabilitas-sampling" class="level4">
+<h4 class="anchored" data-anchor-id="tugas-6-tantangan-variabilitas-sampling">Tugas 6 (Tantangan): Variabilitas Sampling</h4>
 <p>Anggap survei_app sebagai populasi mini. Ambil 500 sampel acak berukuran 30, hitung proporsi akses_harian == “Ya” pada tiap sampel, dan gambarkan histogramnya.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">8</span>)</span>
@@ -1361,8 +1359,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <p><strong>Jawaban</strong>: Proporsi sampel berkisar cukup lebar di sekitar proporsi “populasi” (garis merah). Dengan 𝑛 = 30 saja, satu sampel bisa menghasilkan angka yang cukup jauh dari nilai sebenarnya – itulah mengapa ukuran sampel dan ketidakpastian penting.</p>
 </section>
 </section>
-<section id="latihan-tambahan-self-check" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">8.2</span> Latihan Tambahan (Self-Check)</h2>
+<section id="latihan-tambahan-self-check" class="level3" data-number="1.8.2">
+<h3 data-number="1.8.2" class="anchored" data-anchor-id="latihan-tambahan-self-check"><span class="header-section-number">1.8.2</span> Latihan Tambahan (Self-Check)</h3>
 <p>Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode. <strong>Soal A</strong>. Sebuah pabrik baterai memproduksi 50.000 baterai per hari. Petugas QC menguji umur 100 baterai dan mendapatkan rata-rata 18,2 jam. Tentukan populasi, sampel, parameter, statistik, dan jelaskan mengapa sensus tidak mungkin dilakukan.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Kunci jawaban:</span></span>
@@ -1412,8 +1410,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </div>
 </section>
 </section>
-<section id="kesalahan-umum-pada-konsep-dasar" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Kesalahan Umum pada Konsep Dasar</h1>
+<section id="kesalahan-umum-pada-konsep-dasar" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="kesalahan-umum-pada-konsep-dasar"><span class="header-section-number">1.9</span> Kesalahan Umum pada Konsep Dasar</h2>
 <ol type="1">
 <li>Menyamakan “statistika” dan “statistik” – yang pertama ilmunya, yang kedua nilai ringkasan dari sampel.</li>
 <li>Menganggap statistik sampel sama persis dengan parameter – selalu ada kesalahan sampling.</li>
@@ -1428,8 +1426,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;"></li>
 </ol>
 </section>
-<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Cheat Sheet: Fungsi R yang Digunakan</h1>
+<section id="cheat-sheet-fungsi-r-yang-digunakan" class="level2" data-number="1.10">
+<h2 data-number="1.10" class="anchored" data-anchor-id="cheat-sheet-fungsi-r-yang-digunakan"><span class="header-section-number">1.10</span> Cheat Sheet: Fungsi R yang Digunakan</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1548,8 +1546,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="glosarium-istilah" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Glosarium Istilah</h1>
+<section id="glosarium-istilah" class="level2" data-number="1.11">
+<h2 data-number="1.11" class="anchored" data-anchor-id="glosarium-istilah"><span class="header-section-number">1.11</span> Glosarium Istilah</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -1638,8 +1636,8 @@ Rata-rata IPK <strong>50 mahasiswa</strong>, x̄
 </table>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="rangkuman-dan-kesimpulan" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Rangkuman dan Kesimpulan</h1>
+<section id="rangkuman-dan-kesimpulan" class="level2" data-number="1.12">
+<h2 data-number="1.12" class="anchored" data-anchor-id="rangkuman-dan-kesimpulan"><span class="header-section-number">1.12</span> Rangkuman dan Kesimpulan</h2>
 <ol>
 <li>
 Statistika adalah ilmu tentang data dan ketidakpastian; statistik adalah nilai ringkasan dari sampel.
@@ -1668,8 +1666,8 @@ Hubungan antarvariabel dari data observasional bukan bukti sebab-akibat.
 </p>
 <hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
 </section>
-<section id="referensi-pendukung" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> Referensi Pendukung</h1>
+<section id="referensi-pendukung" class="level2" data-number="1.13">
+<h2 data-number="1.13" class="anchored" data-anchor-id="referensi-pendukung"><span class="header-section-number">1.13</span> Referensi Pendukung</h2>
 <p>
 Materi ini merangkum konsep dasar statistika (<em>introduction to statistics and data</em>) yang umum dibahas pada bab pertama buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:
 </p>
@@ -2196,8 +2194,8 @@ Buku teks pengantar statistika pada bab Pendahuluan: Data, Populasi, dan Sampel.
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../chapters/P02.html" class="pagination-link" aria-label="Jenis Data">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../chapters/P02.html" class="pagination-link" aria-label="Jenis Data, Skala Pengukuran, dan Struktur Dataset">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Jenis Data, Skala Pengukuran, dan Struktur Dataset</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
