@@ -1,0 +1,778 @@
+# Mengenal R Secara Singkat
+
+Sepanjang semester kita memakai R sebagai “kalkulator statistika”. Bagian ini hanya membekali
+perintah minimal yang dibutuhkan pada pertemuan ini.
+
+## Vektor: Kumpulan Nilai Sejenis
+
+Vektor dibuat dengan fungsi c() (combine). Satu vektor biasanya mewakili satu variabel.
+
+```{r}
+tinggi <- c(160, 172, 168, 155, 181)
+prodi <- c("DS", "SI", "DS", "TI", "DS")
+lulus <- c(TRUE, TRUE, FALSE, TRUE, TRUE)
+
+length(tinggi)
+```
+```{r}
+tinggi[2] # elemen ke-2
+```
+```{r}
+tinggi * 0.01 # operasi berlaku untuk setiap elemen (cm -> m)
+```
+```{r}
+class(tinggi); class(prodi); class(lulus)
+```
+
+
+## Data Frame: Tabel Data
+
+Data frame adalah tabel: baris = observasi, kolom = variabel. Inilah bentuk data yang paling
+sering kita jumpai.
+
+```{r}
+mhs_kecil <- data.frame(
+nama = c("Ayu", "Budi", "Citra", "Dedi", "Eka"),
+prodi = prodi,
+tinggi = tinggi,
+lulus = lulus
+)
+print(mhs_kecil)
+```
+```{r}
+nrow(mhs_kecil); ncol(mhs_kecil)
+```
+```{r}
+mhs_kecil$tinggi
+```
+```{r}
+str(mhs_kecil)
+```
+Fungsi str() akan sering kita pakai untuk “berkenalan” dengan dataset baru: berapa observasinya,
+apa saja variabelnya, dan apa tipenya.
+
+
+# Fundamental Statistika
+
+## Statistika vs Statistik
+Dua kata ini mirip tetapi maknanya berbeda:
+<table
+        style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
+        <thead>
+            <tr style="border-bottom: 1px solid black; text-align: left;">
+                <th style="padding: 8px;">Istilah</th>
+                <th style="padding: 8px;">Makna</th>
+                <th style="padding: 8px;">Contoh</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px; vertical-align: top;">
+                    <strong>Statistika</strong> (<em>statistics</em> sebagai ilmu)
+                </td>
+                <td style="padding: 8px; vertical-align: top;">
+                    Ilmu tentang cara <strong>mengumpulkan, mengolah, menyajikan, menganalisis, dan
+                        menginterpretasikan</strong> data untuk menarik kesimpulan dalam kondisi ketidakpastian
+                </td>
+                <td style="padding: 8px; vertical-align: top;">
+                    "Saya sedang belajar statistika."
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 8px; vertical-align: top;">
+                    <strong>Statistik</strong> (<em>a statistic</em>)
+                </td>
+                <td style="padding: 8px; vertical-align: top;">
+                    <strong>Nilai ringkasan</strong> yang dihitung dari data <strong>sampel</strong>
+                </td>
+                <td style="padding: 8px; vertical-align: top;">
+                    "Rata-rata tinggi 5 mahasiswa tadi adalah 167,2 cm."
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+Dalam bahasa sehari-hari, “statistik” juga sering berarti “kumpulan angka” (misalnya “statistik
+pengangguran”). Dalam kuliah ini kita memakai makna teknisnya:<strong> nilai yang dihitung dari
+sampel.</strong>
+
+```{r}
+mean(mhs_kecil$tinggi) # sebuah statistik: rata-rata sampel
+```
+```{r}
+mean(mhs_kecil$lulus) # sebuah statistik: proporsi lulus (TRUE dihitung 1)  
+```
+## Siklus Kerja Statistika
+Statistika bukan sekadar menghitung rumus. Ia adalah sebuah siklus:
+<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
+<thead>
+<tr style="border-bottom: 1px solid black; text-align: left;">
+<th style="padding: 8px;">Tahap</th>
+<th style="padding: 8px;">Pertanyaan yang dijawab</th>
+<th style="padding: 8px;">Dibahas pada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 8px; vertical-align: top;">1. Merumuskan masalah</td>
+<td style="padding: 8px; vertical-align: top;">Apa yang ingin diketahui?<br>Tentang siapa?</td>
+<td style="padding: 8px; vertical-align: top;">Pertemuan 1</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;">2. Mengumpulkan data</td>
+<td style="padding: 8px; vertical-align: top;">Bagaimana data diperoleh?<br>Siapa yang diamati?</td>
+<td style="padding: 8px; vertical-align: top;">Pertemuan 2–3</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;">3. Menyajikan &amp; meringkas</td>
+<td style="padding: 8px; vertical-align: top;">Seperti apa pola datanya?</td>
+<td style="padding: 8px; vertical-align: top;">Pertemuan 4–7</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;">4. Menarik kesimpulan</td>
+<td style="padding: 8px; vertical-align: top;">Apa yang bisa dikatakan<br>tentang populasi?</td>
+<td style="padding: 8px; vertical-align: top;">Pertemuan 9–15</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;">5. Mengomunikasikan</td>
+<td style="padding: 8px; vertical-align: top;">Bagaimana melaporkan hasil<br>secara jujur?</td>
+<td style="padding: 8px; vertical-align: top;">Sepanjang semester</td>
+</tr>
+</tbody>
+</table>
+
+## Statistika Deskriptif vs Inferensial
+<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
+<thead>
+<tr style="border-bottom: 1px solid black; text-align: left;">
+<th style="padding: 8px;">Aspek</th>
+<th style="padding: 8px;">Statistika Deskriptif</th>
+<th style="padding: 8px;">Statistika Inferensial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="padding: 8px; vertical-align: top;"><strong>Tujuan</strong></td>
+<td style="padding: 8px; vertical-align: top;">Meringkas dan menggambarkan data yang <strong>ada di tangan</strong></td>
+<td style="padding: 8px; vertical-align: top;">Menarik kesimpulan tentang <strong>populasi</strong> berdasarkan sampel</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;"><strong>Cakupan kesimpulan</strong></td>
+<td style="padding: 8px; vertical-align: top;">Hanya berlaku untuk data yang diamati</td>
+<td style="padding: 8px; vertical-align: top;">Digeneralisasi ke kelompok yang lebih besar</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;"><strong>Alat</strong></td>
+<td style="padding: 8px; vertical-align: top;">Tabel, grafik, mean, median, simpangan baku</td>
+<td style="padding: 8px; vertical-align: top;">Estimasi, selang kepercayaan, uji hipotesis, regresi</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;"><strong>Ketidakpastian</strong></td>
+<td style="padding: 8px; vertical-align: top;">Tidak dinyatakan</td>
+<td style="padding: 8px; vertical-align: top;"><strong>Selalu</strong> dinyatakan (misalnya <em>margin of error</em>, <em>p-value</em>)</td>
+</tr>
+<tr>
+<td style="padding: 8px; vertical-align: top;"><strong>Contoh kalimat</strong></td>
+<td style="padding: 8px; vertical-align: top;">"Rata-rata IPK 50 mahasiswa yang disurvei adalah 3,21."</td>
+<td style="padding: 8px; vertical-align: top;">"Rata-rata IPK seluruh mahasiswa diperkirakan antara 3,13 dan 3,29 (kepercayaan 95%)."</td>
+</tr>
+</tbody>
+</table>
+
+Perhatikan perbedaan kalimatnya: kalimat deskriptif hanya <strong>melaporkan</strong>, sedangkan kalimat in-
+6
+ferensial <strong>menggeneralisasi</strong> dan menyebutkan <strong>ketidakpastian</strong>. Pada paruh pertama semester
+(Pertemuan 1–7) kita fokus pada statistika deskriptif; paruh kedua (Pertemuan 9–15) pada inferen-
+sial.
+
+<hr>
+
+# Populasi dan Sampel
+## Definisi Kunci
+<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid #000; border-bottom: 1.5px solid #000; font-family: 'Times New Roman', Times, serif, sans-serif; font-size: 15px; line-height: 1.4;">
+  <thead>
+    <tr style="border-bottom: 1px solid #000; text-align: left;">
+      <th style="padding: 8px 12px; width: 22%; font-weight: normal;">Istilah</th>
+      <th style="padding: 8px 12px; width: 43%; font-weight: normal;">Definisi</th>
+      <th style="padding: 8px 12px; width: 35%; font-weight: normal;">Contoh (Survei Kebiasaan Belajar)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Populasi</strong></td>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Seluruh</strong> objek/individu yang menjadi sasaran kesimpulan</td>
+      <td style="padding: 8px 12px; vertical-align: top;">Seluruh 5.000 mahasiswa aktif sebuah universitas</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Sampel</strong></td>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Sebagian</strong> populasi yang benar-benar diamati</td>
+      <td style="padding: 8px 12px; vertical-align: top;">50 mahasiswa yang mengisi survei</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Unit observasi</strong></td>
+      <td style="padding: 8px 12px; vertical-align: top;">Satu "entitas" tempat data dicatat (satu baris data)</td>
+      <td style="padding: 8px 12px; vertical-align: top;">Satu orang mahasiswa</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Parameter</strong></td>
+      <td style="padding: 8px 12px; vertical-align: top;">Nilai ringkasan <strong>populasi</strong> (biasanya tidak diketahui)</td>
+      <td style="padding: 8px 12px; vertical-align: top;">Rata-rata IPK <strong>seluruh</strong> mahasiswa, &mu;</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 12px; vertical-align: top;"><strong>Statistik</strong></td>
+      <td style="padding: 8px 12px; vertical-align: top;">Nilai ringkasan <strong>sampel</strong> (dapat dihitung)</td>
+      <td style="padding: 8px 12px; vertical-align: top;">Rata-rata IPK <strong>50 mahasiswa</strong>, x&#772;</td>
+    </tr>
+  </tbody>
+</table>
+
+Cara mudah mengingat: <strong>P</strong>arameter - <strong>P</strong>opulasi; <strong>S</strong>tatistik - <strong>S</strong>ampel.
+
+## Mengapa Tidak Mengamati Seluruh Populasi?
+
+Mengamati seluruh populasi disebut <strong>sensus</strong>. Sensus ideal, tetapi sering tidak mungkin atau tidak
+efisien karena:
+
+1. **Biaya dan waktu** – mensurvei 270 juta penduduk Indonesia hanya dilakukan BPS setiap 10 tahun.
+2. **Populasi tak terhingga atau terus berubah** – misalnya seluruh transaksi QRIS di masa depan.
+3. **Pengamatan bersifat merusak** – menguji umur lampu atau kekuatan beton berarti menghancurkannya; menguji seluruh produksi berarti tidak ada yang tersisa untuk dijual.
+4. **Sampel yang dirancang baik sudah cukup akurat** – dan sering lebih teliti karena petugasnya lebih sedikit dan terlatih.
+
+## Simulasi: Populasi yang (Pura-pura) Kita Ketahui
+Di dunia nyata parameter populasi **tidak diketahui**. Agar dapat melihat hubungan parameter dan
+statistik, kita **menyimulasikan** sebuah populasi 5.000 mahasiswa, sehingga – khusus di praktikum
+ini – kita tahu “kebenarannya”.
+
+```{r}
+set.seed(2026)
+N <- 5000
+populasi <- data.frame(
+id = 1:N,
+fakultas = sample(c("Teknik", "Ekonomi", "Sains", "Hukum", "Kedokteran"), N,
+replace = TRUE, prob = c(0.30, 0.25, 0.20, 0.15, 0.10)),
+jenis_kel = sample(c("Perempuan", "Laki-laki"), N, replace = TRUE),
+tinggal = sample(c("Kos", "Rumah Ortu", "Asrama"), N, replace = TRUE,
+
+prob = c(0.55, 0.35, 0.10)),
+
+jam_belajar = round(pmax(0, rnorm(N, mean = 14, sd = 5)), 1) # jam per minggu
+)
+# IPK dipengaruhi jam belajar ditambah faktor acak lain
+populasi$ipk <- round(pmin(4, pmax(1.5, 2.3 + 0.065 * populasi$jam_belajar +
+
+rnorm(N, 0, 0.3))), 2)
+
+populasi$uang_saku <- round(rlnorm(N, meanlog = log(2), sdlog = 0.4), 2) # juta rupiah/bulan
+head(populasi)
+```
+
+**Parameter** populasi (dalam kenyataan tidak kita ketahui):
+```{r}
+mu <- mean(populasi$ipk) # rata-rata IPK populasi
+p_kos <- mean(populasi$tinggal == "Kos") # proporsi mahasiswa kos
+c(mu = mu, p_kos = p_kos)
+```
+
+## Mengambil Sampel dan Menghitung Statistik
+
+Sekarang kita berperan sebagai peneliti yang hanya mampu mensurvei **50 mahasiswa** yang dipilih
+secara acak.
+
+```{r}
+set.seed(1)
+n <- 50
+sampel <- populasi[sample(1:N, n), ]
+x_bar <- mean(sampel$ipk)
+p_hat <- mean(sampel$tinggal == "Kos")
+
+
+```
+
+```{r}
+knitr::kable(data.frame(
+Ukuran = c("Rata-rata IPK", "Proporsi tinggal di kos"),
+Parameter = round(c(mu, p_kos), 3),
+Statistik = round(c(x_bar, p_hat), 3),
+Selisih = round(c(x_bar - mu, p_hat - p_kos), 3)
+), caption = "Parameter populasi vs statistik dari satu sampel (n = 50)")
+```
+Statistik sampel **dekat** dengan parameter, tetapi **tidak sama persis**. Selisih ini disebut **kesalahan sampling** (*sampling error*) – bukan karena peneliti ceroboh, melainkan karena kita hanya melihat
+sebagian populasi.
+
+## Unit Observasi Bisa Berubah
+
+Unit observasi ditentukan oleh **tingkat** di mana data dicatat. Data mahasiswa di atas memiliki unit
+observasi “satu mahasiswa”. Jika data tersebut diringkas per fakultas, unit observasinya berubah
+menjadi “satu fakultas”:
+
+```{r}
+per_fakultas <- aggregate(cbind(ipk, jam_belajar) ~ fakultas, data = populasi, FUN = mean)
+per_fakultas$jumlah_mhs <- as.numeric(table(populasi$fakultas)[per_fakultas$fakultas])
+knitr::kable(per_fakultas, digits = 2, caption = "Data dengan unit observasi = fakultas 5 baris)")
+
+```
+
+Tabel kedua hanya memiliki 5 baris. Kesimpulan dari data tingkat fakultas **tidak otomatis berlaku** untuk tingkat individu – kesalahan logika ini dikenal sebagai **ecological fallacy**. Selalu tanyakan: “satu baris data ini mewakili apa?”
+
+<hr>
+
+# Variabilitas Sampling: Statistik Itu Berubah-ubah
+
+Jika peneliti lain mengambil sampel 50 mahasiswa yang berbeda, apakah ia memperoleh ̄𝑥 yang sama? Mari kita ulangi pengambilan sampel sebanyak 1.000 kali.
+
+```{r}
+set.seed(2)
+rata_sampel_50 <- replicate(1000, mean(sample(populasi$ipk, 50)))
+hist(rata_sampel_50, breaks = 30, col = "#4C72B0", border = "white",
+main = "Rata-rata IPK dari 1.000 Sampel Berbeda (n = 50)",
+xlab = "Rata-rata IPK sampel", ylab = "Frekuensi")
+abline(v = mu, col = "firebrick", lwd = 3)
+legend("topright", legend = "Parameter mu (sebenarnya)", col = "firebrick", lwd = 3, bty = "n")
+```
+
+```{r}
+range(rata_sampel_50)
+```
+
+Setiap sampel menghasilkan ̄𝑥 yang berbeda, tetapi nilai-nilainya **berkumpul di sekitar 𝜇**. Inilah
+alasan statistika inferensial selalu menyertakan ukuran ketidakpastian.
+**Pengaruh ukuran sampel**. Apa yang terjadi jika sampel diperbesar?
+
+```{r}
+set.seed(3)
+rata_sampel_10 <- replicate(1000, mean(sample(populasi$ipk, 10)))
+rata_sampel_200 <- replicate(1000, mean(sample(populasi$ipk, 200)))
+par(mfrow = c(1, 3))
+for (hasil in list(list(rata_sampel_10, "n = 10"), list(rata_sampel_50, "n = 50"),
+list(rata_sampel_200, "n = 200"))) {
+hist(hasil[[1]], breaks = 25, xlim = c(2.9, 3.5), col = "#9ecae1", border = "white",
+main = hasil[[2]], xlab = "Rata-rata IPK sampel", ylab = "Frekuensi")
+abline(v = mu, col = "firebrick", lwd = 2)
+}
+
+
+```
+
+```{r}
+par(mfrow = c(1, 1))
+round(c(Sebaran_n10 = sd(rata_sampel_10), Sebaran_n50 = sd(rata_sampel_50),
+Sebaran_n200 = sd(rata_sampel_200)), 4)
+
+```
+Semakin besar sampel, semakin **sempit** sebaran ̄𝑥 di sekitar 𝜇 – statistik semakin dapat dipercaya.
+Ide ini akan dibahas secara formal pada Pertemuan 9 (*sampling distribution* dan *Central Limit Theorem*).
+
+##  Sekilas Inferensi
+Sebagai pratinjau, statistika inferensial memungkinkan kita menyatakan: “berdasarkan satu sampel
+ini, **𝜇 kemungkinan besar** berada di antara … dan …”.
+
+```{r}
+se <- sd(sampel$ipk) / sqrt(n)
+selang <- c(Bawah = x_bar - 2 * se, Atas = x_bar + 2 * se)
+round(selang, 3)
+```
+```{r}
+# Apakah selang memuat parameter?
+mu >= selang["Bawah"] & mu <= selang["Atas"]
+```
+Rumus di atas **belum perlu dihafal**; yang penting adalah idenya: kesimpulan tentang populasi
+dinyatakan sebagai **rentang** beserta tingkat kepercayaannya, bukan satu angka pasti.
+
+<hr>
+
+# Variabel
+**Variabel** adalah karakteristik yang **nilainya bervariasi** antarunit observasi. Dalam data frame,
+setiap kolom adalah satu variabel.
+
+##  Variabel Numerik vs Kategorik
+
+| Jenis | Ciri | Contoh | Tipe di R |
+|:---|:---|:---|:---|
+| **Numerik**<br>(kuantitatif) | Nilainya angka yang **bermakna untuk dihitung** (dijumlah, dirata-rata) | IPK, jam belajar, uang saku, tinggi badan | `numeric`, `integer` |
+| **Kategorik**<br>(kualitatif) | Nilainya **label/kelompok** | Fakultas, jenis kelamin, tempat tinggal | character, factor |
+
+**Jebakan penting**: tidak semua yang ditulis dengan angka adalah variabel numerik. NIM, kode
+pos, nomor HP, atau kode fakultas “1, 2, 3” adalah **kategorik**, karena merata-ratakannya tidak
+bermakna.
+
+```{r}
+str(sampel)
+```
+
+
+```{r}
+jenis_variabel <- function(x) if (is.numeric(x)) "Numerik" else "Kategorik"
+sapply(sampel, jenis_variabel)
+
+```
+
+Menurut R, kolom id bertipe numerik – padahal secara makna id hanyalah **label** unit observasi.
+R hanya melihat **tipe penyimpanan**, sedangkan menentukan jenis variabel adalah tugas **analis**
+13 berdasarkan **makna**.
+
+```{r}
+mean(sampel$id) # dapat dihitung, tetapi "rata-rata nomor ID" tidak bermakna apapun
+```
+
+```{r}
+table(sampel$fakultas)
+```
+
+```{r}
+summary(sampel$jam_belajar)
+```
+Pembagian numerik menjadi **diskrit/kontinu** dan kategorik menjadi **nominal/ordinal** akan dibahas lebih rinci pada Pertemuan 2.
+
+##  Variabel Independen vs Dependen
+Ketika sebuah studi menyelidiki **hubungan** antarvariabel, peran variabel dibedakan:
+
+| Peran | Nama lain | Makna | Contoh |
+|:---|:---|:---|:---|
+| **Independen** | Variabel bebas, prediktor, *feature*, $X$ | Variabel yang **diduga memengaruhi** | Jam belajar per minggu |
+| **Dependen** | Variabel terikat, respons, *target*, $Y$ | Variabel yang **diduga dipengaruhi** | IPK |
+
+```{r}
+plot(sampel$jam_belajar, sampel$ipk, pch = 16, col = "steelblue",
+xlab = "Jam belajar per minggu (variabel independen, X)",
+ylab = "IPK (variabel dependen, Y)",
+main = "Hubungan Jam Belajar dan IPK (n = 50)")
+abline(lm(ipk ~ jam_belajar, data = sampel), col = "firebrick", lwd = 2)
+```
+Secara umum, mahasiswa yang belajar lebih lama cenderung memiliki IPK lebih tinggi. Konvensi
+grafiknya: variabel independen di **sumbu-x**, dependen di **sumbu-y**. Hubungan ini akan diukur
+secara formal pada Pertemuan 15 (korelasi dan regresi).
+
+**Peran variabel ditentukan oleh pertanyaan penelitian, bukan oleh variabelnya**. “IPK” adalah variabel dependen jika pertanyaannya “apakah jam belajar memengaruhi IPK?”, tetapi menjadi variabel independen jika pertanyaannya “apakah IPK
+memengaruhi gaji pertama lulusan?”. <br> <br>
+**Hubungan belum tentu sebab-akibat**. Data survei (observasional) hanya menunjukkan bahwa dua variabel bergerak bersama. Untuk menyimpulkan sebab-akibat,
+dibutuhkan desain eksperimen (Pertemuan 3).
+ <hr>
+ 
+# Kerangka Membaca Sebuah Studi
+Setiap kali menjumpai klaim berbasis data, biasakan menjawab enam pertanyaan berikut:
+
+| No | Pertanyaan | Mengidentifikasi |
+|:---|:---|:---|
+| 1 | Kesimpulannya ditujukan kepada siapa? | **Populasi** |
+| 2 | Siapa yang benar-benar diamati, dan berapa banyak? | **Sampel** dan $n$ |
+| 3 | Satu baris data mewakili apa? | **Unit observasi** |
+| 4 | Karakteristik apa yang diukur, dan apa jenisnya? | **Variabel** (numerik/kategorik) |
+| 5 | Angka yang dilaporkan dihitung dari sampel atau populasi? | **Statistik** atau **parameter** |
+| 6 | Apakah klaimnya hanya menggambarkan data, atau menggeneralisasi? | **Deskriptif** atau **inferensial** |
+
+<hr>
+# Studi Kasus Komprehensif: Survei Pemakaian QRIS
+**Konteks**: Sebuah lembaga riset melaporkan: *“Survei terhadap 400 pelaku UMKM kuliner di Kota Bandung menunjukkan 72% sudah menerima pembayaran QRIS, dengan rata-rata 38 transaksi QRIS per minggu. Pelaku usaha yang lebih lama memakai QRIS cenderung memiliki omzet lebih tinggi.Dengan demikian, sekitar tujuh dari sepuluh UMKM kuliner di Bandung telah mengadopsi QRIS.”*
+Kita simulasikan data survei tersebut agar dapat dianalisis.
+
+```{r}
+set.seed(2024)
+n_umkm <- 400
+umkm <- data.frame(
+id_umkm = sprintf("UMKM-%03d", 1:n_umkm),
+jenis_usaha = sample(c("Warung makan", "Kedai kopi", "Kue & roti", "Streetfood"),
+n_umkm, replace = TRUE),
+terima_qris = sample(c("Ya", "Tidak"), n_umkm, replace = TRUE, prob = c(0.72, 0.28))
+)
+umkm$bulan_qris <- ifelse(umkm$terima_qris == "Ya", sample(1:48, n_umkm, replace = TRUE), 0)
+umkm$trx_qris <- ifelse(umkm$terima_qris == "Ya",
+rpois(n_umkm, lambda = 20 + 0.75 * umkm$bulan_qris), 0)
+umkm$omzet_juta <- round(rlnorm(n_umkm, log(15 + 0.25 * umkm$bulan_qris), 0.35), 1)
+str(umkm)
+```
+
+## Langkah 1: Identifikasi Komponen Studi
+| Komponen | Jawaban |
+|:---|:---|
+| Populasi | Seluruh pelaku UMKM kuliner di Kota Bandung |
+| Sampel | 400 pelaku UMKM kuliner yang disurvei |
+| Unit observasi | Satu UMKM kuliner |
+| Variabel kategorik | `jenis_usaha`, `terima_qris` (dan `id_umkm` sebagai label) |
+| Variabel numerik | `bulan_qris`, `trx_qris`, `omzet_juta` |
+| Statistik | 72% (proporsi penerima QRIS dalam sampel); 38 transaksi (rata-rata sampel) |
+| Parameter yang diduga | Proporsi dan rata-rata transaksi pada **seluruh** UMKM kuliner Bandung |
+
+##  Langkah 2: Menghitung Statistik dari Sampel
+```{r}
+p_hat_qris <- mean(umkm$terima_qris == "Ya")
+rata_trx <- mean(umkm$trx_qris[umkm$terima_qris == "Ya"])
+c(Proporsi_QRIS = round(p_hat_qris, 3), Rata_trx_per_minggu = round(rata_trx, 1))
+```
+
+```{r}
+table(umkm$jenis_usaha, umkm$terima_qris)
+```
+Karena datanya hasil simulasi, angkanya (71.5% dan 36.1 transaksi) sedikit berbeda dari laporan
+(72% dan 38 transaksi) – persis seperti dua sampel berbeda yang menghasilkan statistik berbeda.
+
+## Langkah 3: Variabel Independen dan Dependen
+
+```{r}
+pengguna <- subset(umkm, terima_qris == "Ya")
+plot(pengguna$bulan_qris, pengguna$omzet_juta, pch = 16, col = rgb(0.3, 0.45, 0.7, 0.6),
+xlab = "Lama memakai QRIS (bulan) -- independen",
+ylab = "Omzet per bulan (juta Rp) -- dependen",
+main = "Lama Pemakaian QRIS vs Omzet UMKM")
+abline(lm(omzet_juta ~ bulan_qris, data = pengguna), col = "firebrick", lwd = 2)
+```
+
+## Pertanyaan Diskusi dan Jawaban
+
+**1. Bagian mana dari laporan itu yang deskriptif, dan mana yang inferensial?**
+“72% sudah menerima QRIS” dan “rata-rata 38 transaksi” adalah **deskriptif** (menggambarkan 400
+UMKM dalam sampel). Kalimat “sekitar tujuh dari sepuluh UMKM kuliner **di Bandung”** adalah
+**inferensial** karena menggeneralisasi ke seluruh populasi.
+2. Apakah generalisasi tersebut sah?
+Hanya jika sampel 400 UMKM **mewakili** populasi – misalnya dipilih secara acak dari daftar seluruh
+UMKM kuliner Bandung. Jika survei dilakukan secara online melalui media sosial, UMKM yang
+sudah melek digital akan lebih banyak terjaring, dan angka 72% kemungkinan **terlalu tinggi**.
+Laporan juga sebaiknya menyebut ketidakpastiannya (misalnya *margin of error*).
+**3. Bolehkah disimpulkan bahwa “memakai QRIS menyebabkan omzet naik”?**
+**Tidak.** Grafik menunjukkan **kecenderungan bersama**, tetapi data ini observasional. Bisa jadi
+UMKM yang omzetnya sudah besar lebih dahulu mengadopsi QRIS (arah sebab-akibat terbalik),
+atau ada faktor lain (lokasi strategis) yang memengaruhi keduanya.
+**4. Mengapa id_umkm tidak dianalisis?**
+id_umkm hanya **pengenal** unit observasi. Ia bukan karakteristik yang bervariasi secara bermakna,
+sehingga tidak dianalisis sebagai variabel.
+<hr>
+# Latihan Mandiri
+## Latihan Utama: Survei Kepuasan Aplikasi Kampus
+**Konteks**: Bagian TI sebuah universitas dengan 12.000 mahasiswa ingin mengetahui kepuasan
+terhadap aplikasi akademik barunya. Mereka menyebarkan kuesioner kepada 300 mahasiswa yang
+dipilih acak dari daftar mahasiswa aktif. Laporan awal menyebut: skor kepuasan rata-rata sekitar
+3,5 (skala 1–5), sekitar 60% mahasiswa mengakses aplikasi setiap hari, dan mahasiswa yang lebih
+sering mengalami error cenderung memberi skor kepuasan lebih rendah.
+
+```{r}
+set.seed(77)
+survei_app <- data.frame(
+nim = sprintf("2024%04d", sample(1:9999, 300)),
+angkatan = sample(2021:2024, 300, replace = TRUE),
+akses_harian = sample(c("Ya", "Tidak"), 300, replace = TRUE, prob = c(0.64, 0.36)),
+jumlah_error = rpois(300, lambda = 3)
+)
+survei_app$kepuasan <- pmin(5, pmax(1, round(4.4 - 0.25 * survei_app$jumlah_error +
+rnorm(300, 0, 0.6))))
+head(survei_app)
+
+```
+
+### Tugas 1: Identifikasi komponen studi
+Tentukan populasi, sampel, 𝑛, unit observasi, serta satu contoh parameter dan statistik.
+**Jawaban**: Populasi = seluruh 12.000 mahasiswa aktif; sampel = 300 mahasiswa yang mengisi
+kuesioner (𝑛 = 300); unit observasi = satu mahasiswa. Parameter = proporsi **seluruh** mahasiswa
+yang mengakses aplikasi setiap hari (tidak diketahui); statistik = proporsi mahasiswa dalam sampel
+yang mengakses aplikasi setiap hari (dihitung pada Tugas 3, sekitar 62.3%).
+
+### Tugas 2: Klasifikasikan setiap variabel
+```{r}
+sapply(survei_app, class)
+```
+**Jawaban**: akses_harian kategorik; jumlah_error numerik; kepuasan pada skala 1–5 adalah
+**kategorik berurutan** (ordinal) meskipun ditulis sebagai angka – dibahas lebih lanjut di Pertemuan
+2. nim adalah label (kategorik, disimpan sebagai teks). angkatan tersimpan sebagai numerik, tetapi
+dalam survei ini berfungsi sebagai **kelompok** (kategorik).
+
+### Tugas 3: Hitung statistik sampel
+```{r}
+c(Proporsi_akses_harian = mean(survei_app$akses_harian == "Ya"),
+Rata_kepuasan = mean(survei_app$kepuasan),
+Rata_error = mean(survei_app$jumlah_error))
+```
+### Tugas 4: Tentukan variabel independen dan dependen
+```{r}
+boxplot(kepuasan ~ jumlah_error, data = survei_app, col = "#c6dbef",
+xlab = "Jumlah error yang dialami (independen)",
+ylab = "Skor kepuasan (dependen)", main = "Error vs Kepuasan")
+```
+**Jawaban**: Pertanyaannya adalah “apakah error memengaruhi kepuasan?”, sehingga jumlah_error
+= **independen** dan kepuasan = **dependen**. Grafik menunjukkan skor kepuasan cenderung turun
+seiring bertambahnya error.
+
+### Tugas 5: Deskriptif atau inferensial?
+Klasifikasikan dua kalimat berikut: (a) “Rata-rata kepuasan 300 responden adalah 3,5.” (b) “Mayoritas mahasiswa universitas ini puas terhadap aplikasi akademik.”
+**Jawaban**: (a) **deskriptif** – hanya melaporkan sampel. (b) **inferensial** – menggeneralisasi ke
+seluruh mahasiswa; sah karena sampel diambil **acak** dari daftar mahasiswa aktif, tetapi sebaiknya
+disertai ukuran ketidakpastian.
+
+###  Tugas 6 (Tantangan): Variabilitas Sampling
+Anggap survei_app sebagai populasi mini. Ambil 500 sampel acak berukuran 30, hitung proporsi
+akses_harian == "Ya" pada tiap sampel, dan gambarkan histogramnya.
+
+```{r}
+set.seed(8)
+prop_30 <- replicate(500, mean(sample(survei_app$akses_harian, 30) == "Ya"))
+hist(prop_30, breaks = 15, col = "#fdae6b", border = "white",
+main = "Proporsi Akses Harian dari 500 Sampel (n = 30)",
+xlab = "Proporsi sampel", ylab = "Frekuensi")
+abline(v = mean(survei_app$akses_harian == "Ya"), col = "firebrick", lwd = 2)
+```
+
+```{r}
+range(prop_30)
+```
+
+**Jawaban**: Proporsi sampel berkisar cukup lebar di sekitar proporsi “populasi” (garis merah). Dengan 𝑛 = 30 saja, satu sampel bisa menghasilkan angka yang cukup jauh dari nilai sebenarnya –
+itulah mengapa ukuran sampel dan ketidakpastian penting.
+
+## Latihan Tambahan (Self-Check)
+
+Kerjakan soal-soal berikut secara mandiri sebelum melihat kunci jawaban pada komentar kode.
+**Soal A**. Sebuah pabrik baterai memproduksi 50.000 baterai per hari. Petugas QC menguji umur
+100 baterai dan mendapatkan rata-rata 18,2 jam. Tentukan populasi, sampel, parameter, statistik,
+dan jelaskan mengapa sensus tidak mungkin dilakukan.
+
+```{r}
+# Kunci jawaban:
+# Populasi : seluruh 50.000 baterai produksi hari itu
+# Sampel : 100 baterai yang diuji (n = 100)
+# Parameter : rata-rata umur SELURUH 50.000 baterai (mu, tidak diketahui)
+# Statistik : x-bar = 18,2 jam
+# Sensus tidak mungkin karena pengujian umur bersifat MERUSAK (baterai habis dipakai).
+
+```
+
+**Soal B**. Klasifikasikan variabel berikut sebagai numerik atau kategorik: (1) nomor kursi pesawat,
+(2) berat bagasi, (3) kelas penerbangan (Ekonomi/Bisnis), (4) jumlah transit, (5) kode bandara
+(CGK, DPS), (6) lama penerbangan.
+
+```{r}
+# Kunci jawaban:
+# (1) Kategorik (label, meskipun memuat angka) (2) Numerik
+# (3) Kategorik (4) Numerik
+# (5) Kategorik (6) Numerik
+```
+
+**Soal C**. Buat data frame berisi 6 teman sekelas dengan variabel: nama, asal_daerah, tinggi_cm,
+jumlah_saudara. Tampilkan strukturnya dengan str() dan hitung rata-rata tinggi badan. Apakah
+angka ini parameter atau statistik jika tujuannya menggambarkan seluruh angkatan?
+
+```{r}
+teman <- data.frame(
+nama = c("A", "B", "C", "D", "E", "F"),
+asal_daerah = c("Bekasi", "Medan", "Bogor", "Makassar", "Bekasi", "Solo"),
+tinggi_cm = c(158, 170, 165, 175, 162, 168),
+jumlah_saudara = c(2, 1, 3, 0, 2, 4)
+)
+str(teman)
+mean(teman$tinggi_cm)
+# Kunci: rata-rata 6 orang adalah STATISTIK, karena 6 teman hanyalah sampel dari angkatan.
+# Namun jika tujuannya hanya menggambarkan 6 orang itu saja, keenamnya adalah populasi
+# dan angka tersebut menjadi parameter. Populasi ditentukan oleh TUJUAN kesimpulan.
+
+```
+
+**Soal D**. Seorang peneliti ingin mengetahui apakah durasi tidur memengaruhi konsentrasi belajar.
+Tentukan variabel independen dan dependen. Jika ia hanya mengamati (tanpa mengatur durasi
+tidur responden), bolehkah ia menyimpulkan sebab-akibat?
+
+```{r}
+# Kunci jawaban:
+# Independen: durasi tidur; Dependen: skor konsentrasi belajar.
+# Karena hanya mengamati (studi observasional), ia hanya boleh menyimpulkan ADANYA HUBUNGAN,
+# bukan sebab-akibat. Faktor lain (stres, konsumsi kafein) bisa memengaruhi keduanya.
+
+```
+
+# Kesalahan Umum pada Konsep Dasar
+
+1. Menyamakan “statistika” dan “statistik” – yang pertama ilmunya, yang kedua nilai
+ringkasan dari sampel.
+2. Menganggap statistik sampel sama persis dengan parameter – selalu ada kesalahan sampling.
+3. Menggeneralisasi dari sampel yang tidak mewakili – misalnya survei online untuk
+menggambarkan seluruh penduduk.
+4. Menyebut parameter sebagai sesuatu yang “dihitung dari sampel” – parameter
+adalah milik populasi dan biasanya tidak diketahui.
+5. Menganggap variabel berkode angka sebagai numerik – NIM, kode pos, dan kode
+kategori adalah kategorik.
+6. Mengandalkan class() di R untuk menentukan jenis variabel – R hanya tahu tipe
+penyimpanan, bukan makna.
+7. Salah menentukan unit observasi – sehingga kesimpulan tingkat kelompok dianggap
+berlaku untuk individu (ecological fallacy).
+8. Menganggap peran independen/dependen melekat pada variabel – perannya ditentukan pertanyaan penelitian.
+9. Menyimpulkan sebab-akibat dari data observasional – hubungan bukan berarti penyebab.
+10. Melaporkan kesimpulan inferensial tanpa ketidakpastian – generalisasi harus disertai
+margin of error atau selang kepercayaan.
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+
+# Cheat Sheet: Fungsi R yang Digunakan
+| Fungsi | Kegunaan |
+|:---|:---|
+| `c(...)` | Membuat vektor |
+| `data.frame(...)` | Membuat tabel data |
+| `head(df)` | Menampilkan 6 baris pertama |
+| `str(df)` | Menampilkan struktur data (variabel, tipe, contoh isi) |
+| `nrow(df)`, `ncol(df)` | Banyaknya baris (observasi) dan kolom (variabel) |
+| `df$kolom` | Mengambil satu variabel |
+| `class(x)` | Tipe penyimpanan objek di R |
+| `is.numeric(x)` | Memeriksa apakah objek bertipe numerik |
+| `sapply(df, fungsi)` | Menerapkan fungsi ke setiap kolom |
+| `length(x)` | Banyaknya elemen vektor |
+| `mean(x)` | Rata-rata; `mean(x == "A")` menghitung proporsi kategori "A" |
+| `table(x)` | Frekuensi setiap kategori |
+| `summary(x)` | Ringkasan angka variabel numerik |
+| `sample(x, n)` | Mengambil sampel acak berukuran n |
+
+| Fungsi | Kegunaan |
+|:---|:---|
+| `set.seed(k)` | Mengunci bilangan acak agar hasil dapat direproduksi |
+| `replicate(B, ekspresi)` | Mengulang sebuah ekspresi sebanyak B kali (simulasi) |
+| `subset(df, kondisi)` | Memilih baris yang memenuhi kondisi |
+| `aggregate(y ~ g, data, FUN)` | Meringkas variabel per kelompok |
+| `rnorm()`, `rlnorm()`, `rpois()` | Membangkitkan data acak (untuk simulasi) |
+| `plot(x, y)`, `hist(x)`, `boxplot()` | Grafik dasar |
+| `abline(lm(y ~ x))` | Menambahkan garis tren pada diagram pencar |
+| `kable(df)` | Menampilkan tabel rapi (paket `knitr`) |
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+
+# Glosarium Istilah
+| Istilah | Definisi Singkat |
+|:---|:---|
+| **Statistika** | Ilmu mengumpulkan, mengolah, menyajikan, menganalisis, dan menginterpretasikan data |
+| **Statistik** | Nilai ringkasan yang dihitung dari sampel |
+| **Statistika Deskriptif** | Cabang statistika untuk meringkas dan menggambarkan data yang diamati |
+| **Statistika Inferensial** | Cabang statistika untuk menarik kesimpulan tentang populasi dari sampel |
+| **Populasi** | Keseluruhan objek yang menjadi sasaran kesimpulan |
+| **Sampel** | Bagian populasi yang benar-benar diamati |
+| **Sensus** | Pengamatan terhadap seluruh anggota populasi |
+| **Unit Observasi** | Entitas tempat data dicatat; satu baris dalam dataset |
+| **Parameter** | Nilai ringkasan populasi ($\mu, \sigma, p$) |
+| **Kesalahan Sampling** | Selisih antara statistik dan parameter akibat hanya mengamati sebagian populasi |
+| **Variabilitas Sampling** | Perubahan nilai statistik dari satu sampel ke sampel lain |
+| **Variabel** | Karakteristik yang nilainya bervariasi antarunit observasi |
+| **Variabel Numerik** | Variabel bernilai angka yang bermakna untuk dihitung |
+| **Variabel Kategorik** | Variabel bernilai label atau kelompok |
+| **Variabel Independen** | Variabel yang diduga memengaruhi ($X$, prediktor, *feature*) |
+| **Variabel Dependen** | Variabel yang diduga dipengaruhi ($Y$, respons, *target*) |
+| **Studi Observasional** | Studi yang hanya mengamati tanpa memberi perlakuan |
+| **Ecological Fallacy** | Kesalahan menerapkan kesimpulan tingkat kelompok ke tingkat individu |
+
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+
+# Rangkuman dan Kesimpulan
+<ol>
+  <li>Statistika adalah ilmu tentang data dan ketidakpastian; statistik adalah nilai ringkasan dari sampel.</li>
+  <li>Statistika deskriptif menggambarkan data yang ada; statistika inferensial menggeneralisasi ke populasi dan selalu menyertakan ketidakpastian.</li>
+  <li>Populasi adalah sasaran kesimpulan, sampel adalah yang diamati. Parameter milik populasi (biasanya tak diketahui), statistik milik sampel (dapat dihitung).</li>
+  <li>Statistik berubah-ubah dari sampel ke sampel (variabilitas sampling) dan semakin stabil ketika ukuran sampel membesar.</li>
+  <li>Unit observasi menentukan tingkat kesimpulan; jangan menerapkan kesimpulan kelompok ke individu.</li>
+  <li>Variabel dibedakan menurut jenisnya (numerik vs kategorik) dan menurut perannya (independen vs dependen). Jenis ditentukan makna, peran ditentukan pertanyaan penelitian.</li>
+  <li>Hubungan antarvariabel dari data observasional bukan bukti sebab-akibat.</li>
+</ol>
+
+<p>
+  <strong>Jembatan ke sesi berikutnya:</strong> Pertemuan 2 memperdalam klasifikasi data &ndash; kualitatif vs kuantitatif, diskrit vs kontinu, sumber data primer vs sekunder, dan skala pengukuran (nominal, ordinal, interval, rasio) yang menentukan analisis apa yang sah dilakukan.
+</p>
+
+<hr style="border: 1px solid black; width: 50%; margin: 20px auto;">
+
+# Referensi Pendukung
+<p>
+  Materi ini merangkum konsep dasar statistika (<em>introduction to statistics and data</em>) yang umum dibahas pada bab pertama buku teks pengantar statistika bisnis/data science. Mahasiswa disarankan melengkapi pemahaman dengan merujuk pada:
+</p>
+
+<ul>
+  <li>Modul/slide perkuliahan "Introduction to Statistics (SDT-1102)" &ndash; Pertemuan 1: Konsep Dasar Statistika dan Data.</li>
+  <li>Dokumentasi resmi R: <code>?data.frame</code>, <code>?str</code>, <code>?sample</code>, <code>?set.seed</code>, <code>?replicate</code>, <code>?aggregate</code> (dapat diakses langsung di R/RStudio).</li>
+  <li>Buku teks pengantar statistika pada bab Pendahuluan: Data, Populasi, dan Sampel.</li>
+</ul>

@@ -11,6 +11,7 @@ book:
   date: today
   description: "Deskripsi singkat tentang buku"
   cover-image: images/cover-e.jpg
+
   sidebar:
     tools:
       - icon: github
@@ -22,11 +23,19 @@ book:
       - icon: book
         href: Quarto-Template.epub
         text: "Baca / Unduh EPUB"
+
   chapters:
     - index.qmd
-    - chapters/bab-1.qmd
-    - chapters/bab-2.qmd
-    - chapters/bab-3.qmd
+    - chapters/P01.qmd
+    - chapters/P02.qmd
+    - chapters/P03.qmd
+    - chapters/P04.qmd
+    - chapters/P05.qmd
+    # - chapters/P06.qmd
+    # - chapters/P07.qmd
+    # - chapters/P08.qmd
+    - chapters/P09.qmd
+    - chapters/P10.qmd
     - references/referensi.qmd
 
 bibliography:
@@ -62,7 +71,6 @@ format:
     toc: true
   epub:
     cover-image: images/cover-e.jpg
-
 execute:
   freeze: auto
   echo: true
