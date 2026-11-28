@@ -58,41 +58,10 @@ apa saja variabelnya, dan apa tipenya.
 
 ### Statistika vs Statistik
 Dua kata ini mirip tetapi maknanya berbeda:
-<table
-        style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
-        <thead>
-            <tr style="border-bottom: 1px solid black; text-align: left;">
-                <th style="padding: 8px;">Istilah</th>
-                <th style="padding: 8px;">Makna</th>
-                <th style="padding: 8px;">Contoh</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="padding: 8px; vertical-align: top;">
-                    <strong>Statistika</strong> (<em>statistics</em> sebagai ilmu)
-                </td>
-                <td style="padding: 8px; vertical-align: top;">
-                    Ilmu tentang cara <strong>mengumpulkan, mengolah, menyajikan, menganalisis, dan
-                        menginterpretasikan</strong> data untuk menarik kesimpulan dalam kondisi ketidakpastian
-                </td>
-                <td style="padding: 8px; vertical-align: top;">
-                    "Saya sedang belajar statistika."
-                </td>
-            </tr>
-            <tr>
-                <td style="padding: 8px; vertical-align: top;">
-                    <strong>Statistik</strong> (<em>a statistic</em>)
-                </td>
-                <td style="padding: 8px; vertical-align: top;">
-                    <strong>Nilai ringkasan</strong> yang dihitung dari data <strong>sampel</strong>
-                </td>
-                <td style="padding: 8px; vertical-align: top;">
-                    "Rata-rata tinggi 5 mahasiswa tadi adalah 167,2 cm."
-                </td>
-            </tr>
-        </tbody>
-    </table>
+| Istilah | Makna | Contoh |
+|---|---|---|
+| **Statistika** (*statistics* sebagai ilmu) | Ilmu tentang cara **mengumpulkan, mengolah, menyajikan, menganalisis, dan menginterpretasikan** data untuk menarik kesimpulan dalam kondisi ketidakpastian | "Saya sedang belajar statistika." |
+| **Statistik** (*a statistic*) | **Nilai ringkasan** yang dihitung dari data **sampel** | "Rata-rata tinggi 5 mahasiswa tadi adalah 167,2 cm." |
     
 Dalam bahasa sehari-hari, “statistik” juga sering berarti “kumpulan angka” (misalnya “statistik
 pengangguran”). Dalam kuliah ini kita memakai makna teknisnya:<strong> nilai yang dihitung dari
@@ -106,80 +75,22 @@ mean(mhs_kecil$lulus) # sebuah statistik: proporsi lulus (TRUE dihitung 1)
 ```
 ### Siklus Kerja Statistika
 Statistika bukan sekadar menghitung rumus. Ia adalah sebuah siklus:
-<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
-<thead>
-<tr style="border-bottom: 1px solid black; text-align: left;">
-<th style="padding: 8px;">Tahap</th>
-<th style="padding: 8px;">Pertanyaan yang dijawab</th>
-<th style="padding: 8px;">Dibahas pada</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding: 8px; vertical-align: top;">1. Merumuskan masalah</td>
-<td style="padding: 8px; vertical-align: top;">Apa yang ingin diketahui?<br>Tentang siapa?</td>
-<td style="padding: 8px; vertical-align: top;">Pertemuan 1</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;">2. Mengumpulkan data</td>
-<td style="padding: 8px; vertical-align: top;">Bagaimana data diperoleh?<br>Siapa yang diamati?</td>
-<td style="padding: 8px; vertical-align: top;">Pertemuan 2–3</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;">3. Menyajikan &amp; meringkas</td>
-<td style="padding: 8px; vertical-align: top;">Seperti apa pola datanya?</td>
-<td style="padding: 8px; vertical-align: top;">Pertemuan 4–7</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;">4. Menarik kesimpulan</td>
-<td style="padding: 8px; vertical-align: top;">Apa yang bisa dikatakan<br>tentang populasi?</td>
-<td style="padding: 8px; vertical-align: top;">Pertemuan 9–15</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;">5. Mengomunikasikan</td>
-<td style="padding: 8px; vertical-align: top;">Bagaimana melaporkan hasil<br>secara jujur?</td>
-<td style="padding: 8px; vertical-align: top;">Sepanjang semester</td>
-</tr>
-</tbody>
-</table>
+| Tahap | Pertanyaan yang dijawab | Dibahas pada |
+|---|---|---|
+| 1\. Merumuskan masalah | Apa yang ingin diketahui? Tentang siapa? | Pertemuan 1 |
+| 2\. Mengumpulkan data | Bagaimana data diperoleh? Siapa yang diamati? | Pertemuan 2–3 |
+| 3\. Menyajikan & meringkas | Seperti apa pola datanya? | Pertemuan 4–7 |
+| 4\. Menarik kesimpulan | Apa yang bisa dikatakan tentang populasi? | Pertemuan 9–15 |
+| 5\. Mengomunikasikan | Bagaimana melaporkan hasil secara jujur? | Sepanjang semester |
 
 ### Statistika Deskriptif vs Inferensial
-<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid black; border-bottom: 1.5px solid black; font-family: sans-serif;">
-<thead>
-<tr style="border-bottom: 1px solid black; text-align: left;">
-<th style="padding: 8px;">Aspek</th>
-<th style="padding: 8px;">Statistika Deskriptif</th>
-<th style="padding: 8px;">Statistika Inferensial</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="padding: 8px; vertical-align: top;"><strong>Tujuan</strong></td>
-<td style="padding: 8px; vertical-align: top;">Meringkas dan menggambarkan data yang <strong>ada di tangan</strong></td>
-<td style="padding: 8px; vertical-align: top;">Menarik kesimpulan tentang <strong>populasi</strong> berdasarkan sampel</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;"><strong>Cakupan kesimpulan</strong></td>
-<td style="padding: 8px; vertical-align: top;">Hanya berlaku untuk data yang diamati</td>
-<td style="padding: 8px; vertical-align: top;">Digeneralisasi ke kelompok yang lebih besar</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;"><strong>Alat</strong></td>
-<td style="padding: 8px; vertical-align: top;">Tabel, grafik, mean, median, simpangan baku</td>
-<td style="padding: 8px; vertical-align: top;">Estimasi, selang kepercayaan, uji hipotesis, regresi</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;"><strong>Ketidakpastian</strong></td>
-<td style="padding: 8px; vertical-align: top;">Tidak dinyatakan</td>
-<td style="padding: 8px; vertical-align: top;"><strong>Selalu</strong> dinyatakan (misalnya <em>margin of error</em>, <em>p-value</em>)</td>
-</tr>
-<tr>
-<td style="padding: 8px; vertical-align: top;"><strong>Contoh kalimat</strong></td>
-<td style="padding: 8px; vertical-align: top;">"Rata-rata IPK 50 mahasiswa yang disurvei adalah 3,21."</td>
-<td style="padding: 8px; vertical-align: top;">"Rata-rata IPK seluruh mahasiswa diperkirakan antara 3,13 dan 3,29 (kepercayaan 95%)."</td>
-</tr>
-</tbody>
-</table>
+| Aspek | Statistika Deskriptif | Statistika Inferensial |
+|---|---|---|
+| **Tujuan** | Meringkas dan menggambarkan data yang **ada di tangan** | Menarik kesimpulan tentang **populasi** berdasarkan sampel |
+| **Cakupan kesimpulan** | Hanya berlaku untuk data yang diamati | Digeneralisasi ke kelompok yang lebih besar |
+| **Alat** | Tabel, grafik, mean, median, simpangan baku | Estimasi, selang kepercayaan, uji hipotesis, regresi |
+| **Ketidakpastian** | Tidak dinyatakan | **Selalu** dinyatakan (misalnya *margin of error*, *p-value*) |
+| **Contoh kalimat** | "Rata-rata IPK 50 mahasiswa yang disurvei adalah 3,21." | "Rata-rata IPK seluruh mahasiswa diperkirakan antara 3,13 dan 3,29 (kepercayaan 95%)." |
 
 Perhatikan perbedaan kalimatnya: kalimat deskriptif hanya <strong>melaporkan</strong>, sedangkan kalimat in-
 6
@@ -191,42 +102,13 @@ sial.
 
 ## Populasi dan Sampel
 ### Definisi Kunci
-<table style="width: 100%; border-collapse: collapse; border-top: 1.5px solid #000; border-bottom: 1.5px solid #000; font-family: 'Times New Roman', Times, serif, sans-serif; font-size: 15px; line-height: 1.4;">
-  <thead>
-    <tr style="border-bottom: 1px solid #000; text-align: left;">
-      <th style="padding: 8px 12px; width: 22%; font-weight: normal;">Istilah</th>
-      <th style="padding: 8px 12px; width: 43%; font-weight: normal;">Definisi</th>
-      <th style="padding: 8px 12px; width: 35%; font-weight: normal;">Contoh (Survei Kebiasaan Belajar)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Populasi</strong></td>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Seluruh</strong> objek/individu yang menjadi sasaran kesimpulan</td>
-      <td style="padding: 8px 12px; vertical-align: top;">Seluruh 5.000 mahasiswa aktif sebuah universitas</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Sampel</strong></td>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Sebagian</strong> populasi yang benar-benar diamati</td>
-      <td style="padding: 8px 12px; vertical-align: top;">50 mahasiswa yang mengisi survei</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Unit observasi</strong></td>
-      <td style="padding: 8px 12px; vertical-align: top;">Satu "entitas" tempat data dicatat (satu baris data)</td>
-      <td style="padding: 8px 12px; vertical-align: top;">Satu orang mahasiswa</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Parameter</strong></td>
-      <td style="padding: 8px 12px; vertical-align: top;">Nilai ringkasan <strong>populasi</strong> (biasanya tidak diketahui)</td>
-      <td style="padding: 8px 12px; vertical-align: top;">Rata-rata IPK <strong>seluruh</strong> mahasiswa, &mu;</td>
-    </tr>
-    <tr>
-      <td style="padding: 8px 12px; vertical-align: top;"><strong>Statistik</strong></td>
-      <td style="padding: 8px 12px; vertical-align: top;">Nilai ringkasan <strong>sampel</strong> (dapat dihitung)</td>
-      <td style="padding: 8px 12px; vertical-align: top;">Rata-rata IPK <strong>50 mahasiswa</strong>, x&#772;</td>
-    </tr>
-  </tbody>
-</table>
+| Istilah | Definisi | Contoh (Survei Kebiasaan Belajar) |
+|---|---|---|
+| **Populasi** | **Seluruh** objek/individu yang menjadi sasaran kesimpulan | Seluruh 5.000 mahasiswa aktif sebuah universitas |
+| **Sampel** | **Sebagian** populasi yang benar-benar diamati | 50 mahasiswa yang mengisi survei |
+| **Unit observasi** | Satu "entitas" tempat data dicatat (satu baris data) | Satu orang mahasiswa |
+| **Parameter** | Nilai ringkasan **populasi** (biasanya tidak diketahui) | Rata-rata IPK **seluruh** mahasiswa, $\mu$ |
+| **Statistik** | Nilai ringkasan **sampel** (dapat dihitung) | Rata-rata IPK **50 mahasiswa**, $\bar{x}$ |
 
 Cara mudah mengingat: <strong>P</strong>arameter - <strong>P</strong>opulasi; <strong>S</strong>tatistik - <strong>S</strong>ampel.
 
